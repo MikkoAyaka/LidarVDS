@@ -1,0 +1,18 @@
+﻿<Application x:Class="LidarVDS.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LidarVDS"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- HandyControl 命名空间定义规范 xmlns:hc="https://handyorg.github.io/handycontrol" -->
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/skindefault.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/theme.xaml"/>
+                <!-- 自定义组件、改进组件 -->
+                <ResourceDictionary Source="Resources/Controllers/CustomController.xaml"/>
+                <ResourceDictionary Source="Resources/Controllers/ImprovedController.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

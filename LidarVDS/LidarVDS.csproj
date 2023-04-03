@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="HandyControl" Version="3.4.0" />
+      <PackageReference Include="SharpVectors" Version="1.8.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="resources\svgs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="resources\svgs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="resources\svgs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Remove="resources\svgs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="resources\下拉.png" />
+      <None Remove="resources\关闭.png" />
+      <None Remove="resources\最小化.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\Images\关闭.png" />
+      <Resource Include="Resources\Images\关闭.png" />
+      <None Remove="Resources\Images\最小化.png" />
+      <Resource Include="Resources\Images\最小化.png" />
+      <None Remove="Resources\Images\下拉.png" />
+      <Resource Include="Resources\Images\下拉.png" />
+      <None Remove="Resources\Images\雷达.png" />
+      <Resource Include="Resources\Images\雷达.png" />
+    </ItemGroup>
+
+</Project>
