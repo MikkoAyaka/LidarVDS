@@ -14,19 +14,19 @@
         <hc:Col HorizontalAlignment="Left">
             <hc:SimpleStackPanel Orientation="Horizontal">
                 <Image Source="Resources/Images/雷达.png" Width="60" RenderOptions.BitmapScalingMode="HighQuality"/>
-                <TextBox Text="Lidar - VDS" FontSize="25" BorderThickness="0" Margin="25,0,0,0"/>
+                <TextBox Text="{StaticResource AppTitle}" FontSize="25" BorderThickness="0" Margin="25,0,0,0"/>
             </hc:SimpleStackPanel>
         </hc:Col>
         <hc:Col Span="10">
             <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <RadioButton Style="{StaticResource NavButton}" Content="帮助"/>
-                <RadioButton Style="{StaticResource NavButton}" Content="设置"/>
-                <RadioButton Style="{StaticResource NavButton}" Content="数据分析"/>
-                <RadioButton Style="{StaticResource NavButton}" Content="仿真环境"/>
-                <RadioButton Style="{StaticResource NavButton}" Content="主页"/>
+                <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavHelp}"/>
+                <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavSettings}"/>
+                <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavDataAnalysis}"/>
+                <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavSimulator}"/>
+                <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavHomePage}"/>
                 <Button Style="{StaticResource ButtonPrimary}" FontSize="16" Height="48" Width="140" hc:BorderElement.CornerRadius="5">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock VerticalAlignment="Center">快捷使用</TextBlock>
+                        <TextBlock VerticalAlignment="Center"><StaticResource ResourceKey="NavEasyUse"/></TextBlock>
                         <Image Source="Resources/Images/下拉.png" Width="30" RenderOptions.BitmapScalingMode="HighQuality" Margin="15,0,0,0"></Image>
                     </StackPanel> 
                 </Button>
