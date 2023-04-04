@@ -10,11 +10,15 @@
                WindowStartupLocation="CenterScreen"
                ShowNonClientArea="False"
                Height="800" Width="1440">
-    <Grid Height="80" Background="White" VerticalAlignment="Top" MouseLeftButtonDown="DragWindow">
+    <Border>
+        <Border.Effect>
+            <DropShadowEffect Color="Black" ShadowDepth="10" BlurRadius="10" Opacity="0.3" Direction="0"/>
+        </Border.Effect>
+        <Grid Height="80" Background="{StaticResource Brush-NavBarBackground}" VerticalAlignment="Top" MouseLeftButtonDown="DragWindow">
         <hc:Col HorizontalAlignment="Left">
             <hc:SimpleStackPanel Orientation="Horizontal">
                 <Image Source="Resources/Images/雷达.png" Width="60" RenderOptions.BitmapScalingMode="HighQuality"/>
-                <TextBox Text="{StaticResource AppTitle}" FontSize="25" BorderThickness="0" Margin="25,0,0,0"/>
+                <TextBox Text="{StaticResource AppTitle}" Background="Transparent" FontSize="25" BorderThickness="0" Margin="25,0,0,0"/>
             </hc:SimpleStackPanel>
         </hc:Col>
         <hc:Col Span="10">
@@ -30,14 +34,15 @@
                         <Image Source="Resources/Images/下拉.png" Width="30" RenderOptions.BitmapScalingMode="HighQuality" Margin="15,0,0,0"></Image>
                     </StackPanel> 
                 </Button>
-                <Button Width="30" Margin="50,0,0,0" Click="HideWindow" Padding="0" BorderThickness="0">
+                <Button Width="30" Margin="50,0,0,0" Click="HideWindow" Padding="0" BorderThickness="0" Background="Transparent">
                     <Image Source="Resources/Images/最小化.png" RenderOptions.BitmapScalingMode="HighQuality"/>
                 </Button>
-                <Button Width="30" Margin="10,0,30,0" Click="CloseWindow" Padding="0" BorderThickness="0">
+                <Button Width="30" Margin="10,0,30,0" Click="CloseWindow" Padding="0" BorderThickness="0" Background="Transparent">
                     <Image Source="Resources/Images/关闭.png" RenderOptions.BitmapScalingMode="HighQuality" />
                 </Button>
             </hc:SimpleStackPanel>
         </hc:Col>
-        
-    </Grid>
+        </Grid>
+    </Border>
+    
 </hc:GlowWindow>

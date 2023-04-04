@@ -14,6 +14,7 @@
                 <ResourceDictionary Source="pack://application:,,,/Resources/Controllers/ImprovedController.xaml"/>
                 <!-- 常量词典 -->
                 <ResourceDictionary Source="pack://application:,,,/Resources/Values/Lang.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Resources/Values/Color.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
