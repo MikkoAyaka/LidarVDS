@@ -30,8 +30,12 @@
                         <Image Source="Resources/Images/下拉.png" Width="30" RenderOptions.BitmapScalingMode="HighQuality" Margin="15,0,0,0"></Image>
                     </StackPanel> 
                 </Button>
-                <Image Source="Resources/Images/最小化.png" Width="30" RenderOptions.BitmapScalingMode="HighQuality" Margin="50,0,0,0" MouseDown="HideWindow"/>
-                <Image Source="Resources/Images/关闭.png" Width="30" RenderOptions.BitmapScalingMode="HighQuality" Margin="10,0,30,0" MouseDown="CloseWindow"/>
+                <Button Width="30" Margin="50,0,0,0" Click="HideWindow" Padding="0" BorderThickness="0">
+                    <Image Source="Resources/Images/最小化.png" RenderOptions.BitmapScalingMode="HighQuality"/>
+                </Button>
+                <Button Width="30" Margin="10,0,30,0" Click="CloseWindow" Padding="0" BorderThickness="0">
+                    <Image Source="Resources/Images/关闭.png" RenderOptions.BitmapScalingMode="HighQuality" />
+                </Button>
             </hc:SimpleStackPanel>
         </hc:Col>
         

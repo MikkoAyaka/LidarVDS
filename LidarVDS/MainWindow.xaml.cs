@@ -31,12 +31,12 @@ namespace LidarVDS
             DragMove();
         }
 
-        private void HideWindow(object sender, MouseButtonEventArgs e)
+        private void HideWindow(object sender, RoutedEventArgs e)
         {
             e.Handled = true;
             WindowState = WindowState.Minimized;
         }
-        private void CloseWindow(object sender, MouseButtonEventArgs e)
+        private void CloseWindow(object sender, RoutedEventArgs e)
         {
             e.Handled = true;
             Close();
