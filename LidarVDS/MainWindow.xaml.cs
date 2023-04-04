@@ -21,10 +21,8 @@ namespace LidarVDS
     /// </summary>
     public partial class MainWindow : GlowWindow
     {
-        private static MainWindow INSTANCE;
         public MainWindow()
         {
-            INSTANCE = this;
             InitializeComponent();
         }
 

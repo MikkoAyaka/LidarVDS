@@ -10,10 +10,10 @@
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/skindefault.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/theme.xaml"/>
                 <!-- 自定义组件、改进组件 -->
-                <ResourceDictionary Source="Resources/Controllers/CustomController.xaml"/>
-                <ResourceDictionary Source="Resources/Controllers/ImprovedController.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Resources/Controllers/CustomController.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Resources/Controllers/ImprovedController.xaml"/>
                 <!-- 常量词典 -->
-                <ResourceDictionary Source="Resources/Values/Lang.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Resources/Values/Lang.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
