@@ -15,6 +15,11 @@
                 <!-- 常量词典 -->
                 <ResourceDictionary Source="pack://application:,,,/Resources/Values/Lang.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Resources/Values/Color.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Resources/Values/Value.xaml"/>
+                <!-- 字体 -->
+                <ResourceDictionary>
+                    <FontFamily x:Key="MacFont">pack://application:,,,/Resources/Fonts/苹方-简.ttf</FontFamily>
+                </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

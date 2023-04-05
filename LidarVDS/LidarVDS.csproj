@@ -43,6 +43,8 @@
       <Resource Include="Resources\Images\下拉.png" />
       <None Remove="Resources\Images\雷达.png" />
       <Resource Include="Resources\Images\雷达.png" />
+      <None Remove="Resources\Fonts\苹方-简.ttf" />
+      <Resource Include="Resources\Fonts\苹方-简.ttf" />
     </ItemGroup>
 
 </Project>
