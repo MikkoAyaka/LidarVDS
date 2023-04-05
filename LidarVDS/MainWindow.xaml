@@ -10,39 +10,56 @@
                WindowStartupLocation="CenterScreen"
                ShowNonClientArea="False"
                Height="800" Width="1440">
-    <Border>
-        <Border.Effect>
-            <DropShadowEffect Color="Black" ShadowDepth="10" BlurRadius="10" Opacity="0.3" Direction="0"/>
-        </Border.Effect>
-        <Grid Height="80" Background="{StaticResource Brush-NavBarBackground}" VerticalAlignment="Top" MouseLeftButtonDown="DragWindow">
+    <!-- 导航栏 -->
+    <Grid Height="80" 
+          Background="{StaticResource Brush-NavBarBackground}" 
+          VerticalAlignment="Top"
+          MouseLeftButtonDown="DragWindow">
+        <!-- 设置外围阴影 -->
+        <Grid.Effect>
+            <DropShadowEffect Color="Black" ShadowDepth="10" BlurRadius="10" Opacity="0.7" Direction="0" />
+        </Grid.Effect>
+        <!-- 左侧 Logo 和 标题 -->
         <hc:Col HorizontalAlignment="Left">
             <hc:SimpleStackPanel Orientation="Horizontal">
-                <Image Source="Resources/Images/雷达.png" Width="60" RenderOptions.BitmapScalingMode="HighQuality"/>
-                <TextBox Text="{StaticResource AppTitle}" Background="Transparent" FontSize="25" BorderThickness="0" Margin="25,0,0,0"/>
+                <Image Source="Resources/Images/雷达.png" Width="60" RenderOptions.BitmapScalingMode="HighQuality" />
+                <TextBox Text="{StaticResource AppTitle}" Background="Transparent" FontSize="25" BorderThickness="0"
+                         Margin="25,0,0,0" />
             </hc:SimpleStackPanel>
         </hc:Col>
-        <hc:Col Span="10">
-            <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavHelp}"/>
-                <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavSettings}"/>
-                <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavDataAnalysis}"/>
-                <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavSimulator}"/>
-                <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavHomePage}"/>
-                <Button Style="{StaticResource ButtonPrimary}" FontSize="16" Height="48" Width="140" hc:BorderElement.CornerRadius="5">
+        <!-- 右侧 -->
+        <hc:Col HorizontalAlignment="Right">
+            <hc:SimpleStackPanel Orientation="Horizontal">
+                <!-- 导航按钮 -->
+                <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavHelp}" />
+                <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavSettings}" />
+                <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavDataAnalysis}" />
+                <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavSimulator}" />
+                <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavHomePage}" />
+                <!-- 快速使用 -->
+                <Button Style="{StaticResource ButtonPrimary}" FontSize="16" Height="48" Width="140"
+                        hc:BorderElement.CornerRadius="5">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock VerticalAlignment="Center"><StaticResource ResourceKey="NavEasyUse"/></TextBlock>
-                        <Image Source="Resources/Images/下拉.png" Width="30" RenderOptions.BitmapScalingMode="HighQuality" Margin="15,0,0,0"></Image>
-                    </StackPanel> 
+                        <TextBlock VerticalAlignment="Center">
+                            <StaticResource ResourceKey="NavEasyUse" />
+                        </TextBlock>
+                        <Image Source="Resources/Images/下拉.png" Width="30"
+                               RenderOptions.BitmapScalingMode="HighQuality" Margin="15,0,0,0">
+                        </Image>
+                    </StackPanel>
                 </Button>
-                <Button Width="30" Margin="50,0,0,0" Click="HideWindow" Padding="0" BorderThickness="0" Background="Transparent">
-                    <Image Source="Resources/Images/最小化.png" RenderOptions.BitmapScalingMode="HighQuality"/>
+                <!-- 最小化 -->
+                <Button Width="30" Margin="50,0,0,0" Click="HideWindow" Padding="0" BorderThickness="0"
+                        Background="Transparent">
+                    <Image Source="Resources/Images/最小化.png" RenderOptions.BitmapScalingMode="HighQuality" />
                 </Button>
-                <Button Width="30" Margin="10,0,30,0" Click="CloseWindow" Padding="0" BorderThickness="0" Background="Transparent">
+                <!-- 关闭 -->
+                <Button Width="30" Margin="10,0,30,0" Click="CloseWindow" Padding="0" BorderThickness="0"
+                        Background="Transparent">
                     <Image Source="Resources/Images/关闭.png" RenderOptions.BitmapScalingMode="HighQuality" />
                 </Button>
             </hc:SimpleStackPanel>
         </hc:Col>
-        </Grid>
-    </Border>
-    
+    </Grid>
+
 </hc:GlowWindow>
