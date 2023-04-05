@@ -13,13 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HandyControl.Controls;
+using Window = HandyControl.Controls.Window;
 
 namespace LidarVDS
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : GlowWindow
+    public partial class MainWindow : Window
     {
         public MainWindow()
         {
@@ -36,6 +37,7 @@ namespace LidarVDS
             e.Handled = true;
             WindowState = WindowState.Minimized;
         }
+
         private void CloseWindow(object sender, RoutedEventArgs e)
         {
             e.Handled = true;
