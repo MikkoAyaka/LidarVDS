@@ -4,7 +4,7 @@
                     xmlns:hc="https://handyorg.github.io/handycontrol">
     <Style x:Key="NavButton" TargetType="RadioButton" BasedOn="{StaticResource ButtonBaseBaseStyle}">
         <Setter Property="Margin" Value="20"></Setter>
-        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="MinWidth" Value="80"/>
         <Setter Property="Height" Value="40"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisualRadius0}" />
@@ -19,7 +19,7 @@
                         CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}"
                         Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}"
                         BorderBrush="{TemplateBinding BorderBrush}">
-                        <Border Name="BorderHighlight" BorderThickness="0,0,0,2" BorderBrush="Transparent">
+                        <Border Name="Highlight" Background="Transparent" CornerRadius="20">
                             <StackPanel Orientation="Horizontal"
                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -45,9 +45,9 @@
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
                             <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}"/>
-                            <Setter Property="BorderBrush"
-                                    Value="{Binding Path=(hc:VisualElement.HighlightBrush),RelativeSource={RelativeSource TemplatedParent}}"
-                                    TargetName="BorderHighlight" />
+                            <Setter Property="Background"
+                                    Value="White"
+                                    TargetName="Highlight" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
