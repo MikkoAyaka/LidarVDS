@@ -46,8 +46,8 @@
                         <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavHelp}" />
                         <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavSettings}" />
                         <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavDataAnalysis}" />
-                        <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavSimulator}"/>
-                        <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavHomePage}" IsChecked="True"/>
+                        <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavSimulator}" />
+                        <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavHomePage}" IsChecked="True" />
                         <!-- 快速使用 -->
                         <Button Style="{StaticResource ButtonPrimary}" FontSize="16" Height="48" Width="140"
                                 hc:BorderElement.CornerRadius="5">
@@ -61,14 +61,21 @@
                             </StackPanel>
                         </Button>
                         <!-- 最小化 -->
-                        <Button Width="30" Margin="50,0,0,0" Click="HideWindow" Padding="0" BorderThickness="0"
+                        <Button Width="35" Margin="30,0,0,0" Click="HideWindow" Padding="0" BorderThickness="0"
                                 Background="Transparent">
-                            <Image Source="Resources/Images/最小化.png" RenderOptions.BitmapScalingMode="HighQuality" />
+                            <Border CornerRadius="8" Background="#D3FFCC" Width="30" Height="30">
+                                <Line X1="0" Y1="0" X2="10" Y2="0" Stroke="Black" Opacity="0.5" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
                         </Button>
                         <!-- 关闭 -->
-                        <Button Width="30" Margin="10,0,30,0" Click="CloseWindow" Padding="0" BorderThickness="0"
+                        <Button Width="35" Margin="10,0,30,0" Click="CloseWindow" Padding="0" BorderThickness="0"
                                 Background="Transparent">
-                            <Image Source="Resources/Images/关闭.png" RenderOptions.BitmapScalingMode="HighQuality" />
+                            <Border CornerRadius="8" Background="#E74455" Width="30" Height="30">
+                                <hc:SimplePanel>
+                                    <Line X1="0" Y1="0" X2="10" Y2="10" Stroke="Black" Opacity="0.5" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <Line X1="10" Y1="0" X2="0" Y2="10" Stroke="Black" Opacity="0.5" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </hc:SimplePanel>
+                            </Border>
                         </Button>
                     </hc:SimpleStackPanel>
                 </hc:Col>
