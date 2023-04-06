@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using HandyControl.Controls;
 using Window = HandyControl.Controls.Window;
 
 namespace LidarVDS
@@ -12,6 +13,7 @@ namespace LidarVDS
         public MainWindow()
         {
             InitializeComponent();
+            Growl.Success("启动成功");
         }
 
         /**
