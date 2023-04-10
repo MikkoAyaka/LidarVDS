@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using HandyControl.Controls;
 using Window = HandyControl.Controls.Window;
@@ -14,6 +15,7 @@ namespace LidarVDS
         {
             InitializeComponent();
             Growl.Success("启动成功");
+            PageFrame.Navigate(new PageMain());
         }
 
         /**
