@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using HandyControl.Controls;
+using LidarVDS.Utils;
 using Window = HandyControl.Controls.Window;
 
 namespace LidarVDS
@@ -14,7 +15,7 @@ namespace LidarVDS
         public MainWindow()
         {
             InitializeComponent();
-            Growl.Success("启动成功");
+            "启动成功".LogInfo();
             PageFrame.Navigate(new PageMain());
         }
 
@@ -42,6 +43,10 @@ namespace LidarVDS
         {
             e.Handled = true;
             Close();
+        }
+
+        private void NavButton_MainPage_OnClick(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

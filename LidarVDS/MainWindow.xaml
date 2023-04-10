@@ -49,7 +49,7 @@
                             <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavSettings}" />
                             <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavDataAnalysis}" />
                             <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavSimulator}" />
-                            <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavHomePage}" IsChecked="True" />
+                            <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavHomePage}" IsChecked="True" Click="NavButton_MainPage_OnClick"/>
                             <!-- 快速使用 -->
                             <ToggleButton
                                 Name="FastUseButton"
