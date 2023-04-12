@@ -18,7 +18,7 @@
 
     <hc:SimpleStackPanel>
         <!-- 导航栏 -->
-        <Border CornerRadius="20,20,0,0"
+        <Border CornerRadius="10,10,0,0"
                 Background="{StaticResource Brush-NavBarBackground}"
                 Height="80"
                 VerticalAlignment="Top"
@@ -90,7 +90,7 @@
             </Grid>
         </Border>
         <!-- 页面内容 -->
-        <Border CornerRadius="0,0,20,20" Height="720" Background="Azure">
+        <Border CornerRadius="0,0,10,10" Height="720" Background="Azure">
             <hc:SimplePanel>
                 <!-- 右侧弹窗提示 -->
                 <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Right">
@@ -109,7 +109,7 @@
                     </hc:TransitioningContentControl>
                 </Border>
                 <!-- 页面视图 -->
-                <Border CornerRadius="0,0,20,20">
+                <Border CornerRadius="0,0,10,10">
                     <Frame Name="PageFrame" BorderThickness="0"/>
                 </Border>
             </hc:SimplePanel>
