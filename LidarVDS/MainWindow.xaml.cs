@@ -2,6 +2,10 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using HandyControl.Controls;
+using LidarVDS.Pages.Analysis;
+using LidarVDS.Pages.Help;
+using LidarVDS.Pages.Settings;
+using LidarVDS.Pages.Simulator;
 using LidarVDS.Utils;
 using Window = HandyControl.Controls.Window;
 
@@ -16,7 +20,7 @@ namespace LidarVDS
         {
             InitializeComponent();
             "启动成功".LogInfo();
-            PageFrame.Navigate(new PageMain());
+            PageFrame.Navigate(PageMainService.GetPage());
         }
 
         /**
@@ -35,7 +39,7 @@ namespace LidarVDS
             e.Handled = true;
             WindowState = WindowState.Minimized;
         }
-        
+
         /**
          * 关闭窗口
          */
@@ -47,6 +51,27 @@ namespace LidarVDS
 
         private void NavButton_MainPage_OnClick(object sender, RoutedEventArgs e)
         {
+            PageFrame.Navigate(PageMainService.GetPage());
+        }
+
+        private void NavButton_Simulator_OnClick(object sender, RoutedEventArgs e)
+        {
+            PageFrame.Navigate(PageSimulatorService.GetPage());
+        }
+
+        private void NavButton_Settings_OnClick(object sender, RoutedEventArgs e)
+        {
+            PageFrame.Navigate(PageSettingsService.GetPage());
+        }
+
+        private void NavButton_Help_OnClick(object sender, RoutedEventArgs e)
+        {
+            PageFrame.Navigate(PageHelpService.GetPage());
+        }
+
+        private void NavButton_Analysis_OnClick(object sender, RoutedEventArgs e)
+        {
+            PageFrame.Navigate(PageAnalysisService.GetPage());
         }
     }
 }
