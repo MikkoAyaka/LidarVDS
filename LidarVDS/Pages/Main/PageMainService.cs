@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Documents;
 using HandyControl.Controls;
+using LidarVDS.Utils;
 
 namespace LidarVDS;
 
@@ -10,19 +11,20 @@ namespace LidarVDS;
  */
 public class PageMainService
 {
-    private PageMainService()
-    {
-    }
+    private PageMainService() {}
     private static class InstanceHolder
-    { 
-        public static readonly PageMainService Instance = new PageMainService();
+    {
+        public static readonly PageMainService Instance = new();
+        public static readonly PageMain Page = new();
     }
-
+    public static PageMain GetPage()
+    {
+        return InstanceHolder.Page;
+    }
     public static PageMainService GetInstance()
     {
         return InstanceHolder.Instance;
     }
-
     public List<string> GetCommand()
     {
         //TODO 从历史操作记录中获取最近几次操作的信息摘要
