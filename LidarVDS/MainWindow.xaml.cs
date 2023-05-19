@@ -18,8 +18,10 @@ namespace LidarVDS
          */
         public MainWindow()
         {
+            TimingUtil.StartTiming("应用启动");
             InitializeComponent();
-            "启动成功".LogInfo();
+            var ms = TimingUtil.StopTiming("应用启动");
+            $"启动成功，耗时 {ms/1000.0} 秒".LogInfo();
             PageFrame.Navigate(PageMainService.GetPage());
         }
 
