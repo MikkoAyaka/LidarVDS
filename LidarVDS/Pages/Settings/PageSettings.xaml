@@ -3,10 +3,45 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:local="clr-namespace:LidarVDS.Pages.Settings"
+      xmlns:hc="https://handyorg.github.io/handycontrol"
+	  xmlns:local="clr-namespace:LidarVDS.Pages.Settings"
       mc:Ignorable="d"
-      Title="PageSettings" Height="720" Width="1440">
-    <Grid>
-        <TextBlock>设置页面</TextBlock>
+      Title="PageSettings" Height="720" Width="1440" Background="#F4F8FE">
+
+	<Grid Background="#F4F8FE">        <!--创建一个Grid-->
+		
+		<Grid.RowDefinitions>  <!-- 设置 Grid 的行定义 -->
+			<RowDefinition Height="*"/>  <!-- 第一行高度为自动适应内容 -->
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>  <!-- 设置 Grid 的列定义 -->
+			<ColumnDefinition Width="300"/>  <!-- 第一列宽度为300固定值 -->
+			<ColumnDefinition Width="*"/>  <!-- 第二列宽度为自动适应内容 -->
+		</Grid.ColumnDefinitions>
+
+        <!--侧边栏-->
+
+        <Grid Grid.Column="0" HorizontalAlignment="Left" Background="White">
+            <StackPanel HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+                <!-- 边栏按钮 -->
+                <RadioButton Height="60" Width="200" Content="常量设置" BorderBrush="White" FontSize="20" IsChecked="True" Click="Constant_OnClick"/>
+                <RadioButton Height="60" Width="200" Content="变量设置" BorderBrush="White" FontSize="20" Click="Variable_OnClick"/>
+                <RadioButton Height="60" Width="200" Content="系统设置" BorderBrush="White" FontSize="20" Click="System_OnClick"/>
+                <RadioButton Height="60" Width="200" Content="其他设置" BorderBrush="White" FontSize="20" Click="Others_OnClick"/>
+                <RadioButton Height="60" Width="200" Content="设置项五" BorderBrush="White" FontSize="20" />
+            </StackPanel>
+	    </Grid>
+        
+        <!--设置页面-->
+        
+        <Grid Grid.Column="1">
+            <StackPanel>
+                <!-- 页面视图 -->
+                <Border CornerRadius="0,0,10,10">
+                    <Frame Name="SettingFrame" BorderThickness="0" NavigationUIVisibility="Hidden"/>
+                </Border>
+            </StackPanel>
+
+        </Grid>
+        
     </Grid>
 </Page>
