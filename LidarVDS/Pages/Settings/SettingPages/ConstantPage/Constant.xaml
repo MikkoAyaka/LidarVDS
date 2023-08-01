@@ -1,0 +1,40 @@
+﻿<Page x:Class="LidarVDS.Pages.Settings.SettingPages.ConstantPage.Constant"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:hc="https://handyorg.github.io/handycontrol"
+	   mc:Ignorable="d"
+       Title="Constant" Height="720" Width="1240">
+    <Grid>
+        <!--设置项一-->
+        <StackPanel>
+            <Button Width="1240">大气透过率</Button>
+            <Border Height="80"  VerticalAlignment="Top" ClipToBounds="True">
+                <hc:TransitioningContentControl TransitionMode="Top2Bottom" Visibility="{Binding IsChecked,ElementName=FastUseButton,Converter={StaticResource Boolean2VisibilityConverter}}">
+                    <Border  Background="Azure" VerticalAlignment="Top" Height="80" CornerRadius="0,0,10,10">
+                        <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="1240">
+                            <TextBox x:Name="Atmospheric_Transmissivity_Data" Margin="20" Width="1000" Height="40"/>
+                            <Button Width="80" Height="40" Background="Azure" Click="Save">保存</Button>
+                            <Button Width="80" Height="40" Background="Azure" Click="Atmospheric_Transmissivity_Refresh">刷新</Button>
+                        </hc:SimpleStackPanel>
+                    </Border>
+                </hc:TransitioningContentControl>
+            </Border>
+            
+            <Button Width="1240">背景噪声</Button>
+            <Border Height="80"  VerticalAlignment="Top" ClipToBounds="True">
+                <hc:TransitioningContentControl TransitionMode="Top2Bottom" Visibility="{Binding IsChecked,ElementName=FastUseButton,Converter={StaticResource Boolean2VisibilityConverter}}">
+                    <Border  Background="Azure" VerticalAlignment="Top" Height="80" CornerRadius="0,0,10,10">
+                        <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="1240">
+                            <TextBox x:Name="Background_Noise_Data" Margin="20" Width="1000" Height="40"/>
+                            <Button Width="80" Height="40" Background="Azure" Click="Save">保存</Button>
+                            <Button Width="80" Height="40" Background="Azure" Click="Background_Noise_Refresh">刷新</Button>
+                        </hc:SimpleStackPanel>
+                    </Border>
+                </hc:TransitioningContentControl>
+            </Border>
+            
+        </StackPanel>
+    </Grid>
+</Page>
