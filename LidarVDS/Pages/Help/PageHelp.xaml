@@ -4,9 +4,21 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:LidarVDS.Pages.Help"
+      xmlns:hc="https://handyorg.github.io/handycontrol"
       mc:Ignorable="d"
       Title="PageHelp" Height="720" Width="1440">
     <Grid>
-        <TextBlock>帮助页面</TextBlock>
+        
+        <!--<StackPanel Width="200" VerticalAlignment="Center">
+            <Button Content="Button" HorizontalAlignment="Stretch"/>
+            <Button Content="Button" hc:IconElement.Geometry="{StaticResource CalendarGeometry}" HorizontalAlignment="Stretch" Margin="0,10,0,0"/>
+        </StackPanel>-->
+        <!--<hc:SimplePanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock hc:TextBlockAttach.AutoTooltip="True" Text="EEEEEEEEEEEEEEEEEEEE"/>
+        </hc:SimplePanel>-->
+        
+        <hc:TextBox hc:TitleElement.Title="理论知识文档"
+                    hc:TitleElement.TitlePlacement="Left"
+                    Margin="10,10"></hc:TextBox>
     </Grid>
 </Page>
