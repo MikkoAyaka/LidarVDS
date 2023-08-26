@@ -10,4 +10,5 @@
         <GradientStop Offset="1.0" Color="#53BAEE"/>
     </LinearGradientBrush>
     <Brush x:Key="Brush-PageBackground">White</Brush>
+    <Brush x:Key="Brush-NavButtonText">#2A7BF6</Brush>
 </ResourceDictionary>

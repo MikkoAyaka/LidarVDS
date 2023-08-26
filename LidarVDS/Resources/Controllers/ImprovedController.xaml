@@ -46,7 +46,7 @@
                             <Setter Property="Margin" Value="0" TargetName="ContentPresenterMain" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource Brush-NavButtonText}" />
                             <Setter Property="Background"
                                     Value="White"
                                     TargetName="Highlight" />
