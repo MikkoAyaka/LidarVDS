@@ -5,9 +5,10 @@
     <!-- 导航按钮的自定义实现 -->
     <Style x:Key="NavButton" TargetType="RadioButton" BasedOn="{StaticResource ButtonBaseBaseStyle}">
         <Setter Property="Margin" Value="20"></Setter>
-        <Setter Property="MinWidth" Value="80"/>
-        <Setter Property="Height" Value="40"/>
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="MinWidth" Value="80" />
+        <Setter Property="Height" Value="36" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="Heavy" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisualRadius0}" />
         <Setter Property="Foreground" Value="FloralWhite" />
         <Setter Property="Background" Value="Transparent" />
@@ -20,7 +21,7 @@
                         CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}"
                         Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}"
                         BorderBrush="{TemplateBinding BorderBrush}">
-                        <Border Name="Highlight" Background="Transparent" CornerRadius="20">
+                        <Border Name="Highlight" Background="Transparent" CornerRadius="18">
                             <StackPanel Orientation="Horizontal"
                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -45,7 +46,7 @@
                             <Setter Property="Margin" Value="0" TargetName="ContentPresenterMain" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
                             <Setter Property="Background"
                                     Value="White"
                                     TargetName="Highlight" />
@@ -67,10 +68,10 @@
         </Style.Triggers>
     </Style>
     <Style x:Key="FastUseToggleStyle" BasedOn="{StaticResource ToggleButtonPrimary}" TargetType="ToggleButton">
-        <Setter Property="Background" Value="{DynamicResource Brush-FastUseBackground}"/>
+        <Setter Property="Background" Value="{DynamicResource Brush-FastUseBackground}" />
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
-                <Setter Property="Opacity" Value="0.7"/>
+                <Setter Property="Opacity" Value="0.7" />
             </Trigger>
         </Style.Triggers>
     </Style>

@@ -31,18 +31,23 @@
                 </Grid.Effect>
                 <hc:Row>
                     <!-- 左侧 Logo 和 标题 -->
-                    <hc:Col HorizontalAlignment="Left" Span="8">
+                    <hc:Col HorizontalAlignment="Left" Span="10">
                         <hc:SimpleStackPanel Orientation="Horizontal">
                             <Image Source="Resources/Images/雷达.png" Width="60"
                                RenderOptions.BitmapScalingMode="HighQuality" />
-                            <TextBox Text="{StaticResource AppTitle}" Background="Transparent" FontSize="25"
-                                 FontFamily="{StaticResource MacFont}"
-                                 BorderThickness="0"
+                            <TextBox Text="{StaticResource AppTitle}"
+                                     Background="Transparent"
+                                     FontSize="26" 
+                                     IsReadOnly="True"
+                                     FontWeight="Heavy"
+                                     FontFamily="{StaticResource MacFont}"
+                                     BorderThickness="0"
+                                     Foreground="GhostWhite"
                                  Margin="25,0,0,0" />
                         </hc:SimpleStackPanel>
                     </hc:Col>
                     <!-- 右侧 -->
-                    <hc:Col HorizontalAlignment="Right" Span="16">
+                    <hc:Col HorizontalAlignment="Right" Span="14">
                         <hc:SimpleStackPanel Orientation="Horizontal">
                             <!-- 导航按钮 -->
                             <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavHelp}" Click="NavButton_Help_OnClick"/>
@@ -50,27 +55,10 @@
                             <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavDataAnalysis}" Click="NavButton_Analysis_OnClick"/>
                             <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavSimulator}" Click="NavButton_Simulator_OnClick"/>
                             <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavHomePage}" IsChecked="True" Click="NavButton_MainPage_OnClick"/>
-                            <!-- 快速使用 -->
-                            <ToggleButton
-                                Name="FastUseButton"
-                                Style="{StaticResource FastUseToggleStyle}" 
-                                FontSize="16" Height="48" Width="140" 
-                                BorderThickness="0"
-                                hc:BorderElement.CornerRadius="5"
-                            >
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock VerticalAlignment="Center">
-                                    <StaticResource ResourceKey="NavEasyUse" />
-                                </TextBlock>
-                                <Image Source="Resources/Images/下拉.png" Width="30"
-                                       RenderOptions.BitmapScalingMode="HighQuality" Margin="15,0,0,0">
-                                </Image>
-                            </StackPanel>
-                        </ToggleButton>
-                        <!-- 最小化 -->
+                            <!-- 最小化 -->
                         <Button Width="35" Margin="30,0,0,0" Click="HideWindow" Padding="0" BorderThickness="0"
                                 Background="Transparent">
-                            <Border CornerRadius="8" Background="#D3FFCC" Width="30" Height="30">
+                            <Border CornerRadius="8" Background="#7AB6F3" Width="30" Height="30">
                                 <Line X1="0" Y1="0" X2="10" Y2="0" Stroke="Black" Opacity="0.5" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                         </Button>
@@ -95,18 +83,6 @@
                 <!-- 页面视图 -->
                 <Border CornerRadius="0,0,10,10">
                     <Frame Name="PageFrame" BorderThickness="0" NavigationUIVisibility="Hidden"/>
-                </Border>
-                <!-- 快速使用按钮展开栏 -->
-                <Border Height="80"  VerticalAlignment="Top" ClipToBounds="True">
-                    <hc:TransitioningContentControl TransitionMode="Top2Bottom" Visibility="{Binding IsChecked,ElementName=FastUseButton,Converter={StaticResource Boolean2VisibilityConverter}}">
-                        <Border Name="HideBar" Background="{StaticResource Brush-NavBarBackground}" VerticalAlignment="Top" Height="80" CornerRadius="0,0,10,10">
-                            <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                <Button Style="{StaticResource ButtonPrimary}" Margin="20" Width="80" Height="40">按钮1</Button>
-                                <Button Style="{StaticResource ButtonPrimary}" Margin="20" Width="80" Height="40">按钮2</Button>
-                                <Button Style="{StaticResource ButtonPrimary}" Margin="20" Width="80" Height="40">按钮3</Button>
-                            </hc:SimpleStackPanel>
-                        </Border>
-                    </hc:TransitioningContentControl>
                 </Border>
                 <!-- 右侧弹窗提示 -->
                 <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Right">
