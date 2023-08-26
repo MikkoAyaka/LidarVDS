@@ -12,7 +12,6 @@
         <Expander Margin="10,10,1250,420">
             <Expander.Header>
                 <StackPanel>
-                    <Border Height="10" Width="" />
                     <TextBlock  FontSize="20" Margin="8,-5,-51,5">理论知识文档</TextBlock>
                 </StackPanel>
             </Expander.Header>
@@ -31,7 +30,6 @@
         <Expander Margin="10,320,1250,170">
             <Expander.Header>
                 <StackPanel>
-                    <Border Height="10" Width="" />
                     <TextBlock  FontSize="20" Margin="8,-5,-51,5">软件操作文档</TextBlock>
                 </StackPanel>
             </Expander.Header>

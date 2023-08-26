@@ -1,3 +1,4 @@
+using System;
 using System.Windows.Controls;
 // using LidarVDS.Pages.Settings.SettingPages.ConstantPage;
 // using LidarVDS.Pages.Settings.SettingPages.VariablePage;
@@ -8,7 +9,8 @@ namespace LidarVDS.Pages.Settings;
 
 public partial class PageSettings : Page
 {
-    public PageSettings()
+    [Obsolete("请通过相应Service类获取单例实例")]
+    internal PageSettings()
     {
         InitializeComponent();
     }
