@@ -4,7 +4,7 @@
                     xmlns:hc="https://handyorg.github.io/handycontrol">
     <!-- 导航按钮的自定义实现 -->
     <Style x:Key="NavButton" TargetType="RadioButton" BasedOn="{StaticResource ButtonBaseBaseStyle}">
-        <Setter Property="Margin" Value="20"></Setter>
+        <Setter Property="Margin" Value="20"/>
         <Setter Property="MinWidth" Value="80" />
         <Setter Property="Height" Value="36" />
         <Setter Property="FontSize" Value="16" />

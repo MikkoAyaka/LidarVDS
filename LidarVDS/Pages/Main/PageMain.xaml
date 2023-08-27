@@ -30,12 +30,12 @@
             </Label.Effect>
         </Label>
         
-        <Label Grid.Row="0" Grid.Column="0" Content="独立宣言" HorizontalAlignment="Center" VerticalAlignment="Center"
+        <Label Grid.Row="0" Grid.Column="0" x:Name="Announcement" Content="" HorizontalAlignment="Center" VerticalAlignment="Center"
                FontFamily="Arial" Width="Auto" Height="Auto" FontSize="20" BorderBrush="Transparent" BorderThickness="0">
 
         </Label>
         
-        <Image Grid.Column="0" Grid.Row="0" Source="C:\Users\Mechrevo\RiderProjects\LidarVDS\LidarVDS\Pages\Main\公告.png" Width="36" Height="36" Margin="-290,-460,0,0">
+        <Image Grid.Column="0" Grid.Row="0" Source="../../Resources/Images/公告.png" Width="36" Height="36" Margin="-290,-460,0,0">
             <Image.Effect>
                 <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.3" BlurRadius="10"/>
             </Image.Effect>
@@ -48,8 +48,7 @@
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.5" BlurRadius="10"/>
                 </Border.Effect>
-                <MediaElement Source="C:\Users\Mechrevo\RiderProjects\LidarVDS\LidarVDS\Pages\Main\1.mp4" Width="800" Height="600" />
-                    
+                <MediaElement Source="../../Resources/abab.mp4" Width="800" Height="600" />
             </Border>
         </Grid>
         
