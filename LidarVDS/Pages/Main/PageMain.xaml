@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:LidarVDS"
       mc:Ignorable="d"
-      Title="PageMain" Height="720" Width="1440" Background="#F4F8FE">
+      Title="PageMain" Height="720" Width="1440" Background="{StaticResource Brush-SecondaryBackground}">
     <Grid>
         <!-- 创建一个 Grid 控件 -->
         <Grid.RowDefinitions>  <!-- 设置 Grid 的行定义 -->
@@ -17,7 +17,7 @@
         </Grid.ColumnDefinitions>
         <!--<Border Background="Gold"></Border>-->
 
-        <Rectangle Grid.Row="0" Grid.Column="0" Width="400" Height="600" Fill="White" Margin="40,0,40,0" RadiusX="20" RadiusY="20">
+        <Rectangle Grid.Row="0" Grid.Column="0" Width="400" Height="600" Fill="{StaticResource Brush-PrimaryBackground}" Margin="40,0,40,0" RadiusX="20" RadiusY="20">
             <Rectangle.Effect>
                 <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.3" BlurRadius="10"/>
             </Rectangle.Effect>
@@ -44,7 +44,7 @@
         <!--右侧-->
         
         <Grid Grid.Row="0" Grid.Column="1">
-            <Border Width="820" Height="600" Margin="40,0,40,0" Background="White" CornerRadius="20">
+            <Border Width="820" Height="600" Margin="40,0,40,0" Background="{StaticResource Brush-PrimaryBackground}" CornerRadius="20">
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.3" BlurRadius="10"/>
                 </Border.Effect>
