@@ -53,6 +53,11 @@
       <Resource Include="Resources\abab.mp4" />
       <None Remove="Resources\Fonts\思源黑体.ttf" />
       <Resource Include="Resources\Fonts\思源黑体.ttf" />
+      <Resource Include="Resources\Images\帮助.png" />
+      <None Remove="Resources\Images\叹号.png" />
+      <Resource Include="Resources\Images\叹号.png" />
+      <None Remove="Resources\Images\帮助.png" />
+      <Resource Include="Resources\Images\帮助.png" />
     </ItemGroup>
 
 </Project>

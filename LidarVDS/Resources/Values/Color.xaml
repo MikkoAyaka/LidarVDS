@@ -12,7 +12,7 @@
     <Brush x:Key="Brush-SecondaryBackground">#F4F7FE</Brush>
     <Brush x:Key="Brush-PrimaryBackground">White</Brush>
     <Brush x:Key="Brush-NavButtonText">#2A7BF6</Brush>
-    <Brush x:Key="Brush-DocButtonText">#4D4A4A</Brush>
+    <Brush x:Key="Brush-DocButtonText">#1A1A1A</Brush>
     <Brush x:Key="Brush-DocButtonBackground">#EEEEEE</Brush>
     <Brush x:Key="Brush-DocButtonCheckedBorder">#0A6CF5</Brush>
 </ResourceDictionary>

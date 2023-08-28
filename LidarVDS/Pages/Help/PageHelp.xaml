@@ -17,14 +17,31 @@
         </Grid.ColumnDefinitions>
         
         <StackPanel Grid.Column="0" Background="{StaticResource Brush-PrimaryBackground}">
-            <TextBlock Foreground="{StaticResource PrimaryTextBrush}" FontSize="25">理论知识文档</TextBlock>
-            <RadioButton Style="{StaticResource DocButton}" Content="斜程能见度"/>
-            <TextBlock FontSize="24" Foreground="{StaticResource SecondaryTextBrush}"></TextBlock>
-            <TextBlock FontSize="24" Foreground="{StaticResource SecondaryTextBrush}">大气后向散射</TextBlock>
-            <TextBlock FontSize="24" Foreground="{StaticResource SecondaryTextBrush}">微脉冲激光雷达</TextBlock>
-            <TextBlock FontSize="24" Foreground="{StaticResource SecondaryTextBrush}">米散射</TextBlock>
-            <TextBlock FontSize="24" Foreground="{StaticResource SecondaryTextBrush}">瑞利散射</TextBlock>
-            <TextBlock FontSize="24" Foreground="{StaticResource SecondaryTextBrush}">能见度反演算法</TextBlock>
+            <StackPanel Height="580">
+                <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">理论知识文档</TextBlock>
+                <RadioButton Style="{StaticResource DocButton}" Content="斜程能见度"/>
+                <RadioButton Style="{StaticResource DocButton}" Content="大气后向散射"/>
+                <RadioButton Style="{StaticResource DocButton}" Content="微脉冲激光雷达"/>
+                <RadioButton Style="{StaticResource DocButton}" Content="米散射"/>
+                <RadioButton Style="{StaticResource DocButton}" Content="瑞利散射"/>
+                <RadioButton Style="{StaticResource DocButton}" Content="能见度反演算法"/>
+                <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">软件操作文档</TextBlock>
+                <RadioButton Style="{StaticResource DocButton}" Content="创建仿真配置"/>
+                <RadioButton Style="{StaticResource DocButton}" Content="运行仿真模拟"/>
+                <RadioButton Style="{StaticResource DocButton}" Content="仿真数据分析"/>
+                <RadioButton Style="{StaticResource DocButton}" Content="数据导入与导出"/>
+            </StackPanel>
+            <StackPanel Height="140">
+                <Rectangle Height="4" Fill="#9B9B9B" Margin="15,0,15,0"/>
+                <StackPanel Orientation="Horizontal" Margin="40,20,0,10">
+                    <Image Source="../../Resources/Images/帮助.png" Width="36" Height="36" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    <TextBlock Margin="10,0,0,0" FontWeight="Black" FontSize="20" VerticalAlignment="Center">在线文档</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="40,0,0,10">
+                    <Image Source="../../Resources/Images/叹号.png" Width="36" Height="36" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    <TextBlock Margin="10,0,0,0" FontWeight="Black" FontSize="20" VerticalAlignment="Center">关于</TextBlock>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
         <StackPanel Grid.Column="1" Background="{StaticResource Brush-SecondaryBackground}"/>
     </Grid>
