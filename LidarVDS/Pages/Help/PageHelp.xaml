@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:LidarVDS.Pages.Help"
       xmlns:hc="https://handyorg.github.io/handycontrol"
       mc:Ignorable="d"
+      Background="{StaticResource Brush-SecondaryBackground}"
       Title="PageHelp" Height="720" Width="1440">
     <Grid>
         <Grid.RowDefinitions>
@@ -15,8 +16,11 @@
             <ColumnDefinition Width="256"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        <StackPanel Grid.Column="0" Background="{StaticResource Brush-PrimaryBackground}">
+        <Border >
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="4" Color="Black" Opacity="0.1" BlurRadius="10"/>
+            </Border.Effect>
+            <StackPanel Grid.Column="0" Background="{StaticResource Brush-PrimaryBackground}">
             <StackPanel Height="580">
                 <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">理论知识文档</TextBlock>
                 <RadioButton Style="{StaticResource DocButton}" Content="斜程能见度"/>
@@ -43,7 +47,8 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Column="1" Background="{StaticResource Brush-SecondaryBackground}"/>
+        </Border>
+        <StackPanel Margin="20,0,0,0" Grid.Column="1" Background="{StaticResource Brush-SecondaryBackground}"/>
     </Grid>
     <!-- <Grid> -->
     <!--     <TextBlock  FontSize="20" Margin="8,-5,-51,5">理论知识文档</TextBlock> -->
