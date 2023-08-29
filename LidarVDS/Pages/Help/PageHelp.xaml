@@ -36,7 +36,7 @@
                 <RadioButton Style="{StaticResource DocButton}" Content="数据导入与导出"/>
             </StackPanel>
             <StackPanel Height="140">
-                <Rectangle Height="4" Fill="#9B9B9B" Margin="15,0,15,0"/>
+                <Rectangle Height="4" Fill="#9B9B9B" Margin="15,0,15,0" Opacity="0.5"/>
                 <StackPanel Orientation="Horizontal" Margin="40,20,0,10">
                     <Image Source="../../Resources/Images/帮助.png" Width="36" Height="36" RenderOptions.BitmapScalingMode="HighQuality"/>
                     <TextBlock Margin="10,0,0,0" FontWeight="Black" FontSize="20" VerticalAlignment="Center">在线文档</TextBlock>
