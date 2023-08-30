@@ -1,33 +1,29 @@
-using System;
 using System.Windows.Controls;
-// using LidarVDS.Pages.Settings.SettingPages.ConstantPage;
-// using LidarVDS.Pages.Settings.SettingPages.VariablePage;
-// using LidarVDS.Pages.Settings.SettingPages.Sys_Page;
-// using LidarVDS.Pages.Settings.SettingPages.OtherPage;
+using LidarVDS.Pages.Settings.SettingPages.EnvironmentPage;
+using LidarVDS.Pages.Settings.SettingPages.LidarPage;
+using LidarVDS.Pages.Settings.SettingPages.OtherPage;
 
 namespace LidarVDS.Pages.Settings;
 
 public partial class PageSettings : Page
 {
-    [Obsolete("请通过相应Service类获取单例实例")]
-    internal PageSettings()
+    public PageSettings()
     {
         InitializeComponent();
     }
 
-    private void Constant_OnClick(object sender, System.Windows.RoutedEventArgs e)
+    private void Environment_OnClick(object sender, System.Windows.RoutedEventArgs e)
     {
-        // SettingFrame.Navigate(ConstantService.GetPage());
-    } private void Variable_OnClick(object sender, System.Windows.RoutedEventArgs e)
+        SettingFrame.Navigate(EnvironmentService.GetPage());
+    } 
+    
+    private void Lidar_OnClick(object sender, System.Windows.RoutedEventArgs e)
     {
-        // SettingFrame.Navigate(VariableService.GetPage());
-    }
-    private void System_OnClick(object sender, System.Windows.RoutedEventArgs e)
-    {
-        // SettingFrame.Navigate(Sys_Service.GetPage());
-    }
+        SettingFrame.Navigate(LidarService.GetPage());
+    } 
+    
     private void Others_OnClick(object sender, System.Windows.RoutedEventArgs e)
     {
-        // SettingFrame.Navigate(OtherService.GetPage());
+        SettingFrame.Navigate(OtherService.GetPage());
     }
 }
