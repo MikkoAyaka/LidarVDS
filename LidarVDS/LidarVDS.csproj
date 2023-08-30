@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="DynamicDataDisplay" Version="0.3.0.1" />
       <PackageReference Include="HandyControl" Version="3.4.0" />
       <PackageReference Include="OxyPlot.Core" Version="2.1.2" />
       <PackageReference Include="OxyPlot.Wpf" Version="2.1.2" />
@@ -57,6 +58,21 @@
       <None Remove="Resources\Images\叹号.png" />
       <Resource Include="Resources\Images\叹号.png" />
       <None Remove="Resources\Images\帮助.png" />
+      <None Remove="Resources\Images\AQI.png" />
+      <Resource Include="Resources\Images\AQI.png" />
+      <None Remove="Resources\Images\PM2.5.png" />
+      <Resource Include="Resources\Images\PM2.5.png" />
+      <None Remove="Resources\Images\PM10.png" />
+      <Resource Include="Resources\Images\PM10.png" />
+      <None Remove="Resources\Images\QY.png" />
+      <Resource Include="Resources\Images\QY.png" />
+      <None Remove="Resources\Images\SD.png" />
+      <Resource Include="Resources\Images\SD.png" />
+      <None Remove="Resources\Images\XDFS.png" />
+      <Resource Include="Resources\Images\XDFS.png" />
+    </ItemGroup>
+
+    <ItemGroup>
       <Resource Include="Resources\Images\帮助.png" />
     </ItemGroup>
 
