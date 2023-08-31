@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Windows.Controls;
 using LidarVDS.Utils;
 
@@ -10,6 +11,8 @@ public partial class PageMain : Page
     internal PageMain()
     {
         InitializeComponent();
+        var announcementStr = String.Join("\n", PageMainService.GetInstance().GetAnnouncements());
+        Announcement.Content = announcementStr;
     }
     
 }

@@ -40,7 +40,7 @@
                                      FontSize="26" 
                                      IsReadOnly="True"
                                      FontWeight="Heavy"
-                                     FontFamily="{StaticResource MacFont}"
+                                     FontFamily="{StaticResource SyBlack}"
                                      BorderThickness="0"
                                      Foreground="GhostWhite"
                                  Margin="25,0,0,0" />

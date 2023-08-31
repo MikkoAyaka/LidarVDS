@@ -1,0 +1,13 @@
+﻿<Page x:Class="LidarVDS.Pages.Settings.SettingPages.OtherPage.Other"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:local="clr-namespace:LidarVDS.Pages.Settings.SettingPages.OtherPage"
+       xmlns:hc="https://handyorg.github.io/handycontrol"
+	   mc:Ignorable="d"
+       Title="Constant" Height="720" Width="1240">
+    <Grid>
+        <TextBlock Text="其他设置" FontSize="100"/>
+    </Grid>
+</Page>

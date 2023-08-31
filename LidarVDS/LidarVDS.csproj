@@ -8,10 +8,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="DynamicDataDisplay" Version="0.3.0.1" />
       <PackageReference Include="HandyControl" Version="3.4.0" />
       <PackageReference Include="OxyPlot.Core" Version="2.1.2" />
       <PackageReference Include="OxyPlot.Wpf" Version="2.1.2" />
       <PackageReference Include="SharpVectors" Version="1.8.1" />
+      <PackageReference Include="YamlDotNet" Version="13.2.0" />
         <Reference Include="PresentationFramework" />
         <Reference Include="PresentationCore" />
     </ItemGroup>
@@ -47,6 +49,31 @@
       <Resource Include="Resources\Images\雷达.png" />
       <None Remove="Resources\Fonts\苹方-简.ttf" />
       <Resource Include="Resources\Fonts\苹方-简.ttf" />
+      <None Remove="Resources\Images\公告.png" />
+      <Resource Include="Resources\Images\公告.png" />
+      <None Remove="Resources\abab.mp4" />
+      <Resource Include="Resources\abab.mp4" />
+      <None Remove="Resources\Fonts\思源黑体.ttf" />
+      <Resource Include="Resources\Fonts\思源黑体.ttf" />
+      <None Remove="Resources\Images\叹号.png" />
+      <Resource Include="Resources\Images\叹号.png" />
+      <None Remove="Resources\Images\帮助.png" />
+      <None Remove="Resources\Images\AQI.png" />
+      <Resource Include="Resources\Images\AQI.png" />
+      <None Remove="Resources\Images\PM2.5.png" />
+      <Resource Include="Resources\Images\PM2.5.png" />
+      <None Remove="Resources\Images\PM10.png" />
+      <Resource Include="Resources\Images\PM10.png" />
+      <None Remove="Resources\Images\QY.png" />
+      <Resource Include="Resources\Images\QY.png" />
+      <None Remove="Resources\Images\SD.png" />
+      <Resource Include="Resources\Images\SD.png" />
+      <None Remove="Resources\Images\XDFS.png" />
+      <Resource Include="Resources\Images\XDFS.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="Resources\Images\帮助.png" />
     </ItemGroup>
 
 </Project>

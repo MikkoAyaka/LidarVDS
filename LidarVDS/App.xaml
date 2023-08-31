@@ -19,6 +19,7 @@
                 <!-- 字体 -->
                 <ResourceDictionary>
                     <FontFamily x:Key="MacFont">pack://application:,,,/Resources/Fonts/苹方-简.ttf</FontFamily>
+                    <FontFamily x:Key="SyBlack">pack://application:,,,/Resources/Fonts/思源黑体.ttf</FontFamily>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

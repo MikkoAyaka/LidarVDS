@@ -9,6 +9,10 @@
         <GradientStop Offset="0.0" Color="#73FCF7"/>
         <GradientStop Offset="1.0" Color="#53BAEE"/>
     </LinearGradientBrush>
-    <Brush x:Key="Brush-PageBackground">White</Brush>
+    <Brush x:Key="Brush-SecondaryBackground">#F4F7FE</Brush>
+    <Brush x:Key="Brush-PrimaryBackground">White</Brush>
     <Brush x:Key="Brush-NavButtonText">#2A7BF6</Brush>
+    <Brush x:Key="Brush-DocButtonText">#1A1A1A</Brush>
+    <Brush x:Key="Brush-DocButtonBackground">#EEEEEE</Brush>
+    <Brush x:Key="Brush-DocButtonCheckedBorder">#0A6CF5</Brush>
 </ResourceDictionary>

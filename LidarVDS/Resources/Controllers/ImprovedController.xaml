@@ -4,10 +4,11 @@
                     xmlns:hc="https://handyorg.github.io/handycontrol">
     <!-- 导航按钮的自定义实现 -->
     <Style x:Key="NavButton" TargetType="RadioButton" BasedOn="{StaticResource ButtonBaseBaseStyle}">
-        <Setter Property="Margin" Value="20"></Setter>
+        <Setter Property="Margin" Value="20"/>
         <Setter Property="MinWidth" Value="80" />
         <Setter Property="Height" Value="36" />
-        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontStretch" Value="Condensed"/>
         <Setter Property="FontWeight" Value="Heavy" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisualRadius0}" />
         <Setter Property="Foreground" Value="FloralWhite" />
@@ -67,11 +68,72 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style x:Key="FastUseToggleStyle" BasedOn="{StaticResource ToggleButtonPrimary}" TargetType="ToggleButton">
-        <Setter Property="Background" Value="{DynamicResource Brush-FastUseBackground}" />
+    <Style x:Key="DocButton" TargetType="RadioButton" BasedOn="{StaticResource ButtonBaseBaseStyle}">
+        <Setter Property="Margin" Value="20,-1,0,0"/>
+        <Setter Property="Width" Value="236" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="Heavy" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisualRadius0}" />
+        <Setter Property="Foreground" Value="{StaticResource SecondaryTextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="hc:BorderElement.CornerRadius" Value="0" />
+        <Setter Property="hc:VisualElement.HighlightBrush" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Width="4" Fill="#6da6f6"></Rectangle>
+                        <Rectangle Name="Rectangle" Width="4" Fill="{TemplateBinding Background}"/>
+                        <Border
+                            Width="236"
+                            Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+                            <Border Name="Highlight" Background="Transparent">
+                                <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            Margin="{TemplateBinding Padding}">
+                                    <Path x:Name="PathMain"
+                                          Height="{Binding Path=(hc:IconElement.Height),RelativeSource={RelativeSource TemplatedParent}}"
+                                          Width="{Binding Path=(hc:IconElement.Width),RelativeSource={RelativeSource TemplatedParent}}"
+                                          Fill="{TemplateBinding Foreground}" SnapsToDevicePixels="True" Stretch="Uniform"
+                                          Data="{TemplateBinding hc:IconElement.Geometry}" />
+                                    <ContentPresenter x:Name="ContentPresenterMain" RecognizesAccessKey="True"
+                                                      VerticalAlignment="Center" Margin="6,0,0,0"
+                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                </StackPanel>
+                            </Border>
+                        </Border>
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Content" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="ContentPresenterMain" />
+                        </Trigger>
+                        <Trigger Property="hc:IconElement.Geometry" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="PathMain" />
+                            <Setter Property="Margin" Value="0" TargetName="ContentPresenterMain" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource Brush-DocButtonText}" />
+                            <Setter Property="Background"
+                                    Value="{DynamicResource Brush-DocButtonBackground}"
+                                    TargetName="Highlight" />
+                            <Setter Property="Fill" Value="{DynamicResource Brush-DocButtonCheckedBorder}" TargetName="Rectangle"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
         <Style.Triggers>
-            <Trigger Property="IsChecked" Value="True">
-                <Setter Property="Opacity" Value="0.7" />
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value=".9" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Opacity" Value=".6" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.4" />
             </Trigger>
         </Style.Triggers>
     </Style>

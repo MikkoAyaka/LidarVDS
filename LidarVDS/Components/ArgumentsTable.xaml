@@ -1,0 +1,22 @@
+﻿<!-- 参数列表组件(可以修改是否允许编辑) -->
+<UserControl x:Class="LidarVDS.Components.ArgumentsTable"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:local="clr-namespace:LidarVDS.Components"
+             mc:Ignorable="d"
+             d:DesignHeight="1024" d:DesignWidth="608">
+    <Border CornerRadius="30">
+        <hc:SimpleStackPanel Orientation="Horizontal" Height="1024" Width="608">
+            <hc:SimpleStackPanel Height="1024" Width="96">
+                <RadioButton Click="EnvironmentArguments">环境参数</RadioButton>
+                <RadioButton>激光器参数</RadioButton>
+                <RadioButton>光学单元参数</RadioButton>
+                <RadioButton>信号处理参数</RadioButton>
+            </hc:SimpleStackPanel>
+            <hc:SimpleStackPanel Height="1024" Width="512" Background="#EBEBEB" Name="StackPanelContext"/>
+        </hc:SimpleStackPanel>
+    </Border>
+</UserControl>

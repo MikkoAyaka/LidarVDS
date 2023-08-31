@@ -12,7 +12,7 @@ public class PageSettingsService
     {
         return InstanceHolder.Page;
     }
-    public static PageSettingsService GetInstance()
+   public static PageSettingsService GetInstance()
     {
         return InstanceHolder.Instance;
     }
