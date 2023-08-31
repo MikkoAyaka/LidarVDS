@@ -8,7 +8,7 @@
       mc:Ignorable="d"
       Title="PageSettings" Height="720" Width="1440" Background="#F4F8FE">
 
-	<Grid Background="#F4F8FE">        <!--创建一个Grid-->
+	<Grid Background="#F4F8FE">  <!--创建一个Grid-->
 		<Grid.RowDefinitions>  <!-- 设置 Grid 的行定义 -->
 			<RowDefinition Height="720"/>  <!-- 第一行高度为自动适应内容 -->
 		</Grid.RowDefinitions>
@@ -38,7 +38,7 @@
                 <!-- 页面视图 -->
                 <Border CornerRadius="0,0,10,10">
                     <Frame Name="SettingFrame" BorderThickness="0" NavigationUIVisibility="Hidden"/>
-                </Border>
+                </Border> 
             </StackPanel>
 
         </Grid>
