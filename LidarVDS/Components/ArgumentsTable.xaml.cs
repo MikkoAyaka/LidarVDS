@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using LidarVDS.Resources.Values;
 using TextBox = HandyControl.Controls.TextBox;
 
 namespace LidarVDS.Components;
@@ -20,14 +22,12 @@ public partial class ArgumentsTable : UserControl
     private void EnvironmentArguments(object sender, RoutedEventArgs e)
     {
         StackPanelContext.Children.Clear();
-        var li = new List<string>(){"PM2.5","PM10","AQI","相对风速","湿度","气压"};
-        foreach (var str in li)
+        LidarArgumentsRepository.GetInstance().GetAllData().ForEach(arg =>
         {
-            TextBox textBox = new TextBox();
-            textBox.Text = str;
-            textBox.IsEnabled = false;
-            StackPanelContext.Children.Add(textBox);
-        }
+            ArgumentBar bar = new(arg);
+            bar.IsEnabled = Editable;
+            StackPanelContext.Children.Add(bar);
+        });
     }
 
    
