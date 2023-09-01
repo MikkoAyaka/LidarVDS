@@ -49,11 +49,10 @@
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.3" BlurRadius="10"/>
                 </Border.Effect>
-                <MediaElement Source="../../Resources/abab.mp4" Width="800" Height="600" />
-                <!-- <components:ArgumentsTable/> -->
+                <!-- <MediaElement Source="../../Resources/abab.mp4" Width="800" Height="600" /> -->
+                <components:ArgumentsTable/>
             </Border>
         </Grid>
-        
         <!--
         <TextBox Grid.Row="0" Grid.Column="1" x:Name="TxtInput"/>  ~1~ 在第一行第二列添加一个 TextBox 控件，命名为 "TxtInput" @1@
         <Button Grid.Row="0" Grid.Column="1" Content="Submit"/>  ~1~ 在第二行第二列添加一个 Button 控件，显示文本 "Submit" @1@
