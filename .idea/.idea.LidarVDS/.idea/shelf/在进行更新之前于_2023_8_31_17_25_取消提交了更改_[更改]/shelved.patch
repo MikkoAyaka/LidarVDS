@@ -1,0 +1,70 @@
+Index: LidarVDS/Pages/Main/PageMain.xaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><Page x:Class=\"LidarVDS.PageMain\"\r\n      xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\r\n      xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\r\n      xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\"\r\n      xmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\"\r\n      xmlns:local=\"clr-namespace:LidarVDS\"\r\n      mc:Ignorable=\"d\"\r\n      Title=\"PageMain\" Height=\"720\" Width=\"1440\" Background=\"#F4F8FE\">\r\n    <Grid>\r\n        <!-- 创建一个 Grid 控件 -->\r\n        <Grid.RowDefinitions>  <!-- 设置 Grid 的行定义 -->\r\n                <RowDefinition Height=\"720\"/>  <!-- 第一行高度为自动适应内容 -->\r\n        </Grid.RowDefinitions>\r\n        <Grid.ColumnDefinitions>  <!-- 设置 Grid 的列定义 -->\r\n                <ColumnDefinition Width=\"480\"/>  <!-- 第一列宽度为自动适应内容 -->\r\n                <ColumnDefinition Width=\"*\"/>  <!-- 第二列宽度为自动适应内容 -->\r\n        </Grid.ColumnDefinitions>\r\n        <!--<Border Background=\"Gold\"></Border>-->\r\n\r\n        <Rectangle Grid.Row=\"0\" Grid.Column=\"0\" Width=\"400\" Height=\"600\" Fill=\"White\" Margin=\"40,0,40,0\" RadiusX=\"20\" RadiusY=\"20\">\r\n            <Rectangle.Effect>\r\n                <DropShadowEffect ShadowDepth=\"5\" Color=\"Black\" Opacity=\"0.5\" BlurRadius=\"10\"/>\r\n            </Rectangle.Effect>\r\n        </Rectangle>\r\n\r\n        <Label Grid.Row=\"0\" Grid.Column=\"0\" Content=\"更新公告\" Margin=\"-180,-460,0,0\" FontFamily=\"Arial\" \r\n               FontSize=\"20\" Width=\"180\" Height=\"50\" Padding=\"40,0,0,0\">\r\n            <Label.Effect>\r\n                <DropShadowEffect ShadowDepth=\"5\" Color=\"Black\" Opacity=\"0.5\" BlurRadius=\"10\"/>\r\n            </Label.Effect>\r\n        </Label>\r\n        \r\n        <Label Grid.Row=\"0\" Grid.Column=\"0\" Content=\"独立宣言\" HorizontalAlignment=\"Center\" VerticalAlignment=\"Center\"\r\n               FontFamily=\"Arial\" Width=\"Auto\" Height=\"Auto\" FontSize=\"20\" BorderBrush=\"Transparent\" BorderThickness=\"0\">\r\n\r\n        </Label>\r\n        \r\n        <Image Grid.Column=\"0\" Grid.Row=\"0\" Source=\"C:\\Users\\Mechrevo\\RiderProjects\\LidarVDS\\LidarVDS\\Pages\\Main\\公告.png\" Width=\"36\" Height=\"36\" Margin=\"-290,-460,0,0\">\r\n            <Image.Effect>\r\n                <DropShadowEffect ShadowDepth=\"5\" Color=\"Black\" Opacity=\"0.3\" BlurRadius=\"10\"/>\r\n            </Image.Effect>\r\n        </Image>\r\n        \r\n        <!--右侧-->\r\n        \r\n        <Grid Grid.Row=\"0\" Grid.Column=\"1\">\r\n            <Border Width=\"820\" Height=\"600\" Margin=\"40,0,40,0\" Background=\"White\" CornerRadius=\"20\">\r\n                <Border.Effect>\r\n                    <DropShadowEffect ShadowDepth=\"5\" Color=\"Black\" Opacity=\"0.5\" BlurRadius=\"10\"/>\r\n                </Border.Effect>\r\n                <MediaElement Source=\"C:\\Users\\Mechrevo\\RiderProjects\\LidarVDS\\LidarVDS\\Pages\\Main\\1.mp4\" Width=\"800\" Height=\"600\" />\r\n                    \r\n            </Border>\r\n        </Grid>\r\n        \r\n        <!--\r\n        <TextBox Grid.Row=\"0\" Grid.Column=\"1\" x:Name=\"TxtInput\"/>  ~1~ 在第一行第二列添加一个 TextBox 控件，命名为 \"TxtInput\" @1@\r\n        <Button Grid.Row=\"0\" Grid.Column=\"1\" Content=\"Submit\"/>  ~1~ 在第二行第二列添加一个 Button 控件，显示文本 \"Submit\" @1@\r\n        -->\r\n    </Grid>\r\n</Page>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/LidarVDS/Pages/Main/PageMain.xaml b/LidarVDS/Pages/Main/PageMain.xaml
+--- a/LidarVDS/Pages/Main/PageMain.xaml	(revision 6f3801d2179ed0b415f79db0f94dc08909cf554f)
++++ b/LidarVDS/Pages/Main/PageMain.xaml	(date 1693102361421)
+@@ -29,13 +29,21 @@
+                 <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.5" BlurRadius="10"/>
+             </Label.Effect>
+         </Label>
+-        
++        <TextBox Text="{StaticResource AppTitle}"
++                 Background="Transparent"
++                 FontSize="26" 
++                 IsReadOnly="True"
++                 FontWeight="Heavy"
++                 FontFamily="{StaticResource MacFont}"
++                 BorderThickness="0"
++                 Foreground="GhostWhite"
++                 Margin="25,0,0,0" />
+         <Label Grid.Row="0" Grid.Column="0" Content="独立宣言" HorizontalAlignment="Center" VerticalAlignment="Center"
+                FontFamily="Arial" Width="Auto" Height="Auto" FontSize="20" BorderBrush="Transparent" BorderThickness="0">
+ 
+         </Label>
+         
+-        <Image Grid.Column="0" Grid.Row="0" Source="C:\Users\Mechrevo\RiderProjects\LidarVDS\LidarVDS\Pages\Main\公告.png" Width="36" Height="36" Margin="-290,-460,0,0">
++        <Image Grid.Column="0" Grid.Row="0" Source="../../Resources/Images/公告.png" Width="36" Height="36" Margin="-290,-460,0,0">
+             <Image.Effect>
+                 <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.3" BlurRadius="10"/>
+             </Image.Effect>
+@@ -46,10 +54,10 @@
+         <Grid Grid.Row="0" Grid.Column="1">
+             <Border Width="820" Height="600" Margin="40,0,40,0" Background="White" CornerRadius="20">
+                 <Border.Effect>
+-                    <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.5" BlurRadius="10"/>
++                    <DropShadowEffect Direction="315" ShadowDepth="5" Color="Black" Opacity="0.5" BlurRadius="10"/>
+                 </Border.Effect>
+-                <MediaElement Source="C:\Users\Mechrevo\RiderProjects\LidarVDS\LidarVDS\Pages\Main\1.mp4" Width="800" Height="600" />
+-                    
++                <MediaElement Source="../../Resources/Images/1.mp4" Width="800" Height="600" />
++ 
+             </Border>
+         </Grid>
+         
+Index: LidarVDS/LidarVDS.csproj
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><Project Sdk=\"Microsoft.NET.Sdk\">\r\n\r\n    <PropertyGroup>\r\n        <OutputType>WinExe</OutputType>\r\n        <TargetFramework>net6.0-windows</TargetFramework>\r\n        <Nullable>enable</Nullable>\r\n        <UseWPF>true</UseWPF>\r\n    </PropertyGroup>\r\n\r\n    <ItemGroup>\r\n      <PackageReference Include=\"HandyControl\" Version=\"3.4.0\" />\r\n      <PackageReference Include=\"OxyPlot.Core\" Version=\"2.1.2\" />\r\n      <PackageReference Include=\"OxyPlot.Wpf\" Version=\"2.1.2\" />\r\n      <PackageReference Include=\"SharpVectors\" Version=\"1.8.1\" />\r\n        <Reference Include=\"PresentationFramework\" />\r\n        <Reference Include=\"PresentationCore\" />\r\n    </ItemGroup>\r\n\r\n    <ItemGroup>\r\n      <Compile Remove=\"resources\\svgs\\**\" />\r\n    </ItemGroup>\r\n\r\n    <ItemGroup>\r\n      <EmbeddedResource Remove=\"resources\\svgs\\**\" />\r\n    </ItemGroup>\r\n\r\n    <ItemGroup>\r\n      <None Remove=\"resources\\svgs\\**\" />\r\n    </ItemGroup>\r\n\r\n    <ItemGroup>\r\n      <Page Remove=\"resources\\svgs\\**\" />\r\n    </ItemGroup>\r\n\r\n    <ItemGroup>\r\n      <None Remove=\"resources\\下拉.png\" />\r\n      <None Remove=\"resources\\关闭.png\" />\r\n      <None Remove=\"resources\\最小化.png\" />\r\n    </ItemGroup>\r\n\r\n    <ItemGroup>\r\n      <None Remove=\"Resources\\Images\\关闭.png\" />\r\n      <None Remove=\"Resources\\Images\\最小化.png\" />\r\n      <None Remove=\"Resources\\Images\\下拉.png\" />\r\n      <Resource Include=\"Resources\\Images\\下拉.png\" />\r\n      <None Remove=\"Resources\\Images\\雷达.png\" />\r\n      <Resource Include=\"Resources\\Images\\雷达.png\" />\r\n      <None Remove=\"Resources\\Fonts\\苹方-简.ttf\" />\r\n      <Resource Include=\"Resources\\Fonts\\苹方-简.ttf\" />\r\n    </ItemGroup>\r\n\r\n</Project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/LidarVDS/LidarVDS.csproj b/LidarVDS/LidarVDS.csproj
+--- a/LidarVDS/LidarVDS.csproj	(revision 6f3801d2179ed0b415f79db0f94dc08909cf554f)
++++ b/LidarVDS/LidarVDS.csproj	(date 1693102360551)
+@@ -47,6 +47,11 @@
+       <Resource Include="Resources\Images\雷达.png" />
+       <None Remove="Resources\Fonts\苹方-简.ttf" />
+       <Resource Include="Resources\Fonts\苹方-简.ttf" />
++      <None Remove="Resources\Images\公告.png" />
++      <Resource Include="Resources\Images\公告.png" />
++      <None Remove="Resources\Images\1.mp4" />
++      <Resource Include="Resources\Images\1.mp4" />
++      <None Remove="Resources\Images\1.avi" />
+     </ItemGroup>
+ 
+ </Project>
