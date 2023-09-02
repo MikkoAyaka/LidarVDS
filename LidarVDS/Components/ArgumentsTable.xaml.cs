@@ -34,5 +34,5 @@ public partial class ArgumentsTable : UserControl
     /**
      * 是否可以编辑，默认否
      */
-    public bool Editable { get; set; } = false;
+    public bool Editable { get; set; } = true;
 }

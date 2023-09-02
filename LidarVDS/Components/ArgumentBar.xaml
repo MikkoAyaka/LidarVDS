@@ -13,20 +13,22 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Thumb}">
-                        <Image Width="30" Height="30" Source="../../Resources/Images/PM2.5.png" />
+                        <Border CornerRadius="10" Background="White" Width="20" Height="20" BorderBrush="White" BorderThickness="1"/>
+                        <!-- <Image Width="30" Height="30" Source="../../Resources/Images/PM2.5.png" /> -->
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
         <Style x:Key="RepeatButtonTransparent" TargetType="{x:Type RepeatButton}">
-            <Setter Property="OverridesDefaultStyle" Value="true"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Focusable" Value="false"/>
-            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Focusable" Value="false" />
+            <Setter Property="IsTabStop" Value="false" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type RepeatButton}">
-                        <Rectangle Fill="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"/>
+                        <Rectangle Fill="{TemplateBinding Background}" Height="{TemplateBinding Height}"
+                                   Width="{TemplateBinding Width}" />
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -36,16 +38,20 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Slider}">
-                        <Grid Height="40" Background="White">
+                        <Grid Height="40">
                             <Track Grid.Column="1" x:Name="PART_Track">
                                 <Track.DecreaseRepeatButton>
-                                    <RepeatButton Height="16" Background="#79FF7F" Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                    <RepeatButton Height="8" Background="#A8CDFF"
+                                                  Command="{x:Static Slider.DecreaseLarge}"
+                                                  Style="{StaticResource RepeatButtonTransparent}"/>
                                 </Track.DecreaseRepeatButton>
                                 <Track.IncreaseRepeatButton>
-                                    <RepeatButton Height="16" Background="#EDEDED" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                    <RepeatButton Height="8" Background="#EDEDED"
+                                                  Command="{x:Static Slider.IncreaseLarge}"
+                                                  Style="{StaticResource RepeatButtonTransparent}" />
                                 </Track.IncreaseRepeatButton>
                                 <Track.Thumb>
-                                    <Thumb Style="{StaticResource SliderThumb}"/>
+                                    <Thumb Style="{StaticResource SliderThumb}" />
                                 </Track.Thumb>
                             </Track>
                         </Grid>
@@ -54,11 +60,28 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid>
-        <hc:SimpleStackPanel Orientation="Horizontal">
-            <Image x:Name="Logo" Width="30" Height="30" Source="../../Resources/Images/公告.png"/>
-            <TextBlock x:Name="Title" Width="60" Text="预设标题abababab" Height="15" VerticalAlignment="Center"/>
-            <Slider x:Name="ArgumentBarSlider" Height="40" Margin="0,20,0,0" Width="250" Style="{DynamicResource ArgBar_Slider_Style}"/>
-        </hc:SimpleStackPanel>
-    </Grid>
+    <Border CornerRadius="10" Background="White" Margin="8">
+        <Border.Effect>
+            <DropShadowEffect Color="Black" ShadowDepth="1" BlurRadius="10" Opacity="0.2" Direction="0" />
+        </Border.Effect>
+        <Grid>
+            <hc:SimpleStackPanel Orientation="Horizontal">
+                <Image x:Name="Logo" Width="30" Height="30" Source="../../Resources/Images/公告.png" Margin="15,0,0,0" />
+                <hc:SimpleStackPanel Height="30" Margin="15,0,0,0" >
+                    <TextBlock x:Name="Title" Width="60" FontSize="12" Text="预设标题abab" Height="15" VerticalAlignment="Center"/>
+                    <hc:SimpleStackPanel Orientation="Horizontal" Width="60">
+                        <TextBlock x:Name="Value" Height="15" VerticalAlignment="Center" Text="{Binding Value, ElementName=ArgumentBarSlider}"/>
+                        <TextBlock x:Name="Units" Height="15" VerticalAlignment="Center"/>
+                    </hc:SimpleStackPanel>
+                </hc:SimpleStackPanel>
+                <Slider x:Name="ArgumentBarSlider" Height="40" Width="240" Margin="15,0,0,0"
+                        Style="{DynamicResource ArgBar_Slider_Style}" TickFrequency="1" IsSnapToTickEnabled="True">
+                    <Slider.Effect>
+                        <DropShadowEffect Color="Black" ShadowDepth="1" BlurRadius="10" Opacity="0.2" Direction="0" />
+                    </Slider.Effect>
+                </Slider>
+            </hc:SimpleStackPanel>
+        </Grid>
+    </Border>
+    
 </UserControl>

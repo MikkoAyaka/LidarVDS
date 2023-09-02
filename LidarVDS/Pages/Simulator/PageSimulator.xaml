@@ -78,37 +78,37 @@
                 <Grid Grid.Row="0">
                     <Label VerticalAlignment="Top" Content="PM2.5" BorderThickness="0" FontSize="16"/>
                     <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_PM25}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_PM25" Maximum="100" Minimum="0" Value="20" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_PM25}"
+                    <Slider x:Name="slider_PM25" Maximum="100" Minimum="0" Value="20" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
                      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0" ValueChanged="slider_PM25_ValueChanged"/>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Label VerticalAlignment="Top" Content="PM10" BorderThickness="0" FontSize="16"/>
                     <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_PM10}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_PM10" Maximum="100" Minimum="0" Value="28" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_PM10}"
+                    <Slider x:Name="slider_PM10" Maximum="100" Minimum="0" Value="28" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                 </Grid>
                 <Grid Grid.Row="2">
                     <Label VerticalAlignment="Top" Content="AQI" BorderThickness="0" FontSize="16"/>
                     <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_AQI}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_AQI" Maximum="100" Minimum="0" Value="57" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_AQI}"
+                    <Slider x:Name="slider_AQI" Maximum="100" Minimum="0" Value="57" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                 </Grid>
                 <Grid Grid.Row="3">
                     <Label VerticalAlignment="Top" Content="相对风速" BorderThickness="0" FontSize="16"/>
                     <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_XDFS}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_XDFS" Maximum="100" Minimum="0" Value="5" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_XDFS}"
+                    <Slider x:Name="slider_XDFS" Maximum="100" Minimum="0" Value="5" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                 </Grid>
                 <Grid Grid.Row="4">
                     <Label VerticalAlignment="Top" Content="湿度" BorderThickness="0" FontSize="16"/>
                     <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_SD}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_SD" Maximum="100" Minimum="0" Value="31" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_SD}"
+                    <Slider x:Name="slider_SD" Maximum="100" Minimum="0" Value="31" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                 </Grid>
                 <Grid Grid.Row="5">
                     <Label VerticalAlignment="Top" Content="气压" BorderThickness="0" FontSize="16"/>
                     <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_QY}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_QY" Maximum="1000" Minimum="0" Value="997" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_QY}"
+                    <Slider x:Name="slider_QY" Maximum="1000" Minimum="0" Value="997" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                 </Grid>
             </Grid>

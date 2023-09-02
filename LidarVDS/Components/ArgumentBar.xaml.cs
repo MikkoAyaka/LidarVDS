@@ -25,5 +25,7 @@ public partial class ArgumentBar : UserControl
         ArgumentBarSlider.Minimum = argumentData.MinValue;
         ArgumentBarSlider.Value = argumentData.NowValue;
         ArgumentBarSlider.Maximum = argumentData.MaxValue;
+        ArgumentBarSlider.TickFrequency = (argumentData.MaxValue - argumentData.MinValue) / 50;
+        Units.Text = argumentData.Units;
     }
 }

@@ -45,12 +45,12 @@ public class LidarArgumentsRepository
 
     private readonly Dictionary<LidarArgumentsEnum, LidarArgumentsData> _dictionary = new()
     {
-        { LidarArgumentsEnum.ENV_PM2D5, new LidarArgumentsData("", "PM2.5", 0, 300, 0, "μg/m³") },
-        { LidarArgumentsEnum.ENV_PM10, new LidarArgumentsData("", "PM10", 0, 300, 0, "μg/m³") },
-        { LidarArgumentsEnum.ENV_AQI, new LidarArgumentsData("", "AQI", 0, 100, 100, "点") },
-        { LidarArgumentsEnum.ENV_HUMIDITY, new LidarArgumentsData("", "湿度", 0, 100, 50, "%") },
-        { LidarArgumentsEnum.ENV_RELATIVE_WIND_SPEED, new LidarArgumentsData("", "相对风速", 0, 60, 0, "m/s") },
-        { LidarArgumentsEnum.ENV_ATMOSPHEIC_PRESSURE, new LidarArgumentsData("", "大气压强", 0.5, 2, 1, "atm") }
+        { LidarArgumentsEnum.ENV_PM2D5, new LidarArgumentsData("pack://application:,,,/Resources/Images/PM2.5.png", "PM2.5", 0, 300, 0, "μg/m³") },
+        { LidarArgumentsEnum.ENV_PM10, new LidarArgumentsData("pack://application:,,,/Resources/Images/PM10.png", "PM10", 0, 300, 0, "μg/m³") },
+        { LidarArgumentsEnum.ENV_AQI, new LidarArgumentsData("pack://application:,,,/Resources/Images/AQI.png", "AQI", 0, 100, 100, "点") },
+        { LidarArgumentsEnum.ENV_HUMIDITY, new LidarArgumentsData("pack://application:,,,/Resources/Images/SD.png", "湿度", 0, 100, 50, "%") },
+        { LidarArgumentsEnum.ENV_RELATIVE_WIND_SPEED, new LidarArgumentsData("pack://application:,,,/Resources/Images/XDFS.png", "风速", 0, 60, 0, "m/s") },
+        { LidarArgumentsEnum.ENV_ATMOSPHEIC_PRESSURE, new LidarArgumentsData("pack://application:,,,/Resources/Images/QY.png", "气压", 0.5, 2, 1, "atm") }
     };
 
     public List<LidarArgumentsData> GetAllData()
