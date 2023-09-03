@@ -237,7 +237,7 @@
         <Grid.ColumnDefinitions>  <!-- 设置 Grid 的列定义 -->
             <ColumnDefinition Width="256"/>  
             <ColumnDefinition Width="2"/>
-            <ColumnDefinition Width="500"/>  
+            <ColumnDefinition Width="600"/>  
             <ColumnDefinition Width="*"/>
             <!--<ColumnDefinition Width="2"/>
             <ColumnDefinition Width="*"/>-->
