@@ -54,7 +54,7 @@ public partial class PageAnalysis : Page
         List<double> historicalData1 = new List<double> { 10, 20, 30, 40, 50 };
         List<double> historicalData2 = new List<double> { 5, 15, 25, 35, 45 };
 
-        // 点击按钮后导航到统计图子页面，并传递相应的历史数据
+        /*// 点击按钮后导航到统计图子页面，并传递相应的历史数据
         if (sender == Button1)
         {
             ShowStatisticsPage(historicalData1);
@@ -62,7 +62,7 @@ public partial class PageAnalysis : Page
         else if (sender == Button2)
         {
             ShowStatisticsPage(historicalData2);
-        }
+        }*/
     }
 
     private void Button_Click2(object sender, RoutedEventArgs e)
@@ -80,5 +80,10 @@ public partial class PageAnalysis : Page
     {
         // 将导航服务设置为Frame的数据上下文，以便在子页面中使用NavigationService
         // Frame.DataContext = Frame.NavigationService;
+    }
+    
+    private void slider_PM25_ValueChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<double> e)
+    {
+        //var width = slider_PM25
     }
 }

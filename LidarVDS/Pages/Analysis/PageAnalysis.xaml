@@ -7,66 +7,302 @@
       mc:Ignorable="d"
       Title="PageAnalysis" Height="720" Width="1440">
     
+    <Page.Resources>
+        <ResourceDictionary>
+            <!--滑条-->
+
+            <Style x:Key="RepeatButtonTransparent" TargetType="{x:Type RepeatButton}">
+                <Setter Property="OverridesDefaultStyle" Value="true"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Focusable" Value="false"/>
+                <Setter Property="IsTabStop" Value="false"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type RepeatButton}">
+                                <Rectangle Fill="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+            <!--PM2.5-->
+            <Style x:Key="Slider_Thumb_PM25" TargetType="{x:Type Thumb}">
+                <Setter Property="Focusable" Value="false" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Thumb}">
+                            <Image Width="40" Height="40" Source="../../Resources/Images/PM2.5.png" />
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="Slider_CustomStyle_PM25" TargetType="{x:Type Slider}">
+                <Setter Property="Focusable" Value="false" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Slider}">
+                            <Grid Height="40" Background="Transparent">
+                                <Track x:Name="PART_Track">
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton Height="16" Background="#79FF7F" Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                    </Track.DecreaseRepeatButton>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton Height="16" Background="#EDEDED" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.Thumb>
+                                        <Thumb Style="{StaticResource Slider_Thumb_PM25}"/>
+                                    </Track.Thumb>
+                                </Track>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!--PM10-->
+            <Style x:Key="Slider_Thumb_PM10" TargetType="{x:Type Thumb}">
+                <Setter Property="Focusable" Value="false" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Thumb}">
+                            <Image Width="40" Height="40" Source="../../Resources/Images/PM10.png" />
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="Slider_CustomStyle_PM10" TargetType="{x:Type Slider}">
+                <Setter Property="Focusable" Value="false" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Slider}">
+                            <Grid Height="40" Background="White">
+                                <Track Grid.Column="1" x:Name="PART_Track">
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton Height="16" Background="#79FF7F" Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                    </Track.DecreaseRepeatButton>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton Height="16" Background="#EDEDED" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.Thumb>
+                                        <Thumb Style="{StaticResource Slider_Thumb_PM10}"/>
+                                    </Track.Thumb>
+                                </Track>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!--AQI-->
+            <Style x:Key="Slider_Thumb_AQI" TargetType="{x:Type Thumb}">
+                <Setter Property="Focusable" Value="false" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Thumb}">
+                            <Image Width="40" Height="40" Source="../../Resources/Images/AQI.png" />
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="Slider_CustomStyle_AQI" TargetType="{x:Type Slider}">
+                <Setter Property="Focusable" Value="false" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Slider}">
+                            <Grid Height="40" Background="White">
+                                <Track Grid.Column="1" x:Name="PART_Track">
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton Height="16" Background="#79FF7F" Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                    </Track.DecreaseRepeatButton>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton Height="16" Background="#EDEDED" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.Thumb>
+                                        <Thumb Style="{StaticResource Slider_Thumb_AQI}"/>
+                                    </Track.Thumb>
+                                </Track>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!--相对风速-->
+            <Style x:Key="Slider_Thumb_XDFS" TargetType="{x:Type Thumb}">
+                <Setter Property="Focusable" Value="false" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Thumb}">
+                            <Image Width="40" Height="40" Source="../../Resources/Images/XDFS.png" />
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="Slider_CustomStyle_XDFS" TargetType="{x:Type Slider}">
+                <Setter Property="Focusable" Value="false" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Slider}">
+                            <Grid Height="40" Background="White">
+                                <Track Grid.Column="1" x:Name="PART_Track">
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton Height="16" Background="#79FF7F" Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                    </Track.DecreaseRepeatButton>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton Height="16" Background="#EDEDED" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.Thumb>
+                                        <Thumb Style="{StaticResource Slider_Thumb_XDFS}"/>
+                                    </Track.Thumb>
+                                </Track>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!--湿度-->
+            <Style x:Key="Slider_Thumb_SD" TargetType="{x:Type Thumb}">
+                <Setter Property="Focusable" Value="false" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Thumb}">
+                            <Image Width="40" Height="40" Source="../../Resources/Images/SD.png" />
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="Slider_CustomStyle_SD" TargetType="{x:Type Slider}">
+                <Setter Property="Focusable" Value="false" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Slider}">
+                            <Grid Height="40" Background="White">
+                                <Track Grid.Column="1" x:Name="PART_Track">
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton Height="16" Background="#79FF7F" Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                    </Track.DecreaseRepeatButton>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton Height="16" Background="#EDEDED" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.Thumb>
+                                        <Thumb Style="{StaticResource Slider_Thumb_SD}"/>
+                                    </Track.Thumb>
+                                </Track>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!--气压-->
+            <Style x:Key="Slider_Thumb_QY" TargetType="{x:Type Thumb}">
+                <Setter Property="Focusable" Value="false" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Thumb}">
+                            <Image Width="40" Height="40" Source="../../Resources/Images/QY.png" />
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="Slider_CustomStyle_QY" TargetType="{x:Type Slider}">
+                <Setter Property="Focusable" Value="false" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Slider}">
+                            <Grid Height="40" Background="White">
+                                <Track Grid.Column="1" x:Name="PART_Track">
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton Height="16" Background="#79FF7F" Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                    </Track.DecreaseRepeatButton>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton Height="16" Background="#EDEDED" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.Thumb>
+                                        <Thumb Style="{StaticResource Slider_Thumb_QY}"/>
+                                    </Track.Thumb>
+                                </Track>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
+    
     
     <Grid Background="#F4F8FE">        <!--创建一个Grid-->
-		
-        <Grid.RowDefinitions>  <!-- 设置 Grid 的行定义 -->
-            <RowDefinition Height="*"/>  <!-- 第一行高度为自动适应内容 -->
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>  <!-- 设置 Grid 的列定义 -->
-            <ColumnDefinition Width="200"/>  <!-- 第一列宽度为300固定值 -->
-            <ColumnDefinition Width="*"/>  <!-- 第二列宽度为自动适应内容 -->
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="256"/>  <!-- 第一列宽度为固定值 -->
+            <ColumnDefinition Width="2"/>
+            <ColumnDefinition Width="650"/>  <!-- 第二列宽度为自动适应内容 -->
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="2"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        
         <!--侧边栏-->
-
-        <Grid Grid.Column="0" HorizontalAlignment="Left" Background="White">
+        <Grid Grid.Column="0"  Background="White">
             <StackPanel HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
                 <!-- 边栏按钮 -->
-                <RadioButton Height="60" Width="200" Content="统计图" BorderBrush="White" FontSize="20" IsChecked="True" Click="Button_Click1"/>
-                <RadioButton Height="60" Width="200" Content="历史记录" BorderBrush="White" FontSize="20" Click="Button_Click2"/>
-                <Button x:Name="Button1" Content="Historical Data 1" Click="Button_Click1"/>
-                <Button x:Name="Button2" Content="Historical Data 2" Click="Button_Click2"/>
+                <StackPanel Orientation="Horizontal">
+                <Image Source="pack://application:,,,/Resources/Images/统计图.png" Width="36" Height="36" RenderOptions.BitmapScalingMode="HighQuality"/>
+                <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">统计图</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                <Image Source="pack://application:,,,/Resources/Images/历史记录.png" Width="36" Height="36" RenderOptions.BitmapScalingMode="HighQuality"/>
+                <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">历史记录</TextBlock>
+                </StackPanel>
             </StackPanel>
         </Grid>
         
-        <!--设置页面-->
         
-        <Grid Grid.Column="1">
-            <StackPanel>
-                <!-- 页面视图 -->
-                <Border CornerRadius="0,0,10,10">
-                    <Frame Name="SettingFrame" BorderThickness="0" NavigationUIVisibility="Hidden"/>
-                </Border>
-            </StackPanel>
-        </Grid>
+        <Border Grid.Column="1" Background="#D8D8D8"/>
         
         <!-- 右侧第一个Grid -->
-        <Grid Grid.Column="2">
+        <Grid Grid.Column="2" Margin="50,50,50,50">
             <!-- 右侧第一个Grid内容 -->
+            <Image Width="500" Height="488" Source="../../Resources/Images/统计图表.png" />
             <StackPanel VerticalAlignment="Bottom" Margin="0,10,0,0">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="横轴（x）：" Margin="0,0,5,0" VerticalAlignment="Center" />
-                    <ComboBox Width="150" Margin="0,5">
-                        <ComboBoxItem Content="Km" />
-                        <ComboBoxItem Content="m" />
+                    <TextBlock Text="横轴（x）：" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="20" />
+                    <ComboBox Width="150" Margin="0,5" Background="#D8D8D8">
+                        <ComboBoxItem Content="Km" FontSize="20"/>
+                        <ComboBoxItem Content="m" FontSize="20" />
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="纵轴（y）：" Margin="0,0,5,0" VerticalAlignment="Center" />
-                    <ComboBox Width="150" Margin="0,5">
-                        <ComboBoxItem Content="phE" />
-                        <ComboBoxItem Content="选项2" />
+                    <TextBlock Text="纵轴（y）：" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="20" />
+                    <ComboBox Width="150" Margin="0,5" Background="#D8D8D8">
+                        <ComboBoxItem Content="phE" FontSize="20"/>
+                        <ComboBoxItem Content="选项2" FontSize="20"/>
                     </ComboBox>
                 </StackPanel>
             </StackPanel>
         </Grid>
 
         
-        <!-- 右侧第二个Grid -->
-<Grid Grid.Column="3">
+        <!--右侧第二个Grid-->
+        
+        <Grid Grid.Column="3" Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">环境参数</TextBlock>
+            <TextBlock Grid.Row="1" Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">信号处理参数</TextBlock>
+            <TextBlock Grid.Row="2" Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">接收器参数</TextBlock>
+            <TextBlock Grid.Row="3" Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">激光器参数</TextBlock>
+        </Grid>
+        
+        <Border Grid.Column="4" Background="#D8D8D8"/>
+        
+        <!-- 右侧第三个Grid -->
+<Grid Grid.Column="5" Background="White">
     <Grid.RowDefinitions>
         <RowDefinition Height="Auto" /> <!-- 表头行 -->
         <RowDefinition Height="Auto" /> <!-- 数据行1 -->
@@ -83,91 +319,65 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-
-        <TextBlock Grid.Column="0" Text="环境参数" FontWeight="Bold" Margin="5" />
-        <TextBlock Grid.Column="1" Text="数值" FontWeight="Bold" Margin="5" />
     </Grid>
 
+    
     <!-- 数据行 -->
-    <Grid Grid.Row="1">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-        <TextBlock Grid.Column="0" Text="PM2.5" Margin="5" />
-        <TextBlock Grid.Column="1" Text="5" Margin="5" />
-    </Grid>
-
-    <Grid Grid.Row="2">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-        <TextBlock Grid.Column="0" Text="PM10" Margin="5" />
-        <TextBlock Grid.Column="1" Text="28" Margin="5" />
-    </Grid>
-
-    <Grid Grid.Row="3">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-        <TextBlock Grid.Column="0" Text="AQI" Margin="5" />
-        <TextBlock Grid.Column="1" Text="57" Margin="5" />
-    </Grid>
-
-    <Grid Grid.Row="4">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-        <TextBlock Grid.Column="0" Text="相对风速" Margin="5" />
-        <TextBlock Grid.Column="1" Text="3.2m/s" Margin="5" />
-    </Grid>
-
-    <Grid Grid.Row="5">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-        <TextBlock Grid.Column="0" Text="湿度" Margin="5" />
-        <TextBlock Grid.Column="1" Text="31%" Margin="5" />
-    </Grid>
-
-    <Grid Grid.Row="6">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-        <TextBlock Grid.Column="0" Text="气压" Margin="5" />
-        <TextBlock Grid.Column="1" Text="997hPa" Margin="5" />
-    </Grid>
+                <Grid Grid.Row="0" Margin="5,5,5,10">
+                    <StackPanel Orientation="Vertical">
+                    <Label VerticalAlignment="Top" Content="PM2.5" BorderThickness="0" FontSize="16"/>
+                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=SliderPm25}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
+                    <Slider x:Name="SliderPm25" Maximum="100" Minimum="0" Value="20" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_PM25}"
+                     VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0" ValueChanged="slider_PM25_ValueChanged"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <StackPanel Orientation="Vertical">
+                    <Label VerticalAlignment="Top" Content="PM10" BorderThickness="0" FontSize="16"/>
+                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=SliderPm10}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
+                    <Slider x:Name="SliderPm10" Maximum="100" Minimum="0" Value="28" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_PM10}"
+     VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
+                   </StackPanel>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <StackPanel Orientation="Vertical">
+                    <Label VerticalAlignment="Top" Content="AQI" BorderThickness="0" FontSize="16"/>
+                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=SliderAqi}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
+                    <Slider x:Name="SliderAqi" Maximum="100" Minimum="0" Value="57" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_AQI}"
+     VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <StackPanel Orientation="Vertical">
+                    <Label VerticalAlignment="Top" Content="相对风速" BorderThickness="0" FontSize="16"/>
+                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=SliderXdfs}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
+                    <Slider x:Name="SliderXdfs" Maximum="100" Minimum="0" Value="5" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_XDFS}"
+     VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <StackPanel Orientation="Vertical">
+                    <Label VerticalAlignment="Top" Content="湿度" BorderThickness="0" FontSize="16"/>
+                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=SliderSd}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
+                    <Slider x:Name="SliderSd" Maximum="100" Minimum="0" Value="31" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_SD}"
+     VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <StackPanel Orientation="Vertical">
+                    <Label VerticalAlignment="Top" Content="气压" BorderThickness="0" FontSize="16"/>
+                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=SliderQy}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
+                    <Slider x:Name="SliderQy" Maximum="1000" Minimum="0" Value="997" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_QY}"
+     VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
+                    </StackPanel>
+                </Grid>
 </Grid>
-        
-        
         
         
     </Grid>
 </Page>
 
 
-<!-- <Grid> -->
-<!--     <Grid.RowDefinitions> -->
-<!--         <RowDefinition Height="Auto"/> -->
-<!--         <RowDefinition Height="*"/> -->
-<!--     </Grid.RowDefinitions> -->
-<!--     <StackPanel Grid.Row="0" Orientation="Horizontal"> -->
-<!--         <Button x:Name="Button1" Content="Historical Data 1" Click="Button_Click"/> -->
-<!--         <Button x:Name="Button2" Content="Historical Data 2" Click="Button_Click"/> -->
-<!--         <Button Content="历史记录" Click="Button_Click"/> -->
-<!--     </StackPanel> -->
-<!--     <Frame Grid.Row="1" x:Name="Frame"/> -->
-<!-- </Grid> -->
+
 
 

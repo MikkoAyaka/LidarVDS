@@ -70,6 +70,12 @@
       <Resource Include="Resources\Images\SD.png" />
       <None Remove="Resources\Images\XDFS.png" />
       <Resource Include="Resources\Images\XDFS.png" />
+      <None Remove="Resources\Images\历史记录.png" />
+      <Resource Include="Resources\Images\历史记录.png" />
+      <None Remove="Resources\Images\统计图.png" />
+      <Resource Include="Resources\Images\统计图.png" />
+      <None Remove="Resources\Images\统计图表.png" />
+      <Resource Include="Resources\Images\统计图表.png" />
     </ItemGroup>
 
     <ItemGroup>
