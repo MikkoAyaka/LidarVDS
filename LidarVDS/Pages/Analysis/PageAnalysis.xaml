@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:components="clr-namespace:LidarVDS.Components"
       xmlns:local="clr-namespace:LidarVDS.Pages.Analysis"
       mc:Ignorable="d"
       Title="PageAnalysis" Height="720" Width="1440">
@@ -234,12 +235,12 @@
     
     <Grid Background="#F4F8FE">        <!--创建一个Grid-->
         <Grid.ColumnDefinitions>  <!-- 设置 Grid 的列定义 -->
-            <ColumnDefinition Width="256"/>  <!-- 第一列宽度为固定值 -->
+            <ColumnDefinition Width="256"/>  
             <ColumnDefinition Width="2"/>
-            <ColumnDefinition Width="650"/>  <!-- 第二列宽度为自动适应内容 -->
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="2"/>
+            <ColumnDefinition Width="500"/>  
             <ColumnDefinition Width="*"/>
+            <!--<ColumnDefinition Width="2"/>
+            <ColumnDefinition Width="*"/>-->
         </Grid.ColumnDefinitions>
 
         
@@ -286,7 +287,7 @@
         
         <!--右侧第二个Grid-->
         
-        <Grid Grid.Column="3" Background="White">
+        <!--<Grid Grid.Column="3" Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -297,23 +298,24 @@
             <TextBlock Grid.Row="1" Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">信号处理参数</TextBlock>
             <TextBlock Grid.Row="2" Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">接收器参数</TextBlock>
             <TextBlock Grid.Row="3" Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">激光器参数</TextBlock>
-        </Grid>
+        </Grid>-->
         
-        <Border Grid.Column="4" Background="#D8D8D8"/>
+        <!--<Border Grid.Column="4" Background="#D8D8D8"/>-->
+        <components:ArgumentsTable Grid.Column="3" Editable="False"/>
         
         <!-- 右侧第三个Grid -->
-<Grid Grid.Column="5" Background="White">
+<!--<Grid Grid.Column="5" Background="White">
     <Grid.RowDefinitions>
-        <RowDefinition Height="Auto" /> <!-- 表头行 -->
-        <RowDefinition Height="Auto" /> <!-- 数据行1 -->
-        <RowDefinition Height="Auto" /> <!-- 数据行2 -->
-        <RowDefinition Height="Auto" /> <!-- 数据行3 -->
-        <RowDefinition Height="Auto" /> <!-- 数据行4 -->
-        <RowDefinition Height="Auto" /> <!-- 数据行5 -->
-        <RowDefinition Height="Auto" /> <!-- 数据行6 -->
+        <RowDefinition Height="Auto" /> ~1~ 表头行 @1@
+        <RowDefinition Height="Auto" /> ~1~ 数据行1 @1@
+        <RowDefinition Height="Auto" /> ~1~ 数据行2 @1@
+        <RowDefinition Height="Auto" /> ~1~ 数据行3 @1@
+        <RowDefinition Height="Auto" /> ~1~ 数据行4 @1@
+        <RowDefinition Height="Auto" /> ~1~ 数据行5 @1@
+        <RowDefinition Height="Auto" /> ~1~ 数据行6 @1@
     </Grid.RowDefinitions>
 
-    <!-- 表头 -->
+    ~1~ 表头 @1@
     <Grid Grid.Row="0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -322,7 +324,7 @@
     </Grid>
 
     
-    <!-- 数据行 -->
+    ~1~ 数据行 @1@
                 <Grid Grid.Row="0" Margin="5,5,5,10">
                     <StackPanel Orientation="Vertical">
                     <Label VerticalAlignment="Top" Content="PM2.5" BorderThickness="0" FontSize="16"/>
@@ -371,7 +373,7 @@
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                     </StackPanel>
                 </Grid>
-</Grid>
+</Grid>-->
         
         
     </Grid>
