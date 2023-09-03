@@ -12,8 +12,8 @@ namespace LidarVDS.Pages.Settings.SettingPages.EnvironmentPage
     public partial class Environment
     {
         private Dictionary<string, string> _yamlData;//定义字典缓存数据
-        private string _filePath = "D:\\LidarVDS\\LidarVDS\\LidarVDS\\Pages\\Settings\\Data.yaml";//获取文件位置
         
+        private string _filePath = "LidarVDS/Pages/Settings/Data.yaml";//获取文件位置
         
         public Environment()//初始化页面
         {
@@ -42,7 +42,7 @@ namespace LidarVDS.Pages.Settings.SettingPages.EnvironmentPage
         //刷新按钮
         private void Refresh(object sender, RoutedEventArgs e)
         {
-            string filePath = "D:\\LidarVDS\\LidarVDS\\LidarVDS\\Pages\\Settings\\Data.yaml";
+            string filePath = "LidarVDS/Pages/Settings/Data.yaml";
             string yamlContent = File.ReadAllText(filePath);
 
             var deserializer = new DeserializerBuilder().Build();

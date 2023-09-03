@@ -5,5 +5,11 @@ using System.Collections.Generic;
 
 namespace LidarVDS.Pages.Settings.SettingPages.LidarPage
 {
-   
+    public partial class Lidar
+    {
+        public Lidar()
+        {
+            InitializeComponent();
+        }
+    }
 }

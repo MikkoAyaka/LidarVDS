@@ -20,18 +20,22 @@
 
     <ItemGroup>
       <Compile Remove="resources\svgs\**" />
+      <Compile Remove="Pages\Settings\SettingPages\OtherPage\**" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="resources\svgs\**" />
+      <EmbeddedResource Remove="Pages\Settings\SettingPages\OtherPage\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="resources\svgs\**" />
+      <None Remove="Pages\Settings\SettingPages\OtherPage\**" />
     </ItemGroup>
 
     <ItemGroup>
       <Page Remove="resources\svgs\**" />
+      <Page Remove="Pages\Settings\SettingPages\OtherPage\**" />
     </ItemGroup>
 
     <ItemGroup>

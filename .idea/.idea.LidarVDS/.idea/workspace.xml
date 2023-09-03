@@ -8,18 +8,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d9c1877-d4e9-4ac8-904d-b2f358580fca" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LidarVDS/.idea/shelf/_2023_8_31_17_25____.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LidarVDS/.idea/shelf/_2023_8_31_17_25____.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LidarVDS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LidarVDS/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LidarVDS/LidarVDS.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LidarVDS/LidarVDS.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LidarVDS/Pages/Main/1.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/LidarVDS/Resources/Images/1.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LidarVDS/Pages/Main/PageMain.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/LidarVDS/Pages/Main/PageMain.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LidarVDS/Pages/Main/公告.png" beforeDir="false" afterPath="$PROJECT_DIR$/LidarVDS/Resources/Images/公告.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LidarVDS/Pages/Settings/PageSettings.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/LidarVDS/Pages/Settings/PageSettings.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LidarVDS/Pages/Settings/PageSettings.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LidarVDS/Pages/Settings/PageSettings.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LidarVDS/Pages/Settings/SettingPages/EnvironmentPage/Environment.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LidarVDS/Pages/Settings/SettingPages/EnvironmentPage/Environment.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LidarVDS/Pages/Settings/SettingPages/LidarPage/Lidar.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LidarVDS/Pages/Settings/SettingPages/LidarPage/Lidar.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ed3e2ac5597f467ba1009e26c305c8daf886a0/8d/6051d8ab/Rectangle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2SUwUK6hHHVjVObwqXbIvpvPl1D" />
@@ -33,20 +40,22 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Mechrevo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Mechrevo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Mechrevo\\AppData\\Local\\Symbols\\src&quot;
+      &quot;C:\\Users\\conquer\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\conquer\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\conquer\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
 }</component>
@@ -88,6 +97,10 @@
       <workItem from="1689662215092" duration="301000" />
       <workItem from="1693099169033" duration="2510000" />
       <workItem from="1693101720027" duration="1926000" />
+      <workItem from="1693488757807" duration="1197000" />
+      <workItem from="1693566715496" duration="1698000" />
+      <workItem from="1693568508428" duration="226000" />
+      <workItem from="1693738507507" duration="736000" />
     </task>
     <task id="LOCAL-00001" summary="主页页面基本完成，但是视频播放器没有暂停快进功能">
       <option name="closed" value="true" />
@@ -104,6 +117,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

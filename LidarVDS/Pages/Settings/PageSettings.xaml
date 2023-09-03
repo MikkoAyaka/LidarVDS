@@ -21,26 +21,25 @@
         <!--侧边栏-->
 
         <Grid Grid.Column="0" Background="{StaticResource Brush-PrimaryBackground}">
-		        <StackPanel Height="580">
+		        <StackPanel Height="580" VerticalAlignment="Top">
 			        <!-- 边栏按钮 -->
-			        <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">常量设置</TextBlock>
-				        <RadioButton Style="{StaticResource DocButton}" Content="环境设置" Click="Environment_OnClick"/>
-				        <RadioButton Style="{StaticResource DocButton}" Content="雷达设置" Click="Lidar_OnClick"/>
-			        <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">其他设置</TextBlock>
-				        <RadioButton Style="{StaticResource DocButton}" Content="其他设置" Click="Others_OnClick"/>
+			        <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">参数设置</TextBlock>
+				        <RadioButton Style="{StaticResource DocButton}" Content="环境参数" Click="Environment_OnClick"/>
+				        <RadioButton Style="{StaticResource DocButton}" Content="激光器参数" Click="Lidar_OnClick"/>
+						<RadioButton Style="{StaticResource DocButton}" Content="接收器参数"/>
+						<RadioButton Style="{StaticResource DocButton}" Content="信号处理参数"/>
 		        </StackPanel>
 	    </Grid>
         
         <!--设置页面-->
-        
         <Grid Grid.Column="1">
-            <StackPanel>
-                <!-- 页面视图 -->
-                <Border CornerRadius="0,0,10,10">
+	        <StackPanel>
+		        <Border CornerRadius="0,0,10,10">
                     <Frame Name="SettingFrame" BorderThickness="0" NavigationUIVisibility="Hidden"/>
                 </Border> 
+				
             </StackPanel>
-
+			
         </Grid>
         
     </Grid>
