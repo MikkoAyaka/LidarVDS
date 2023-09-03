@@ -1,0 +1,51 @@
+﻿<!-- 参数列表组件(可以修改是否允许编辑) -->
+<UserControl x:Class="LidarVDS.Components.ArgumentsTable"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:local="clr-namespace:LidarVDS.Components"
+             mc:Ignorable="d"
+             d:DesignHeight="800" d:DesignWidth="600">
+    <Border CornerRadius="30" Height="800" Width="600">
+        <hc:SimpleStackPanel Orientation="Horizontal">
+            <hc:SimpleStackPanel Height="700" Width="450" Margin="0,50,0,50" Name="StackPanelContext"/>
+            <hc:SimpleStackPanel Height="800" Width="150" >
+                <TextBlock HorizontalAlignment="Right" Margin="0,20,20,15" FontSize="20" FontWeight="Black">参数类型</TextBlock>
+                <RadioButton Click="EnvironmentArguments" Style="{StaticResource ArgTypeButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>环境</TextBlock>
+                        <Image Source="../../Resources/Images/环境参数.png" 
+                               Width="16" Height="16" Margin="10,0,0,0"
+                               RenderOptions.BitmapScalingMode="HighQuality"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource ArgTypeButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>探测器</TextBlock>
+                        <Image Source="../../Resources/Images/探测器参数.png" 
+                               Width="16" Height="16" Margin="10,0,0,0"
+                               RenderOptions.BitmapScalingMode="HighQuality"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource ArgTypeButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>光学单元</TextBlock>
+                        <Image Source="../../Resources/Images/光学单元参数.png" 
+                               Width="16" Height="16" Margin="10,0,0,0"
+                               RenderOptions.BitmapScalingMode="HighQuality"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource ArgTypeButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>信号处理</TextBlock>
+                        <Image Source="../../Resources/Images/信号处理参数.png" 
+                               Width="16" Height="16" Margin="10,0,0,0" 
+                               RenderOptions.BitmapScalingMode="HighQuality"/>
+                    </StackPanel>
+                </RadioButton>
+            </hc:SimpleStackPanel>
+        </hc:SimpleStackPanel>
+    </Border>
+</UserControl>

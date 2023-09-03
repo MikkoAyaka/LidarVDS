@@ -35,225 +35,6 @@
                     </Setter.Value>
                 </Setter>
             </Style>
-            <!--滑度条-->
-
-            <Style x:Key="RepeatButtonTransparent" TargetType="{x:Type RepeatButton}">
-                <Setter Property="OverridesDefaultStyle" Value="true"/>
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="Focusable" Value="false"/>
-                <Setter Property="IsTabStop" Value="false"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type RepeatButton}">
-                                <Rectangle Fill="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"/>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-            
-            <!--PM2.5-->
-            <Style x:Key="Slider_Thumb_PM25" TargetType="{x:Type Thumb}">
-                <Setter Property="Focusable" Value="false" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Thumb}">
-                            <Image Width="40" Height="40" Source="../../Resources/Images/PM2.5.png" />
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-            <Style x:Key="Slider_CustomStyle_PM25" TargetType="{x:Type Slider}">
-                <Setter Property="Focusable" Value="false" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Slider}">
-                            <Grid Height="40" Background="Transparent">
-                                <Track x:Name="PART_Track">
-                                    <Track.DecreaseRepeatButton>
-                                        <RepeatButton Height="16" Background="#79FF7F" Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
-                                    </Track.DecreaseRepeatButton>
-                                    <Track.IncreaseRepeatButton>
-                                        <RepeatButton Height="16" Background="#EDEDED" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
-                                    </Track.IncreaseRepeatButton>
-                                    <Track.Thumb>
-                                        <Thumb Style="{StaticResource Slider_Thumb_PM25}"/>
-                                    </Track.Thumb>
-                                </Track>
-                            </Grid>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
-            <!--PM10-->
-            <Style x:Key="Slider_Thumb_PM10" TargetType="{x:Type Thumb}">
-                <Setter Property="Focusable" Value="false" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Thumb}">
-                            <Image Width="40" Height="40" Source="../../Resources/Images/PM10.png" />
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-            <Style x:Key="Slider_CustomStyle_PM10" TargetType="{x:Type Slider}">
-                <Setter Property="Focusable" Value="false" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Slider}">
-                            <Grid Height="40" Background="White">
-                                <Track Grid.Column="1" x:Name="PART_Track">
-                                    <Track.DecreaseRepeatButton>
-                                        <RepeatButton Height="16" Background="#79FF7F" Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
-                                    </Track.DecreaseRepeatButton>
-                                    <Track.IncreaseRepeatButton>
-                                        <RepeatButton Height="16" Background="#EDEDED" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
-                                    </Track.IncreaseRepeatButton>
-                                    <Track.Thumb>
-                                        <Thumb Style="{StaticResource Slider_Thumb_PM10}"/>
-                                    </Track.Thumb>
-                                </Track>
-                            </Grid>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
-            <!--AQI-->
-            <Style x:Key="Slider_Thumb_AQI" TargetType="{x:Type Thumb}">
-                <Setter Property="Focusable" Value="false" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Thumb}">
-                            <Image Width="40" Height="40" Source="../../Resources/Images/AQI.png" />
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-            <Style x:Key="Slider_CustomStyle_AQI" TargetType="{x:Type Slider}">
-                <Setter Property="Focusable" Value="false" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Slider}">
-                            <Grid Height="40" Background="White">
-                                <Track Grid.Column="1" x:Name="PART_Track">
-                                    <Track.DecreaseRepeatButton>
-                                        <RepeatButton Height="16" Background="#79FF7F" Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
-                                    </Track.DecreaseRepeatButton>
-                                    <Track.IncreaseRepeatButton>
-                                        <RepeatButton Height="16" Background="#EDEDED" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
-                                    </Track.IncreaseRepeatButton>
-                                    <Track.Thumb>
-                                        <Thumb Style="{StaticResource Slider_Thumb_AQI}"/>
-                                    </Track.Thumb>
-                                </Track>
-                            </Grid>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
-            <!--相对风速-->
-            <Style x:Key="Slider_Thumb_XDFS" TargetType="{x:Type Thumb}">
-                <Setter Property="Focusable" Value="false" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Thumb}">
-                            <Image Width="40" Height="40" Source="../../Resources/Images/XDFS.png" />
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-            <Style x:Key="Slider_CustomStyle_XDFS" TargetType="{x:Type Slider}">
-                <Setter Property="Focusable" Value="false" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Slider}">
-                            <Grid Height="40" Background="White">
-                                <Track Grid.Column="1" x:Name="PART_Track">
-                                    <Track.DecreaseRepeatButton>
-                                        <RepeatButton Height="16" Background="#79FF7F" Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
-                                    </Track.DecreaseRepeatButton>
-                                    <Track.IncreaseRepeatButton>
-                                        <RepeatButton Height="16" Background="#EDEDED" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
-                                    </Track.IncreaseRepeatButton>
-                                    <Track.Thumb>
-                                        <Thumb Style="{StaticResource Slider_Thumb_XDFS}"/>
-                                    </Track.Thumb>
-                                </Track>
-                            </Grid>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
-            <!--湿度-->
-            <Style x:Key="Slider_Thumb_SD" TargetType="{x:Type Thumb}">
-                <Setter Property="Focusable" Value="false" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Thumb}">
-                            <Image Width="40" Height="40" Source="../../Resources/Images/SD.png" />
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-            <Style x:Key="Slider_CustomStyle_SD" TargetType="{x:Type Slider}">
-                <Setter Property="Focusable" Value="false" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Slider}">
-                            <Grid Height="40" Background="White">
-                                <Track Grid.Column="1" x:Name="PART_Track">
-                                    <Track.DecreaseRepeatButton>
-                                        <RepeatButton Height="16" Background="#79FF7F" Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
-                                    </Track.DecreaseRepeatButton>
-                                    <Track.IncreaseRepeatButton>
-                                        <RepeatButton Height="16" Background="#EDEDED" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
-                                    </Track.IncreaseRepeatButton>
-                                    <Track.Thumb>
-                                        <Thumb Style="{StaticResource Slider_Thumb_SD}"/>
-                                    </Track.Thumb>
-                                </Track>
-                            </Grid>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
-            <!--气压-->
-            <Style x:Key="Slider_Thumb_QY" TargetType="{x:Type Thumb}">
-                <Setter Property="Focusable" Value="false" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Thumb}">
-                            <Image Width="40" Height="40" Source="../../Resources/Images/QY.png" />
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-            <Style x:Key="Slider_CustomStyle_QY" TargetType="{x:Type Slider}">
-                <Setter Property="Focusable" Value="false" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Slider}">
-                            <Grid Height="40" Background="White">
-                                <Track Grid.Column="1" x:Name="PART_Track">
-                                    <Track.DecreaseRepeatButton>
-                                        <RepeatButton Height="16" Background="#79FF7F" Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
-                                    </Track.DecreaseRepeatButton>
-                                    <Track.IncreaseRepeatButton>
-                                        <RepeatButton Height="16" Background="#EDEDED" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
-                                    </Track.IncreaseRepeatButton>
-                                    <Track.Thumb>
-                                        <Thumb Style="{StaticResource Slider_Thumb_QY}"/>
-                                    </Track.Thumb>
-                                </Track>
-                            </Grid>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
         </ResourceDictionary>
     </Page.Resources>
     <Grid>
@@ -297,37 +78,37 @@
                 <Grid Grid.Row="0">
                     <Label VerticalAlignment="Top" Content="PM2.5" BorderThickness="0" FontSize="16"/>
                     <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_PM25}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_PM25" Maximum="100" Minimum="0" Value="20" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_PM25}"
+                    <Slider x:Name="slider_PM25" Maximum="100" Minimum="0" Value="20" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
                      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0" ValueChanged="slider_PM25_ValueChanged"/>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Label VerticalAlignment="Top" Content="PM10" BorderThickness="0" FontSize="16"/>
                     <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_PM10}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_PM10" Maximum="100" Minimum="0" Value="28" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_PM10}"
+                    <Slider x:Name="slider_PM10" Maximum="100" Minimum="0" Value="28" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                 </Grid>
                 <Grid Grid.Row="2">
                     <Label VerticalAlignment="Top" Content="AQI" BorderThickness="0" FontSize="16"/>
                     <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_AQI}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_AQI" Maximum="100" Minimum="0" Value="57" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_AQI}"
+                    <Slider x:Name="slider_AQI" Maximum="100" Minimum="0" Value="57" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                 </Grid>
                 <Grid Grid.Row="3">
                     <Label VerticalAlignment="Top" Content="相对风速" BorderThickness="0" FontSize="16"/>
                     <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_XDFS}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_XDFS" Maximum="100" Minimum="0" Value="5" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_XDFS}"
+                    <Slider x:Name="slider_XDFS" Maximum="100" Minimum="0" Value="5" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                 </Grid>
                 <Grid Grid.Row="4">
                     <Label VerticalAlignment="Top" Content="湿度" BorderThickness="0" FontSize="16"/>
                     <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_SD}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_SD" Maximum="100" Minimum="0" Value="31" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_SD}"
+                    <Slider x:Name="slider_SD" Maximum="100" Minimum="0" Value="31" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                 </Grid>
                 <Grid Grid.Row="5">
                     <Label VerticalAlignment="Top" Content="气压" BorderThickness="0" FontSize="16"/>
                     <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_QY}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_QY" Maximum="1000" Minimum="0" Value="997" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300" Style="{StaticResource Slider_CustomStyle_QY}"
+                    <Slider x:Name="slider_QY" Maximum="1000" Minimum="0" Value="997" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                 </Grid>
             </Grid>

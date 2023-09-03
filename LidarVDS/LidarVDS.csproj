@@ -76,6 +76,14 @@
       <Resource Include="Resources\Images\统计图.png" />
       <None Remove="Resources\Images\统计图表.png" />
       <Resource Include="Resources\Images\统计图表.png" />
+      <None Remove="Resources\Images\信号处理参数.png" />
+      <Resource Include="Resources\Images\信号处理参数.png" />
+      <None Remove="Resources\Images\光学单元参数.png" />
+      <Resource Include="Resources\Images\光学单元参数.png" />
+      <None Remove="Resources\Images\探测器参数.png" />
+      <Resource Include="Resources\Images\探测器参数.png" />
+      <None Remove="Resources\Images\环境参数.png" />
+      <Resource Include="Resources\Images\环境参数.png" />
     </ItemGroup>
 
     <ItemGroup>
