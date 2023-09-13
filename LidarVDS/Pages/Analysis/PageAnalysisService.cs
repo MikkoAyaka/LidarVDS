@@ -12,6 +12,7 @@ public class PageAnalysisService
     {
         return InstanceHolder.Page;
     }
+    
     public static PageAnalysisService GetInstance()
     {
         return InstanceHolder.Instance;

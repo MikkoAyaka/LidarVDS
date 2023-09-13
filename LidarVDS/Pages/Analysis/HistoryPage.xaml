@@ -1,0 +1,27 @@
+<Page x:Class="LidarVDS.Pages.Analysis.HistoryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:components="clr-namespace:LidarVDS.Components"
+      xmlns:local="clr-namespace:LidarVDS.Pages.Analysis"
+      mc:Ignorable="d"
+      Title="PageAnalysis" Height="720" Width="1440">
+      
+      <Grid Background="#F4F8FE">        <!--创建一个Grid-->
+            <Grid.ColumnDefinitions>  <!-- 设置 Grid 的列定义 -->
+                  <ColumnDefinition Width="*"/>  
+            </Grid.ColumnDefinitions>
+           
+      
+      <Grid Grid.Column="0">
+            <StackPanel>
+                  <Border CornerRadius="0,0,10,10">
+                        <Frame Name="HistoryFrame" BorderThickness="0" NavigationUIVisibility="Hidden"/>
+                  </Border> 
+				
+            </StackPanel>
+      </Grid>
+            
+      </Grid>
+</Page>

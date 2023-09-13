@@ -245,17 +245,24 @@
 
         
         <!--侧边栏-->
-        <Grid Grid.Column="0"  Background="White">
-            <StackPanel HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+        <!-- <Grid Grid.Column="0"  Background="White"> -->
+        <!--     <StackPanel HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5"> -->
+        <!--         ~1~ 边栏按钮 @1@ -->
+        <!--         <StackPanel Orientation="Horizontal"> -->
+        <!--         <Image Source="pack://application:,,,/Resources/Images/统计图.png" Width="36" Height="36" RenderOptions.BitmapScalingMode="HighQuality"/> -->
+        <!--         <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">统计图</TextBlock> -->
+        <!--         </StackPanel> -->
+        <!--         <StackPanel Orientation="Horizontal"> -->
+        <!--         <Image Source="pack://application:,,,/Resources/Images/历史记录.png" Width="36" Height="36" RenderOptions.BitmapScalingMode="HighQuality"/> -->
+        <!--         <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">历史记录</TextBlock> -->
+        <!--         </StackPanel> -->
+        <!--     </StackPanel> -->
+        <!-- </Grid> -->
+        <Grid Grid.Column="0" Background="{StaticResource Brush-PrimaryBackground}">
+            <StackPanel Height="580" VerticalAlignment="Top">
                 <!-- 边栏按钮 -->
-                <StackPanel Orientation="Horizontal">
-                <Image Source="pack://application:,,,/Resources/Images/统计图.png" Width="36" Height="36" RenderOptions.BitmapScalingMode="HighQuality"/>
-                <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">统计图</TextBlock>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                <Image Source="pack://application:,,,/Resources/Images/历史记录.png" Width="36" Height="36" RenderOptions.BitmapScalingMode="HighQuality"/>
-                <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">历史记录</TextBlock>
-                </StackPanel>
+                <RadioButton Style="{StaticResource DocButton}" Content="统计图" />
+                <RadioButton Style="{StaticResource DocButton}" Content="历史记录" Click="HistoryPage_Onclick"/>
             </StackPanel>
         </Grid>
         
@@ -265,6 +272,7 @@
         <!-- 右侧第一个Grid -->
         <Grid Grid.Column="2" Margin="50,50,50,50">
             <!-- 右侧第一个Grid内容 -->
+            <Frame Name="HistoryFrame" BorderThickness="0" NavigationUIVisibility="Hidden"/>
             <Image Width="500" Height="488" Source="../../Resources/Images/统计图表.png" />
             <StackPanel VerticalAlignment="Bottom" Margin="0,10,0,0">
                 <StackPanel Orientation="Horizontal">
