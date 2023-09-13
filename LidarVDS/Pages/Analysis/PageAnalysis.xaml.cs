@@ -76,14 +76,8 @@ public partial class PageAnalysis : Page
         ShowHistoryPage(historicalData);
     }
 
-    private void NavigationService_LoadCompleted(object sender, NavigationEventArgs e)
+    private void HistoryPage_Onclick(object sender, System.Windows.RoutedEventArgs e)
     {
-        // 将导航服务设置为Frame的数据上下文，以便在子页面中使用NavigationService
-        // Frame.DataContext = Frame.NavigationService;
-    }
-    
-    private void slider_PM25_ValueChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<double> e)
-    {
-        //var width = slider_PM25
+        HistoryFrame.Navigate(HistoryPageService.GetPage());
     }
 }
