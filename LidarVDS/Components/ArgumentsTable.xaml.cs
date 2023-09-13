@@ -24,7 +24,7 @@ public partial class ArgumentsTable : UserControl
         StackPanelContext.Children.Clear();
         LidarArgumentsRepository.GetInstance().GetAllData().ForEach(arg =>
         {
-            ArgumentBar bar = new(arg);
+            ArgumentBar bar = new ArgumentBar(arg);
             bar.IsEnabled = Editable;
             StackPanelContext.Children.Add(bar);
         });

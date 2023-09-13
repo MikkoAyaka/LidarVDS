@@ -1,0 +1,62 @@
+﻿using System;
+using MathNet.Numerics;
+
+namespace LidarVDS.Utils;
+
+public class Computer
+{
+    /**
+     * 激光功率(焦)
+     */
+    private static double P0 = 0.00001;
+    /**
+     * 光速(米/秒)
+     */
+    private static double C = 299792458;
+    /**
+     * 脉冲宽度(秒)
+     */
+    private static double T = 0.0000001;
+    /**
+     * 接收望远镜面积(平方米)
+     */
+    private static double Ar = 3.1415926 / 1600;
+
+    /**
+     * 几何重叠因子(临时)
+     */
+    private static double Yr = 1.0;
+    /**
+     * 发射望远镜透过率
+     */
+    private static double Tt = 1.0;
+    /**
+     * 接收望远镜透过率
+     */
+    private static double Tr = 0.5;
+    /**
+     * 量子效率
+     */
+    private static double Eta = 0.38;
+    /**
+     * 波长
+     */
+    private static double Lambda = 905;
+    /**
+     * 普朗克常数
+     */
+    private static double H = 6.62607015 * Math.Pow(10, -34);
+    /**
+     * 核心能见度反演算法
+     * 输入：x 能见度 粒子散射系数
+     * 输出：y
+     */
+    public static double MainAlg(double x,double viewDistance,double scatteringValue)
+    {
+        var a = 3.912 / viewDistance;
+        var ta = Math.Exp(-Integrate.OnClosedInterval(x => 3.912 / x, 0, x));
+        var pr = P0 * (C * T / 2) * (Ar / (x * x)) * Yr * scatteringValue * ta * ta * Tt * Tr;
+        var nsr = ((Eta * Lambda) / (H * C)) * pr * T;
+        return nsr;
+    }
+}

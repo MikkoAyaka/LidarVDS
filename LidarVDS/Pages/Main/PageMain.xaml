@@ -44,15 +44,16 @@
         
         <!--右侧-->
         
-        <Grid Grid.Row="0" Grid.Column="1">
-            <Border Width="820" Height="600" Margin="40,0,40,0" Background="{StaticResource Brush-PrimaryBackground}" CornerRadius="20">
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.3" BlurRadius="10"/>
-                </Border.Effect>
-                <!-- <MediaElement Source="../../Resources/abab.mp4" Width="800" Height="600" /> -->
-                <!-- <components:ArgumentsTable Height="600" Width="800"/> -->
-            </Border>
-        </Grid>
+        <!-- <Grid Grid.Row="0" Grid.Column="1"> -->
+        <!--     <Border Width="820" Height="600" Margin="40,0,40,0" Background="{StaticResource Brush-PrimaryBackground}" CornerRadius="20"> -->
+        <!--         <Border.Effect> -->
+        <!--             <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.3" BlurRadius="10"/> -->
+        <!--         </Border.Effect> -->
+        <!--         ~1~ <MediaElement Source="../../Resources/abab.mp4" Width="800" Height="600" /> @1@ -->
+        <!--         ~1~ <components:ArgumentsTable Height="600" Width="800"/> @1@ -->
+        <!--     </Border> -->
+        <!-- </Grid> -->
+        <components:ArgumentsTable Grid.Row="0" Grid.Column="1" Editable="False"/>
         <!--
         <TextBox Grid.Row="0" Grid.Column="1" x:Name="TxtInput"/>  ~1~ 在第一行第二列添加一个 TextBox 控件，命名为 "TxtInput" @1@
         <Button Grid.Row="0" Grid.Column="1" Content="Submit"/>  ~1~ 在第二行第二列添加一个 Button 控件，显示文本 "Submit" @1@
