@@ -5,7 +5,7 @@ public  class HistoryPageService
     private HistoryPageService() {}
     private static class InstanceHolder
     {
-        public static readonly HistoryPage Instance = new();
+        public static readonly HistoryPageService Instance = new();
         public static readonly HistoryPage Page = new();
     }
     public static HistoryPage GetPage()
@@ -13,7 +13,7 @@ public  class HistoryPageService
         return InstanceHolder.Page;
     }
     
-    public static HistoryPage GetInstance()
+    public static HistoryPageService GetInstance()
     {
         return InstanceHolder.Instance;
     }
