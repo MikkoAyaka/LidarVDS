@@ -27,19 +27,19 @@ public class Computer
      */
     private static double Yr = 1.0;
     /**
-     * 发射望远镜透过率
+     * 发射望远镜透过率(0.0~1.0)
      */
     private static double Tt = 1.0;
     /**
-     * 接收望远镜透过率
+     * 接收望远镜透过率(0.0~1.0)
      */
     private static double Tr = 0.5;
     /**
-     * 量子效率
+     * 量子效率(0.0~1.0)
      */
     private static double Eta = 0.38;
     /**
-     * 波长
+     * 波长(nm)
      */
     private static double Lambda = 905;
     /**
