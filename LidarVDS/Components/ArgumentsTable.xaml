@@ -10,8 +10,11 @@
              d:DesignHeight="800" d:DesignWidth="600">
     <Border CornerRadius="30" Height="800" Width="600">
         <hc:SimpleStackPanel Orientation="Horizontal">
-            <hc:SimpleStackPanel Height="700" Width="450" Margin="0,50,0,50" Name="StackPanelContext"/>
-            <hc:SimpleStackPanel Height="800" Width="150" >
+            <Border Background="{StaticResource Brush-SecondaryBackground}" Height="800" Width="450">
+                <hc:SimpleStackPanel Height="700" Width="450" Margin="0,50,0,50" Name="StackPanelContext"/>
+            </Border>
+            <Rectangle Height="800" Width="2" Fill="Black" Opacity="0.15"/>
+            <hc:SimpleStackPanel Height="800" Width="150" Background="{StaticResource Brush-PrimaryBackground}">
                 <TextBlock HorizontalAlignment="Right" Margin="0,20,20,15" FontSize="20" FontWeight="Black">参数类型</TextBlock>
                 <RadioButton Click="EnvironmentArguments" Style="{StaticResource ArgTypeButton}">
                     <StackPanel Orientation="Horizontal">

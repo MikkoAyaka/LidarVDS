@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using MathNet.Numerics;
 
 namespace LidarVDS.Utils;
@@ -6,9 +7,9 @@ namespace LidarVDS.Utils;
 public class Computer
 {
     /**
-     * 激光功率(焦)
+     * 激光功率(瓦)
      */
-    private static double P0 = 0.00001;
+    private static double P0 = 0.11;
     /**
      * 光速(米/秒)
      */
@@ -21,11 +22,10 @@ public class Computer
      * 接收望远镜面积(平方米)
      */
     private static double Ar = 3.1415926 / 1600;
-
     /**
-     * 几何重叠因子(临时)
+     * 几何重叠因子(米)
      */
-    private static double Yr = 1.0;
+    private static double Yr = 100;
     /**
      * 发射望远镜透过率(0.0~1.0)
      */
@@ -39,24 +39,23 @@ public class Computer
      */
     private static double Eta = 0.38;
     /**
-     * 波长(nm)
+     * 波长(m)
      */
-    private static double Lambda = 905;
+    private static double Lambda = 905 * Math.Pow(10,-9);
     /**
      * 普朗克常数
      */
     private static double H = 6.62607015 * Math.Pow(10, -34);
-    /**
+    /** 
      * 核心能见度反演算法
      * 输入：x 能见度 粒子散射系数
      * 输出：y
      */
     public static double MainAlg(double x,double viewDistance,double scatteringValue)
     {
-        var a = 3.912 / viewDistance;
-        var ta = Math.Exp(-Integrate.OnClosedInterval(x => 3.912 / x, 0, x));
+        var ta = Math.Exp(-Integrate.OnClosedInterval(tempX => 3.912 / viewDistance, 0, viewDistance));
         var pr = P0 * (C * T / 2) * (Ar / (x * x)) * Yr * scatteringValue * ta * ta * Tt * Tr;
         var nsr = ((Eta * Lambda) / (H * C)) * pr * T;
-        return nsr;
+        return Math.Log10(nsr);
     }
 }

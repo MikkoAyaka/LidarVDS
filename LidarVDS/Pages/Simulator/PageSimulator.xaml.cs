@@ -24,7 +24,7 @@ public partial class PageSimulator : Page
     void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
         //给曲线图绑定数据源
-        line_black.DataSource = CreateDataSource(1000,10000);
+        line_black.DataSource = CreateDataSource(7000,0.0005);
         // line_blue.DataSource = CreateSineDataSource(3.0); ;
         // line_red.DataSource = CreateSineDataSource(5.0); ;
 
@@ -39,7 +39,7 @@ public partial class PageSimulator : Page
     {
         const int maxLen = 1000;
         Point[] pts = new Point[maxLen];
-        for (int i = 0; i < maxLen; i++)
+        for (int i = 1; i < maxLen; i++)
         {
             double x = i;
             double y = Computer.MainAlg(i, viewDistance, scatteringValue);
@@ -47,6 +47,21 @@ public partial class PageSimulator : Page
         }
         var ds = new EnumerableDataSource<Point>(pts);
         ds.SetXYMapping(pt => pt);
+        return ds;
+    }
+
+    private IPointDataSource CreateTestDS()
+    {
+        const int N = 100;
+        Point[] pts = new Point[N];
+        for (int i = 0; i < N; i++)
+        {
+            double x = i;
+            pts[i] = new Point(x, x);
+        }
+        var ds = new EnumerableDataSource<Point>(pts);
+        ds.SetXYMapping(pt => pt);
+        
         return ds;
     }
     //模拟数据源
