@@ -138,9 +138,9 @@
         </Style.Triggers>
     </Style>
     <Style x:Key="ArgTypeButton" TargetType="RadioButton" BasedOn="{StaticResource ButtonBaseBaseStyle}">
-        <Setter Property="Width" Value="120" />
-        <Setter Property="Height" Value="30" />
-        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Width" Value="125" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="FontSize" Value="14" />
         <Setter Property="FontWeight" Value="Heavy" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisualRadius0}" />
         <Setter Property="Foreground" Value="{StaticResource SecondaryTextBrush}" />

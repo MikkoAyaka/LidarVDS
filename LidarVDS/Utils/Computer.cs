@@ -23,11 +23,11 @@ public class Computer
      */
     private static double Ar = 3.1415926 / 1600;
     /**
-     * 几何重叠因子(米)
+     * 接收发射望远镜的间距(米)
      */
-    private static double Yr = 100;
+    private static double D = 0.01;
     /**
-     * 发射望远镜透过率(0.0~1.0)
+     * 存疑 发射望远镜透过率(0.0~1.0)
      */
     private static double Tt = 1.0;
     /**
@@ -53,8 +53,9 @@ public class Computer
      */
     public static double MainAlg(double x,double viewDistance,double scatteringValue)
     {
-        var ta = Math.Exp(-Integrate.OnClosedInterval(tempX => 3.912 / viewDistance, 0, viewDistance));
-        var pr = P0 * (C * T / 2) * (Ar / (x * x)) * Yr * scatteringValue * ta * ta * Tt * Tr;
+        var yr = x * x / (x + D) * (x + D);
+        var ta = Math.Exp(-3.912 * x / viewDistance);
+        var pr = P0 * (C * T / 2) * (Ar / (x * x)) * yr * scatteringValue * ta * ta * Tt * Tr;
         var nsr = ((Eta * Lambda) / (H * C)) * pr * T;
         return Math.Log10(nsr);
     }
