@@ -237,7 +237,7 @@
         <Grid.ColumnDefinitions>  <!-- 设置 Grid 的列定义 -->
             <ColumnDefinition Width="256"/>  
             <ColumnDefinition Width="2"/>
-            <ColumnDefinition Width="600"/>  
+            <ColumnDefinition Width="580"/>  
             <ColumnDefinition Width="*"/>
             <!--<ColumnDefinition Width="2"/>
             <ColumnDefinition Width="*"/>-->
@@ -260,8 +260,9 @@
         <!-- </Grid> -->
         <Grid Grid.Column="0" Background="{StaticResource Brush-PrimaryBackground}">
             <StackPanel Height="580" VerticalAlignment="Top">
+                <TextBlock HorizontalAlignment="Left" Margin="20,20,0,15" FontSize="20" FontWeight="Black">当前视图</TextBlock>
                 <!-- 边栏按钮 -->
-                <RadioButton Style="{StaticResource DocButton}" Content="统计图" />
+                <RadioButton Style="{StaticResource DocButton}" Content="统计图" IsChecked="True"/>
                 <RadioButton Style="{StaticResource DocButton}" Content="历史记录" Click="HistoryPage_Onclick"/>
             </StackPanel>
         </Grid>
