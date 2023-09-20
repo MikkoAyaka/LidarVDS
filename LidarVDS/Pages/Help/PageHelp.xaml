@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:LidarVDS.Pages.Help"
       xmlns:hc="https://handyorg.github.io/handycontrol"
+      xmlns:mdXaml="clr-namespace:MdXaml;assembly=MdXaml"
       mc:Ignorable="d"
       Title="PageHelp" Height="720" Width="1440">
     <Grid>
@@ -44,6 +45,14 @@
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Column="1" Background="{StaticResource Brush-SecondaryBackground}"/>
+        
+        <!--<mdXaml:MarkdownScrollViewer xml:space="preserve">
+		# sample title
+		* document1
+			* two
+			* three
+		* document2
+	</mdXaml:MarkdownScrollViewer>-->
     </Grid>
     <!-- <Grid> -->
     <!--     <TextBlock  FontSize="20" Margin="8,-5,-51,5">理论知识文档</TextBlock> -->
