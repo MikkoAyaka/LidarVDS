@@ -22,7 +22,7 @@
                         CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}"
                         Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}"
                         BorderBrush="{TemplateBinding BorderBrush}">
-                        <Border Name="Highlight" Background="Transparent" CornerRadius="18">
+                        <Border Name="Highlight" Background="Transparent" CornerRadius="5">
                             <StackPanel Orientation="Horizontal"
                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"

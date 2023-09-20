@@ -12,7 +12,6 @@ public partial class PageMain : Page
     {
         InitializeComponent();
         var announcementStr = String.Join("\n", PageMainService.GetInstance().GetAnnouncements());
-        Announcement.Content = announcementStr;
     }
     
 }
