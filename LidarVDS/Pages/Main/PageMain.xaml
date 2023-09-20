@@ -8,55 +8,38 @@
       mc:Ignorable="d"
       Title="PageMain" Height="720" Width="1440" Background="{StaticResource Brush-SecondaryBackground}">
       <Grid>
-        <!-- 创建一个 Grid 控件 -->
-        <Grid.RowDefinitions>  <!-- 设置 Grid 的行定义 -->
-                <RowDefinition Height="720"/>  <!-- 第一行高度为自动适应内容 -->
+        <Grid.RowDefinitions>
+                <RowDefinition Height="720"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>  <!-- 设置 Grid 的列定义 -->
-                <ColumnDefinition Width="480"/>  <!-- 第一列宽度为自动适应内容 -->
-                <ColumnDefinition Width="*"/>  <!-- 第二列宽度为自动适应内容 -->
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="480"/>
+                <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <!--<Border Background="Gold"></Border>-->
 
-        <Rectangle Grid.Row="0" Grid.Column="0" Width="400" Height="600" Fill="{StaticResource Brush-PrimaryBackground}" Margin="40,0,40,0" RadiusX="20" RadiusY="20">
+        <Rectangle Grid.Row="0" Grid.Column="0" Width="400" Height="600" Fill="{StaticResource Brush-PrimaryBackground}" Margin="40,0,40,0" RadiusX="5" RadiusY="5">
             <Rectangle.Effect>
-                <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.3" BlurRadius="10"/>
+                <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.2" BlurRadius="10"/>
             </Rectangle.Effect>
         </Rectangle>
-
         <Label Grid.Row="0" Grid.Column="0" Content="更新公告" Margin="-180,-460,0,0" FontFamily="Arial" 
                FontSize="20" Width="180" Height="50" Padding="40,0,0,0">
             <Label.Effect>
-                <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.5" BlurRadius="10"/>
+                <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.15" BlurRadius="10"/>
             </Label.Effect>
         </Label>
-        
-        <Label Grid.Row="0" Grid.Column="0" x:Name="Announcement" Content="" HorizontalAlignment="Center" VerticalAlignment="Center"
-               FontFamily="Arial" Width="Auto" Height="Auto" FontSize="20" BorderBrush="Transparent" BorderThickness="0">
-
-        </Label>
-        
         <Image Grid.Column="0" Grid.Row="0" Source="../../Resources/Images/公告.png" Width="36" Height="36" Margin="-290,-460,0,0">
             <Image.Effect>
                 <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.3" BlurRadius="10"/>
             </Image.Effect>
         </Image>
-        
-        <!--右侧-->
-        
-        <!-- <Grid Grid.Row="0" Grid.Column="1"> -->
-        <!--     <Border Width="820" Height="600" Margin="40,0,40,0" Background="{StaticResource Brush-PrimaryBackground}" CornerRadius="20"> -->
-        <!--         <Border.Effect> -->
-        <!--             <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.3" BlurRadius="10"/> -->
-        <!--         </Border.Effect> -->
-        <!--         ~1~ <MediaElement Source="../../Resources/abab.mp4" Width="800" Height="600" /> @1@ -->
-        <!--         ~1~ <components:ArgumentsTable Height="600" Width="800"/> @1@ -->
-        <!--     </Border> -->
-        <!-- </Grid> -->
-        <components:ArgumentsTable Grid.Row="0" Grid.Column="1" Editable="False"/>
-        <!--
-        <TextBox Grid.Row="0" Grid.Column="1" x:Name="TxtInput"/>  ~1~ 在第一行第二列添加一个 TextBox 控件，命名为 "TxtInput" @1@
-        <Button Grid.Row="0" Grid.Column="1" Content="Submit"/>  ~1~ 在第二行第二列添加一个 Button 控件，显示文本 "Submit" @1@
-        -->
-    </Grid>
+          <TextBlock Grid.Column="0" Grid.Row="0" Width="350" Height="350" TextWrapping="Wrap">
+              2023/09/20: 界面美化，完善 Markdown 文档渲染。<LineBreak/>
+              2023/09/16: 修正激光雷达能见度反演算法。<LineBreak/>
+              2023/09/13: 美化分析页面，创建历史记录页面，实现界面跳转。<LineBreak/>
+              2023/08/31: 完成参数列表组件的初步封装。<LineBreak/>
+              2023/08/30: 设置页面更新。<LineBreak/>
+              2023/08/26: 调整应用风格。<LineBreak/>
+              ...<LineBreak/>
+          </TextBlock>
+      </Grid>
 </Page>

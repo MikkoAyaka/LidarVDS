@@ -6,31 +6,8 @@
        xmlns:hc="https://handyorg.github.io/handycontrol"
 	   mc:Ignorable="d"
        Title="Lidar" Height="720" Width="1240">
-    <Grid>
+    <Grid Background="Azure">
         <!--设置项一-->
-        <StackPanel>
-            <Button Width="1240">设置项1</Button>
-            <Border Height="80"  VerticalAlignment="Top" ClipToBounds="True">
-                <hc:TransitioningContentControl TransitionMode="Top2Bottom" Visibility="{Binding IsChecked,ElementName=FastUseButton,Converter={StaticResource Boolean2VisibilityConverter}}">
-                    <Border  Background="Azure" VerticalAlignment="Top" Height="80" CornerRadius="0,0,10,10">
-                        <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="1240">
-                            
-                        </hc:SimpleStackPanel>
-                    </Border>
-                </hc:TransitioningContentControl>
-            </Border>
-            
-            <Button Width="1240">设置项2</Button>
-            <Border Height="80"  VerticalAlignment="Top" ClipToBounds="True">
-                <hc:TransitioningContentControl TransitionMode="Top2Bottom" Visibility="{Binding IsChecked,ElementName=FastUseButton,Converter={StaticResource Boolean2VisibilityConverter}}">
-                    <Border  Background="Azure" VerticalAlignment="Top" Height="80" CornerRadius="0,0,10,10">
-                        <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="1240">
-                            
-                        </hc:SimpleStackPanel>
-                    </Border>
-                </hc:TransitioningContentControl>
-            </Border>
-            
-        </StackPanel>
+        <TextBlock>敬请期待。。。</TextBlock>
     </Grid>
 </Page>
