@@ -3,19 +3,15 @@ using System.IO;
 using YamlDotNet.Serialization;
 using System.Collections.Generic;
 
-namespace LidarVDS.Pages.Settings.SettingPages.EnvironmentPage
+namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
 {
-    /// <summary>
-    /// Constant.xaml 的交互逻辑
-    /// </summary>
-
-    public partial class Environment
+    public partial class Parameter
     {
         private Dictionary<string, string> _yamlData;//定义字典缓存数据
         
-        private string _filePath = "LidarVDS/Pages/Settings/Data.yaml";//获取文件位置
+        private string _filePath = "D:/LidarVDS/LidarVDS/LidarVDS/Pages/Settings/Data.yaml";//获取文件位置
         
-        public Environment()//初始化页面
+        public Parameter()//初始化页面
         {
             InitializeComponent();
             _yamlData = new Dictionary<string, string>();//声明字典
@@ -42,8 +38,7 @@ namespace LidarVDS.Pages.Settings.SettingPages.EnvironmentPage
         //刷新按钮
         private void Refresh(object sender, RoutedEventArgs e)
         {
-            string filePath = "LidarVDS/Pages/Settings/Data.yaml";
-            string yamlContent = File.ReadAllText(filePath);
+            string yamlContent = File.ReadAllText(_filePath);
 
             var deserializer = new DeserializerBuilder().Build();
             var yamlObject = deserializer.Deserialize<Dictionary<string, object>>(yamlContent);

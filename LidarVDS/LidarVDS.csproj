@@ -12,6 +12,7 @@
       <PackageReference Include="HandyControl" Version="3.4.0" />
       <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
       <PackageReference Include="MdXaml" Version="1.21.0" />
+      <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls" Version="7.1.3" />
       <PackageReference Include="OxyPlot.Core" Version="2.1.2" />
       <PackageReference Include="OxyPlot.Wpf" Version="2.1.2" />
       <PackageReference Include="SharpVectors" Version="1.8.1" />
@@ -23,6 +24,7 @@
     <ItemGroup>
       <Compile Remove="resources\svgs\**" />
       <Compile Remove="Pages\Settings\SettingPages\OtherPage\**" />
+      <Compile Remove="Components\SettingBox.xaml.cs" />
     </ItemGroup>
 
     <ItemGroup>
@@ -38,6 +40,7 @@
     <ItemGroup>
       <Page Remove="resources\svgs\**" />
       <Page Remove="Pages\Settings\SettingPages\OtherPage\**" />
+      <Page Remove="Components\SettingBox.xaml" />
     </ItemGroup>
 
     <ItemGroup>

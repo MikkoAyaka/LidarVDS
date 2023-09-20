@@ -10,11 +10,11 @@
 
 	<Grid Background="#F4F8FE">  <!--创建一个Grid-->
 		<Grid.RowDefinitions>  <!-- 设置 Grid 的行定义 -->
-			<RowDefinition Height="720"/>  <!-- 第一行高度为自动适应内容 -->
+			<RowDefinition Height="*"/>  <!-- 第一行高度为自动适应内容 -->
 		</Grid.RowDefinitions>
 		
 		<Grid.ColumnDefinitions>  <!-- 设置 Grid 的列定义 -->
-			<ColumnDefinition Width="256"/>  <!-- 第一列宽度为300固定值 -->
+			<ColumnDefinition Width="256"/>  <!-- 第一列宽度为256固定值 -->
 			<ColumnDefinition Width="*"/>  <!-- 第二列宽度为自动适应内容 -->
 		</Grid.ColumnDefinitions>
 
@@ -24,10 +24,9 @@
 		        <StackPanel Height="580" VerticalAlignment="Top">
 			        <!-- 边栏按钮 -->
 			        <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">参数设置</TextBlock>
-				        <RadioButton Style="{StaticResource DocButton}" Content="环境参数" Click="Environment_OnClick"/>
-				        <RadioButton Style="{StaticResource DocButton}" Content="激光器参数" Click="Lidar_OnClick"/>
-						<RadioButton Style="{StaticResource DocButton}" Content="接收器参数"/>
-						<RadioButton Style="{StaticResource DocButton}" Content="信号处理参数"/>
+			        <RadioButton Style="{StaticResource DocButton}" Content="参数设置" Click="Environment_OnClick"/>
+			        <RadioButton Style="{StaticResource DocButton}" Content="其他设置" Click="Lidar_OnClick"/>
+			        
 		        </StackPanel>
 	    </Grid>
         
@@ -37,8 +36,7 @@
 		        <Border CornerRadius="0,0,10,10">
                     <Frame Name="SettingFrame" BorderThickness="0" NavigationUIVisibility="Hidden"/>
                 </Border> 
-				
-            </StackPanel>
+	        </StackPanel>
 			
         </Grid>
         
