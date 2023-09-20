@@ -25,4 +25,24 @@ public partial class PageHelp : Page
     {
         Viewer.Document = new Markdown().Transform(File.ReadAllText(FileUtil.documentsPath+"\\大气后向散射.md"));
     }
+    
+    private void Btn3_Click(object sender, RoutedEventArgs e)
+    {
+        Viewer.Document = new Markdown().Transform(File.ReadAllText(FileUtil.documentsPath+"\\微脉冲激光雷达.md"));
+    }
+    
+    private void Btn4_Click(object sender, RoutedEventArgs e)
+    {
+        Viewer.Document = new Markdown().Transform(File.ReadAllText(FileUtil.documentsPath+"\\米散射.md"));
+    }
+    
+    private void Btn5_Click(object sender, RoutedEventArgs e)
+    {
+        Viewer.Document = new Markdown().Transform(File.ReadAllText(FileUtil.documentsPath+"\\瑞利散射.md"));
+    }
+    
+    private void Btn6_Click(object sender, RoutedEventArgs e)
+    {
+        Viewer.Document = new Markdown().Transform(File.ReadAllText(FileUtil.documentsPath+"\\能见度反演算法.md"));
+    }
 }

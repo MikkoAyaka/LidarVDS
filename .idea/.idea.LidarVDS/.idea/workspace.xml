@@ -8,17 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d9c1877-d4e9-4ac8-904d-b2f358580fca" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/LidarVDS/Utils/FileUtil.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LidarVDS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LidarVDS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LidarVDS/LidarVDS.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LidarVDS/LidarVDS.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LidarVDS/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LidarVDS/MainWindow.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LidarVDS/Pages/Help/PageHelp.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/LidarVDS/Pages/Help/PageHelp.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LidarVDS/Pages/Help/PageHelp.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LidarVDS/Pages/Help/PageHelp.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LidarVDS/Utils/Computer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LidarVDS/Utils/Computer.cs" afterDir="false" />
     </list>
-    <list id="7f515987-4887-44bd-acf2-94a32016a5b3" name="冗余文件" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LidarVDS/.idea/shelf/_2023_8_31_17_25____.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LidarVDS/.idea/shelf/_2023_8_31_17_25____.xml" afterDir="false" />
-    </list>
+    <list id="7f515987-4887-44bd-acf2-94a32016a5b3" name="冗余文件" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,15 +22,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35ef4993def34f7bbd30051a6761b40457c00/89/262b29d4/EnumerableDataSource`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1681edfb7d22e92762a47f7ad24b9c3e49499c53750a9dbeedb20bd20615b/Double.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e723d9ea92efd1035ca44bfd7f15b1631c3c3fe0d82d8bca7c516c4c14e57/UserControl.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/57eca16b67c2e926da874f8fe62b3d7c44b93ec44967afcd6ffff07ece86/Point.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5dcd2dce9a41e756ce6124c748786f8d8084ebeac486d28e3cea6a8ae97d55/RadioButton.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b56a992da534ff2f7a8e226182a4862f1dc19c49fb9305485051deb348cc23/StreamReader.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b7a918735742504420574457803a92b481f173bfcc2de9fe25d82736cc4c797/Slider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d46f122b26cd58f29c516e7276a9627b5e8c401791ed1b79e15925cb2f5d954/Debug.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f324c62785677b53e916aa9084ae54a42014c79d132908ae191cf8e3af4cfb/File.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/LidarVDS/LidarVDS/MainWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/LidarVDS/LidarVDS/MainWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/LidarVDS/LidarVDS/MainWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/LidarVDS/LidarVDS/MainWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/LidarVDS/LidarVDS/Utils/FileUtil.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/LidarVDS/LidarVDS/Utils/FileUtil.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -50,28 +41,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "dev",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "http.proxy",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\34012\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\34012\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\34012\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\吴骏\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\吴骏\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\吴骏\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="LidarVDS" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -123,6 +114,7 @@
       <workItem from="1695179285069" duration="65000" />
       <workItem from="1695179361137" duration="189000" />
       <workItem from="1695180327703" duration="3251000" />
+      <workItem from="1695220414008" duration="4927000" />
     </task>
     <task id="LOCAL-00001" summary="主页页面基本完成，但是视频播放器没有暂停快进功能">
       <option name="closed" value="true" />

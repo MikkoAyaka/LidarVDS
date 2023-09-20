@@ -22,10 +22,10 @@
                 <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">理论知识文档</TextBlock>
                 <RadioButton Style="{StaticResource DocButton}" Content="斜程能见度" Click="Btn1_Click"/>
                 <RadioButton Style="{StaticResource DocButton}" Content="大气后向散射" Click="Btn2_Click"/>
-                <RadioButton Style="{StaticResource DocButton}" Content="微脉冲激光雷达"/>
-                <RadioButton Style="{StaticResource DocButton}" Content="米散射"/>
-                <RadioButton Style="{StaticResource DocButton}" Content="瑞利散射"/>
-                <RadioButton Style="{StaticResource DocButton}" Content="能见度反演算法"/>
+                <RadioButton Style="{StaticResource DocButton}" Content="微脉冲激光雷达" Click="Btn3_Click"/>
+                <RadioButton Style="{StaticResource DocButton}" Content="米散射" Click="Btn4_Click"/>
+                <RadioButton Style="{StaticResource DocButton}" Content="瑞利散射" Click="Btn5_Click"/>
+                <RadioButton Style="{StaticResource DocButton}" Content="能见度反演算法" Click="Btn6_Click"/>
                 <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">软件操作文档</TextBlock>
                 <RadioButton Style="{StaticResource DocButton}" Content="创建仿真配置"/>
                 <RadioButton Style="{StaticResource DocButton}" Content="运行仿真模拟"/>
