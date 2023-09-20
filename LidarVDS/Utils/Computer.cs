@@ -53,7 +53,7 @@ public class Computer
      */
     public static double MainAlg(double x,double viewDistance,double scatteringValue)
     {
-        var yr = x * x / (x + D) * (x + D);
+     var yr = x;
         var ta = Math.Exp(-3.912 * x / viewDistance);
         var pr = P0 * (C * T / 2) * (Ar / (x * x)) * yr * scatteringValue * ta * ta * Tt * Tr;
         var nsr = ((Eta * Lambda) / (H * C)) * pr * T;
