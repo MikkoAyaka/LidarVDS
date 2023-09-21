@@ -39,19 +39,19 @@
     </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="367"/>
+            <ColumnDefinition Width="256"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="240"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Background="White">
             <Grid.RowDefinitions>
-                <RowDefinition Height="100"/>
+                <RowDefinition Height="70"/>
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Border Grid.Row="0" BorderThickness="0,0,0,3" BorderBrush="#D8D8D8">
+            <Border Grid.Row="0" BorderThickness="0,0,0,2" BorderBrush="#E9E9E9">
                 <Grid>
-                    <Label Content="当前所在：天津市" Height="45" FontSize="25" FontFamily="微软雅黑" Background="Transparent" BorderThickness="0"/>
+                    <Label Content="当前所在：天津市" Height="45" FontSize="18" FontFamily="微软雅黑" Background="Transparent" BorderThickness="0"/>
                 </Grid>
             </Border>
             <Grid  Grid.Row="1">
@@ -59,9 +59,9 @@
                     <RowDefinition Height="45"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Content="环境参数" Height="45" FontSize="25" FontFamily="微软雅黑" Background="Transparent" BorderThickness="0"/>
+                <Label Grid.Row="0" Content="环境参数" Height="45" FontSize="20" FontFamily="微软雅黑" Background="Transparent" BorderThickness="0"/>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Label Content="自动获取" Height="35" FontSize="18" VerticalAlignment="Center" FontFamily="微软雅黑" Background="Transparent" BorderThickness="0"/>
+                    <Label Content="自动获取" Height="35" FontSize="15" VerticalAlignment="Center" FontFamily="微软雅黑" Background="Transparent" BorderThickness="0"/>
                     <ToggleButton Style="{StaticResource ToggleButtonStyle}" IsChecked="{Binding ToggleBtnIsCheck}"/>
                     <TextBlock Text="{Binding ToggleStatus}"/>
                 </StackPanel>
@@ -74,41 +74,42 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <Label VerticalAlignment="Top" Content="PM2.5" BorderThickness="0" FontSize="16"/>
-                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_PM25}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_PM25" Maximum="100" Minimum="0" Value="20" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
-                     VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0" ValueChanged="slider_PM25_ValueChanged"/>
+                    <Label VerticalAlignment="Top" BorderThickness="0" Content="PM2.5" FontSize="12"/>
+                    <Slider x:Name="slider_PM25" Maximum="100" Minimum="0" Value="20" Height="20" Margin="0,0,10,0" HorizontalAlignment="Center" Width="200"
+                            VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0" ValueChanged="slider_PM25_ValueChanged"/>
+                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_PM25}" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <Label VerticalAlignment="Top" Content="PM10" BorderThickness="0" FontSize="16"/>
-                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_PM10}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_PM10" Maximum="100" Minimum="0" Value="28" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
+                    <Label VerticalAlignment="Top" Content="PM10" BorderThickness="0" FontSize="12"/>
+                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_PM10}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12"/>
+                    <Slider x:Name="slider_PM10" Maximum="100" Minimum="0" Value="28" Height="20" Margin="0,0,10,0" HorizontalAlignment="Center" Width="200"
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                 </Grid>
                 <Grid Grid.Row="2">
-                    <Label VerticalAlignment="Top" Content="AQI" BorderThickness="0" FontSize="16"/>
-                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_AQI}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_AQI" Maximum="100" Minimum="0" Value="57" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
+                    <Label VerticalAlignment="Top" Content="AQI" BorderThickness="0" FontSize="12"/>
+                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_AQI}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12"/>
+                    <Slider x:Name="slider_AQI" Maximum="100" Minimum="0" Value="57" Height="20" Margin="0,0,10,0" HorizontalAlignment="Center" Width="200"
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                 </Grid>
                 <Grid Grid.Row="3">
-                    <Label VerticalAlignment="Top" Content="相对风速" BorderThickness="0" FontSize="16"/>
-                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_XDFS}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_XDFS" Maximum="100" Minimum="0" Value="5" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
+                    <Label VerticalAlignment="Top" Content="相对风速" BorderThickness="0" FontSize="12"/>
+                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_XDFS}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12"/>
+                    <Slider x:Name="slider_XDFS" Maximum="100" Minimum="0" Value="5" Height="20" Margin="0,0,10,0" HorizontalAlignment="Center" Width="200"
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                 </Grid>
                 <Grid Grid.Row="4">
-                    <Label VerticalAlignment="Top" Content="湿度" BorderThickness="0" FontSize="16"/>
-                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_SD}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_SD" Maximum="100" Minimum="0" Value="31" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
+                    <Label VerticalAlignment="Top" Content="湿度" BorderThickness="0" FontSize="12"/>
+                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_SD}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12"/>
+                    <Slider x:Name="slider_SD" Maximum="100" Minimum="0" Value="31" Height="20" Margin="0,0,10,0" HorizontalAlignment="Center" Width="200"
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                 </Grid>
                 <Grid Grid.Row="5">
-                    <Label VerticalAlignment="Top" Content="气压" BorderThickness="0" FontSize="16"/>
-                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_QY}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="28"/>
-                    <Slider x:Name="slider_QY" Maximum="1000" Minimum="0" Value="997" Height="40" Margin="0,0,10,0" HorizontalAlignment="Right" Width="300"
+                    <Label VerticalAlignment="Top" Content="气压" BorderThickness="0" FontSize="12"/>
+                    <Label Background="Transparent" BorderThickness="0" Content="{Binding Value, ElementName=slider_QY}" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12"/>
+                    <Slider x:Name="slider_QY" Maximum="1000" Minimum="0" Value="997" Height="20" Margin="0,0,10,0" HorizontalAlignment="Center" Width="200"
      VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
                 </Grid>
             </Grid>
@@ -120,16 +121,16 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Label Content="推演算法" HorizontalAlignment="Left" Margin="30" Height="45" FontSize="25" FontFamily="微软雅黑" Background="Transparent" BorderThickness="0"/>
-                <ComboBox Width="250" Background="#EDEDED" HorizontalAlignment="Left" Margin="160,0,0,0" Height="35"/>
+                <ComboBox Name="ComboBox" Width="250" Background="#EDEDED" HorizontalAlignment="Left" Margin="160,0,0,0" Height="35" FontSize="16"/>
             </Grid>
-            <Grid Grid.Row="1">
-                <d3:ChartPlotter Name="plotter">
+            <Grid Grid.Row="1" Margin="40,0,0,40">
+                <d3:ChartPlotter Name="plotter" Background="Transparent">
                     <!--x轴标题-->
                     <d3:HorizontalAxisTitle>r(km)</d3:HorizontalAxisTitle>
                     <!--y轴标题-->
                     <d3:VerticalAxisTitle>Phe</d3:VerticalAxisTitle>
                     <!--仪表底部标题-->
-                    <d3:Footer TextBlock.FontSize="20">回波信号模拟数据</d3:Footer>
+                    <d3:Footer TextBlock.FontSize="20" Margin="50,20,0,0">回波信号模拟数据</d3:Footer>
                     <d3:LineGraph Name="line_black" Stroke="Black" StrokeThickness="4"></d3:LineGraph>
                     <d3:LineGraph Name="line_blue" Stroke="Blue" StrokeThickness="4"></d3:LineGraph>
                     <d3:LineGraph Name="line_red" Stroke="Red" StrokeThickness="4"></d3:LineGraph>
@@ -147,8 +148,10 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" x:Name="btn_Import" Content="导入" HorizontalAlignment="Center" VerticalAlignment="Center" Width="136" Height="56" Foreground="White" FontSize="28" FontWeight="Bold" RenderTransformOrigin="0.49,0.725">
+            <Button Grid.Row="1" x:Name="btn_Import" Content="导入" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="40" Foreground="White" FontSize="28" FontWeight="Bold" RenderTransformOrigin="0.49,0.725">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="10" x:Name="PART_Background">
@@ -173,7 +176,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Grid.Row="1" x:Name="btn_Output" Content="导出" HorizontalAlignment="Center" VerticalAlignment="Center" Width="136" Height="56" Foreground="White" FontSize="28" FontWeight="Bold" RenderTransformOrigin="0.49,0.725">
+            <Button Grid.Row="2" x:Name="btn_Output" Content="导出" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="40" Foreground="White" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.49,0.725">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="10" x:Name="PART_Background">
@@ -198,7 +201,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Grid.Row="2" x:Name="btn_Look" Content="总览" HorizontalAlignment="Center" VerticalAlignment="Center" Width="136" Height="56" Foreground="White" FontSize="28" FontWeight="Bold" RenderTransformOrigin="0.49,0.725">
+            <Button Grid.Row="3" x:Name="btn_Look" Content="总览" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="40" Foreground="White" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.49,0.725">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="10" x:Name="PART_Background">
@@ -223,7 +226,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Grid.Row="8" x:Name="btn_Refresh" Content="刷新" HorizontalAlignment="Center" VerticalAlignment="Center" Width="136" Height="56" Foreground="White" FontSize="28" FontWeight="Bold" RenderTransformOrigin="0.49,0.725">
+            <Button Grid.Row="4" x:Name="btn_Refresh" Content="刷新" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="40" Foreground="White" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.49,0.725">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="10" x:Name="PART_Background">

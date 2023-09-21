@@ -12,8 +12,13 @@ public partial class PageSimulator : Page
     public PageSimulator()
     {
         InitializeComponent();
-
+        
         Loaded += new RoutedEventHandler(MainWindow_Loaded);
+
+        ComboBox.Items.Add("斜率法");
+        ComboBox.Items.Add("改进的斜率法");
+        ComboBox.Items.Add("改进的 Fernald 算法");
+        ComboBox.SelectedIndex = 0;
     }
 
     private void slider_PM25_ValueChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<double> e)
