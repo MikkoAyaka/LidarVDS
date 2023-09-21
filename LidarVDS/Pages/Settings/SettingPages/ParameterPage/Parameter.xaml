@@ -10,66 +10,89 @@
         <!--设置项一-->
         <StackPanel>
             
-            <Border VerticalAlignment="Top" ClipToBounds="True" Background="#F4F8FE">
-                <Border Background="White" CornerRadius="10" Margin="10" BorderThickness="1">
-                    <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                        <TextBlock
-                            HorizontalAlignment="Left" Margin="20,10,0,0"
-                            FontFamily="黑体" FontSize="32" FontWeight="Bold">
-                            设置项一：
-                        </TextBlock>
-                        <TextBox x:Name="WindSpeed" HorizontalAlignment="Left" Margin="20,10,0,20" Width="750" Height="40"/>
-                        <Button Width="80" Height="40"  Margin="20,10,0,20" Click="Save">保存</Button>
-                        <Button Width="80" Height="40" Margin="20,10,0,20" Click="Refresh">刷新</Button>
-                    </hc:SimpleStackPanel>
-                </Border>
-                
+            <Border Background="White" CornerRadius="10" Margin="10" BorderThickness="1">
+                <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="60">
+                    <TextBlock
+                        HorizontalAlignment="Left" Margin="20,0,0,0"
+                        FontFamily="黑体" FontSize="20" FontWeight="Bold" VerticalAlignment="Center">
+                        占位文本
+                    </TextBlock>
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" Width="850"/>
+                    <Button Width="60" Height="30" VerticalAlignment="Center" Margin="20,0,0,0" Click="Save">保存</Button>
+                    <Button Width="60" Height="30" Margin="20,0,0,0" Click="Refresh">刷新</Button>
+                </hc:SimpleStackPanel>
             </Border>
-            
-            <Border VerticalAlignment="Top" ClipToBounds="True" Background="#F4F8FE">
-                <Border Background="White" CornerRadius="10" Margin="10" BorderThickness="1">
-                    <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                        <TextBlock
-                            HorizontalAlignment="Left" Margin="20,10,0,0"
-                            FontFamily="黑体" FontSize="32" FontWeight="Bold">
-                            设置项二：
-                        </TextBlock>
-                        <TextBox x:Name="Humidity" HorizontalAlignment="Left" Margin="20,10,0,20" Width="750" Height="40"/>
-                        <Button Width="80" Height="40"  Margin="20,10,0,20" Click="Save">保存</Button>
-                        <Button Width="80" Height="40" Margin="20,10,0,20" Click="Refresh">刷新</Button>
-                    </hc:SimpleStackPanel>
-                </Border>
-                
+            <Border Background="White" CornerRadius="10" Margin="10" BorderThickness="1">
+                <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="60">
+                    <TextBlock
+                        HorizontalAlignment="Left" Margin="20,0,0,0"
+                        FontFamily="黑体" FontSize="20" FontWeight="Bold" VerticalAlignment="Center">
+                        占位文本
+                    </TextBlock>
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" Width="850"/>
+                    <Button Width="60" Height="30" VerticalAlignment="Center" Margin="20,0,0,0" Click="Save">保存</Button>
+                    <Button Width="60" Height="30" Margin="20,0,0,0" Click="Refresh">刷新</Button>
+                </hc:SimpleStackPanel>
             </Border>
-            
-            <Border VerticalAlignment="Top" ClipToBounds="True" Background="#F4F8FE">
-                <Border Background="White" CornerRadius="10" Margin="10"  BorderThickness="1">
-                    <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                        <TextBlock
-                            HorizontalAlignment="Left" Margin="20,10,0,0"
-                            FontFamily="黑体" FontSize="32" FontWeight="Bold">
-                            设置项三：
-                        </TextBlock>
-                        <TextBox x:Name="Pressure" HorizontalAlignment="Left" Margin="20,10,0,20" Width="750" Height="40"/>
-                        <Button Width="80" Height="40" Margin="20,10,0,20" Click="Save">保存</Button>
-                        <Button Width="80" Height="40" Margin="20,10,0,20" Click="Refresh">刷新</Button>
-                    </hc:SimpleStackPanel>
-                </Border>
+            <Border Background="White" CornerRadius="10" Margin="10" BorderThickness="1">
+                <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="60">
+                    <TextBlock
+                        HorizontalAlignment="Left" Margin="20,0,0,0"
+                        FontFamily="黑体" FontSize="20" FontWeight="Bold" VerticalAlignment="Center">
+                        占位文本
+                    </TextBlock>
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" Width="850"/>
+                    <Button Width="60" Height="30" VerticalAlignment="Center" Margin="20,0,0,0" Click="Save">保存</Button>
+                    <Button Width="60" Height="30" Margin="20,0,0,0" Click="Refresh">刷新</Button>
+                </hc:SimpleStackPanel>
             </Border>
-            
-            <Border VerticalAlignment="Top" ClipToBounds="True" Background="#F4F8FE">
-                <Border Background="White" CornerRadius="10" Margin="10"  BorderThickness="1">
-                    <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                        <TextBlock
-                            HorizontalAlignment="Left" Margin="20,10,0,0"
-                            FontFamily="黑体" FontSize="32" FontWeight="Bold">
-                            设置项四：
-                        </TextBlock>
-                        <TextBox x:Name="a4" HorizontalAlignment="Left" Margin="20,10,0,20" Width="750" Height="40"/>
-                        <Button Width="80" Height="40" Margin="20,10,0,20" >保存</Button>
-                        <Button Width="80" Height="40" Margin="20,10,0,20" >刷新</Button>
-                    </hc:SimpleStackPanel>
-                </Border>
+            <Border Background="White" CornerRadius="10" Margin="10" BorderThickness="1">
+                <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="60">
+                    <TextBlock
+                        HorizontalAlignment="Left" Margin="20,0,0,0"
+                        FontFamily="黑体" FontSize="20" FontWeight="Bold" VerticalAlignment="Center">
+                        占位文本
+                    </TextBlock>
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" Width="850"/>
+                    <Button Width="60" Height="30" VerticalAlignment="Center" Margin="20,0,0,0" Click="Save">保存</Button>
+                    <Button Width="60" Height="30" Margin="20,0,0,0" Click="Refresh">刷新</Button>
+                </hc:SimpleStackPanel>
+            </Border>
+            <Border Background="White" CornerRadius="10" Margin="10" BorderThickness="1">
+                <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="60">
+                    <TextBlock
+                        HorizontalAlignment="Left" Margin="20,0,0,0"
+                        FontFamily="黑体" FontSize="20" FontWeight="Bold" VerticalAlignment="Center">
+                        占位文本
+                    </TextBlock>
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" Width="850"/>
+                    <Button Width="60" Height="30" VerticalAlignment="Center" Margin="20,0,0,0" Click="Save">保存</Button>
+                    <Button Width="60" Height="30" Margin="20,0,0,0" Click="Refresh">刷新</Button>
+                </hc:SimpleStackPanel>
+            </Border>
+            <Border Background="White" CornerRadius="10" Margin="10" BorderThickness="1">
+                <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="60">
+                    <TextBlock
+                        HorizontalAlignment="Left" Margin="20,0,0,0"
+                        FontFamily="黑体" FontSize="20" FontWeight="Bold" VerticalAlignment="Center">
+                        占位文本
+                    </TextBlock>
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" Width="850"/>
+                    <Button Width="60" Height="30" VerticalAlignment="Center" Margin="20,0,0,0" Click="Save">保存</Button>
+                    <Button Width="60" Height="30" Margin="20,0,0,0" Click="Refresh">刷新</Button>
+                </hc:SimpleStackPanel>
+            </Border>
+            <Border Background="White" CornerRadius="10" Margin="10" BorderThickness="1">
+                <hc:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="60">
+                    <TextBlock
+                        HorizontalAlignment="Left" Margin="20,0,0,0"
+                        FontFamily="黑体" FontSize="20" FontWeight="Bold" VerticalAlignment="Center">
+                        占位文本
+                    </TextBlock>
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" Width="850"/>
+                    <Button Width="60" Height="30" VerticalAlignment="Center" Margin="20,0,0,0" Click="Save">保存</Button>
+                    <Button Width="60" Height="30" Margin="20,0,0,0" Click="Refresh">刷新</Button>
+                </hc:SimpleStackPanel>
             </Border>
         </StackPanel>
     </Grid>
