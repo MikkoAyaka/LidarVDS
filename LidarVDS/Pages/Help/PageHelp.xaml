@@ -43,15 +43,15 @@
                         </Image.Resources>
                     </Image>
                     <TextBlock Margin="10,0,0,0" FontWeight="Black" FontSize="20" VerticalAlignment="Center">
-                        <Hyperlink NavigateUri="https://www.baidu.com/?tn=15007414_12_dg" RequestNavigate="Hyperlink_RequestNavigate">
+                        <Hyperlink Foreground="CornflowerBlue" NavigateUri="https://www.baidu.com/?tn=15007414_12_dg" RequestNavigate="Hyperlink_RequestNavigate">
                             在线文档
                         </Hyperlink>
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="40,0,0,10">
-                    <Image Source="../../Resources/Images/叹号.png" Width="36" Height="36" RenderOptions.BitmapScalingMode="HighQuality"/>
-                    <TextBlock Margin="10,0,0,0" FontWeight="Black" FontSize="20" VerticalAlignment="Center" >
-                        关于
+                    <Image Source="../../Resources/Images/叹号.png" Width="36" Height="36" RenderOptions.BitmapScalingMode="HighQuality" Cursor="Hand" MouseLeftButtonDown="Iaboutclick"/>
+                    <TextBlock Margin="10,0,0,0" FontWeight="Black" FontSize="20" VerticalAlignment="Center" MouseLeftButtonDown="aboutclick" Foreground="CornflowerBlue" TextDecorations="Underline" Cursor="Hand">
+                            关于
                     </TextBlock>
                 </StackPanel>
             </StackPanel>

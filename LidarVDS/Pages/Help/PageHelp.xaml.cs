@@ -69,4 +69,38 @@ public partial class PageHelp : Page
             Arguments = url
         });
     }
+    
+    private void aboutclick(object sender, MouseButtonEventArgs e)
+    {
+        string textToShow = "版权信息";
+
+        Window textWindow = new Window
+        {
+            Title = "版权信息",
+            Width = 400,
+            Height = 300,
+            Content = new TextBlock
+            {
+                Text = textToShow,
+                TextWrapping = TextWrapping.Wrap,
+                Margin = new Thickness(10)
+            }
+        };
+
+        textWindow.Show();
+    }
+    
+    private void Iaboutclick(object sender, MouseButtonEventArgs e)
+    {
+        Window window = new Window();
+        window.Width = 400;
+        window.Height = 300;
+        window.Title = "版权信息";
+        TextBlock textBlock = new TextBlock();
+        textBlock.Text = "版权信息";
+        textBlock.Margin = new Thickness(10);
+        textBlock.FontSize = 16;
+        window.Content = textBlock;
+        window.ShowDialog();
+    }
 }
