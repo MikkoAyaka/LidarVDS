@@ -46,6 +46,7 @@ public class Computer
      * 普朗克常数
      */
     private static double H = 6.62607015 * Math.Pow(10, -34);
+
     /** 
      * 核心能见度反演算法
      * 输入：x 能见度 粒子散射系数
@@ -53,7 +54,7 @@ public class Computer
      */
     public static double MainAlg(double x,double viewDistance,double scatteringValue)
     {
-     var yr = x;
+     var yr = 1;
         var ta = Math.Exp(-3.912 * x / viewDistance);
         var pr = P0 * (C * T / 2) * (Ar / (x * x)) * yr * scatteringValue * ta * ta * Tt * Tr;
         var nsr = ((Eta * Lambda) / (H * C)) * pr * T;

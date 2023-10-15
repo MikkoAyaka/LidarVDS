@@ -45,7 +45,7 @@
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Column="1" Background="{StaticResource Brush-SecondaryBackground}">
-            <md:MarkdownScrollViewer Name="Viewer" Margin="50" xml:space="preserve" MarkdownStyleName="GithubLike"/>
+            <md:MarkdownScrollViewer Name="Viewer" Margin="50" xml:space="preserve" MarkdownStyleName="GithubLike" Height="600"/>
         </StackPanel>
     </Grid>
 </Page>
