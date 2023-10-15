@@ -1,8 +1,11 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using System.Windows.Input;
+using System.Windows.Navigation;
 using LidarVDS.Utils;
 using MdXaml;
 
@@ -44,5 +47,26 @@ public partial class PageHelp : Page
     private void Btn6_Click(object sender, RoutedEventArgs e)
     {
         Viewer.Document = new Markdown().Transform(File.ReadAllText(FileUtil.documentsPath+"\\能见度反演算法.md"));
+    }
+    
+    private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+    {
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = "D:\\下载\\SLBrowser\\SLBrowser.exe",
+            Arguments = e.Uri.AbsoluteUri
+        });
+
+        e.Handled = true;
+    }
+    
+    private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        string url = "https://www.baidu.com/?tn=15007414_12_dg";
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = "D:\\下载\\SLBrowser\\SLBrowser.exe",
+            Arguments = url
+        });
     }
 }
