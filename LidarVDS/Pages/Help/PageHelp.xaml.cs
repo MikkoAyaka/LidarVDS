@@ -65,8 +65,8 @@ public partial class PageHelp : Page
         string url = "https://www.baidu.com/?tn=15007414_12_dg";
         Process.Start(new ProcessStartInfo
         {
-            FileName = "D:\\下载\\SLBrowser\\SLBrowser.exe",
-            Arguments = url
+            FileName = url,
+            UseShellExecute = true
         });
     }
     
