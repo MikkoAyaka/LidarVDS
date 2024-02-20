@@ -126,9 +126,9 @@
             <Grid Grid.Row="1" Margin="40,0,0,40">
                 <d3:ChartPlotter Name="plotter" Background="Transparent">
                     <!--x轴标题-->
-                    <d3:HorizontalAxisTitle>r(km)</d3:HorizontalAxisTitle>
+                    <d3:HorizontalAxisTitle>r(m)</d3:HorizontalAxisTitle>
                     <!--y轴标题-->
-                    <d3:VerticalAxisTitle>Phe</d3:VerticalAxisTitle>
+                    <d3:VerticalAxisTitle>PhE</d3:VerticalAxisTitle>
                     <!--仪表底部标题-->
                     <d3:Footer TextBlock.FontSize="20" Margin="50,20,0,0">回波信号模拟数据</d3:Footer>
                     <d3:LineGraph Name="line_black" Stroke="Black" StrokeThickness="4"></d3:LineGraph>

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using LidarVDS.Utils;
@@ -42,13 +43,12 @@ public partial class PageSimulator : Page
      */
     private IPointDataSource CreateDataSource(int viewDistance,double scatteringValue)
     {
-        const int maxLen = 1000;
+        const int maxLen = 5000;
         Point[] pts = new Point[maxLen];
+        Dictionary<Double,Double> dataMap = Computer.MainAlg( viewDistance, scatteringValue,maxLen);
         for (int i = 1; i < maxLen; i++)
         {
-            double x = i;
-            double y = Computer.MainAlg(i, viewDistance, scatteringValue);
-            pts[i] = new Point(x, y);
+            pts[i] = new Point(i, dataMap[i]);
         }
         var ds = new EnumerableDataSource<Point>(pts);
         ds.SetXYMapping(pt => pt);
