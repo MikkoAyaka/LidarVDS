@@ -50,6 +50,42 @@
             2023/04/16: 完成 Settings 页面模板。<LineBreak />
             ...<LineBreak />
         </TextBlock>
-        <Image Grid.Column="1" Grid.Row="0" Source="../../Resources/Images/Background.png" Margin="50"></Image>
+        <!--<MediaElement Grid.Column="1" Grid.Row="0" Source="/Resources/abab.mp4" Margin="50" Width="400" Height="300" />-->
+        <!--<Image Grid.Column="1" Grid.Row="0" Source="../../Resources/Images/Background.png" Margin="50"></Image>-->
+
+
+        <Rectangle Grid.Row="0" Grid.Column="1" Width="900" Height="200"
+                   Fill="{StaticResource Brush-PrimaryBackground}" Margin="0,0,40,390" RadiusX="5" RadiusY="5">
+            <Rectangle.Effect>
+                <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.2" BlurRadius="10" />
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle Grid.Row="0" Grid.Column="1" Width="900" Height="350"
+                   Fill="{StaticResource Brush-PrimaryBackground}" Margin="0,0,40,-250" RadiusX="5" RadiusY="5">
+            <Rectangle.Effect>
+                <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.2" BlurRadius="10" />
+            </Rectangle.Effect>
+        </Rectangle>
+        <Button Grid.Column="1" Grid.Row="0" Width="890" Height="200" Margin="0,-145,40,250" Click="Image_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="../../Resources/Images/Banner.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Image Grid.Column="1" Grid.Row="0" Source="../../Resources/Images/Background.png" Width="500" Height="280" Margin="-370,0,40,-250" ></Image>
+        <TextBlock Grid.Column="1" Grid.Row="0" Text="软件优点特色" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="500,350,0,0" />
+        <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="350" TextWrapping="Wrap" FontSize="15" Margin="500,380,0,0">
+            项目所开发的仿真软件：<LineBreak />
+            能够模拟产生不同能见度天气<LineBreak />
+            不同大气传输环境<LineBreak />
+            不同激光雷达硬件参数下的回波信号<LineBreak />
+            在此基础上<LineBreak />
+            可测试和验证不同能见度反演算法的精度和效率<LineBreak />
+            以获取最优算法<LineBreak />
+            项目成果对理解激光雷达大气探测原理<LineBreak />
+            开展能见度反演算法研究具有科学价值。<LineBreak />
+            ...<LineBreak />
+        </TextBlock>
     </Grid>
 </Page>

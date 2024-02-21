@@ -95,6 +95,8 @@
       <Resource Include="Resources\Images\环境参数.png" />
       <None Remove="Resources\Images\Background.png" />
       <Resource Include="Resources\Images\Background.png" />
+      <None Remove="Resources\Images\Banner.png" />
+      <Resource Include="Resources\Images\Banner.png" />
     </ItemGroup>
 
     <ItemGroup>
