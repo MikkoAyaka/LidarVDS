@@ -23,9 +23,9 @@
         <Grid Grid.Column="0" Background="{StaticResource Brush-PrimaryBackground}">
 		        <StackPanel Height="580" VerticalAlignment="Top">
 			        <!-- 边栏按钮 -->
-			        <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">参数设置</TextBlock>
-			        <RadioButton Style="{StaticResource DocButton}" Content="参数设置" Click="Environment_OnClick"/>
-			        <RadioButton Style="{StaticResource DocButton}" Content="其他设置" Click="Lidar_OnClick"/>
+			        <TextBlock Foreground="{StaticResource PrimaryTextBrush}" Margin="20,20,0,10" FontSize="20" FontWeight="Black">设置</TextBlock>
+			        <RadioButton Style="{StaticResource DocButton}" Content="软件设置" Click="Environment_OnClick"/>
+			        <!--RadioButton Style="{StaticResource DocButton}" Content="其他设置" Click="Lidar_OnClick"/-->
 			        
 		        </StackPanel>
 	    </Grid>
@@ -37,7 +37,6 @@
                     <Frame Name="SettingFrame" BorderThickness="0" NavigationUIVisibility="Hidden"/>
                 </Border> 
 	        </StackPanel>
-			
         </Grid>
         
     </Grid>
