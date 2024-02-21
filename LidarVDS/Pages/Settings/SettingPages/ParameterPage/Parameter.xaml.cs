@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.IO;
 using YamlDotNet.Serialization;
 using System.Collections.Generic;
@@ -12,11 +13,12 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
         private Dictionary<string, string> _yamlData;//定义字典缓存数据
         
         private string _filePath = @"../../Debug/net6.0-windows/Settings.yaml";//获取文件位置
-            //"D:\LidarVDS\LidarVDS\LidarVDS\bin\Debug\net6.0-windows\Settings.yaml"
+        //"D:\LidarVDS\LidarVDS\LidarVDS\bin\Debug\net6.0-windows\Settings.yaml"
         public Parameter()//初始化页面
         {
             InitializeComponent();
-            //LoadSavedData();
+            
+            LoadSavedData();
             //_yamlData = new Dictionary<string, string>();//声明字典
         }
 
@@ -60,10 +62,12 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
                 var deserializer = new DeserializerBuilder().Build();
                 var settings = deserializer.Deserialize<dynamic>(yamlContent);
 
+            //    Color.SelectedItem = (ComboBoxItem)settings.MainColor;
+            //    Size.SelectedItem = settings.FontSize;
+                
                 // 设置下拉框的选定值
-                SetValue(Color, settings.MainColor);
-                SetValue(Size, settings.FontSize);
-                // 根据需要设置更多下拉框的选定值
+                SetValue(Size, settings["FontSize"]);
+                SetValue(Color, settings["MainColor"]);
             }
         }
 
@@ -72,7 +76,7 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
             // 设置下拉框的选定值
             foreach (ComboBoxItem item in comboBox.Items)
             {
-                if (item.Content.ToString() == value)
+                if (item.Content.ToString() != value)
                 {
                     comboBox.SelectedItem = item;
                     break;
