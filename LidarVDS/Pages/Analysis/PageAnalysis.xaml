@@ -45,7 +45,7 @@
                 <d3:HorizontalAxisTitle>r(m)</d3:HorizontalAxisTitle>
                 <!--y轴标题-->
                 <d3:VerticalAxisTitle>PhE</d3:VerticalAxisTitle>
-                <!--仪表底部标题-->
+                
                 <d3:LineGraph Name="line_black" Stroke="Black" StrokeThickness="4"></d3:LineGraph>
                 <d3:LineGraph Name="line_blue" Stroke="Blue" StrokeThickness="4"></d3:LineGraph>
                 <d3:LineGraph Name="line_red" Stroke="Red" StrokeThickness="4"></d3:LineGraph>
