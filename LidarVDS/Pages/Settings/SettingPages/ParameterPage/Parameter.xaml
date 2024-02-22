@@ -19,9 +19,9 @@
                         主题颜色
                     </TextBlock>
                     <ComboBox x:Name="Color" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" Width="850">
-                        <ComboBoxItem Content="蓝色妖姬"/>
-                        <ComboBoxItem Content="红色烈焰"/>
-                        <ComboBoxItem Content="绿色风暴"/>
+                        <ComboBoxItem Content="蓝色"/>
+                        <ComboBoxItem Content="红色"/>
+                        <ComboBoxItem Content="绿色"/>
                     </ComboBox>
                     <!--TextBox HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" Width="850"/-->
                     <Button Width="60" Height="30" VerticalAlignment="Center" Margin="20,0,0,0" Click="Save">保存</Button>

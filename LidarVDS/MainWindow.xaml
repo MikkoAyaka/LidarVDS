@@ -7,6 +7,7 @@
            xmlns:component="clr-namespace:LidarVDS.Components"
            xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
            xmlns:local="clr-namespace:LidarVDS"
+           xmlns:color="clr-namespace:LidarVDS.Utils"
            mc:Ignorable="d"
            WindowStartupLocation="CenterScreen"
            ShowNonClientArea="False"
@@ -19,8 +20,9 @@
 
     <hc:SimpleStackPanel>
         <!-- 导航栏 -->
+        <!-- Background="{StaticResource Brush-NavBarBackground}" -->
         <Border CornerRadius="10,10,0,0"
-                Background="{StaticResource Brush-NavBarBackground}"
+                Background="{x:Static color:AppTheme.Background}"
                 Height="80"
                 VerticalAlignment="Top"
                 MouseLeftButtonDown="DragWindow">
@@ -59,14 +61,16 @@
                             <!-- 最小化 -->
                         <Button Width="35" Margin="30,0,0,0" Click="HideWindow" Padding="0" BorderThickness="0"
                                 Background="Transparent">
-                            <Border CornerRadius="8" Background="#7AB6F3" Width="30" Height="30">
+                            <Border CornerRadius="8" Background="{x:Static color:AppTheme.Color1}" Width="30" Height="30">
+                                <!--Background="#7AB6F3"-->
                                 <Line X1="0" Y1="0" X2="10" Y2="0" Stroke="Black" Opacity="0.5" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                         </Button>
                         <!-- 关闭 -->
                         <Button Width="35" Margin="10,0,30,0" Click="CloseWindow" Padding="0" BorderThickness="0"
                                 Background="Transparent">
-                            <Border CornerRadius="8" Background="#E74455" Width="30" Height="30">
+                            <!--Background="#E74455"-->
+                            <Border CornerRadius="8" Background="{x:Static color:AppTheme.Color2}" Width="30" Height="30">
                                 <hc:SimplePanel>
                                     <Line X1="0" Y1="0" X2="10" Y2="10" Stroke="Black" Opacity="0.5" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     <Line X1="10" Y1="0" X2="0" Y2="10" Stroke="Black" Opacity="0.5" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>

@@ -97,6 +97,8 @@
       <Resource Include="Resources\Images\Background.png" />
       <None Remove="Resources\Images\Banner.png" />
       <Resource Include="Resources\Images\Banner.png" />
+      <None Remove="Utils\Color.yaml" />
+      <Resource Include="Utils\Color.yaml" />
     </ItemGroup>
 
     <ItemGroup>

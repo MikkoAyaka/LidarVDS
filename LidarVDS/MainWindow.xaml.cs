@@ -20,6 +20,7 @@ namespace LidarVDS
         public MainWindow()
         {
             TimingUtil.StartTiming("应用启动");
+            AppTheme.GetTheme();//初始化主题
             InitializeComponent();
             var ms = TimingUtil.StopTiming("应用启动");
             $"启动成功，耗时 {ms/1000.0} 秒".LogInfo();

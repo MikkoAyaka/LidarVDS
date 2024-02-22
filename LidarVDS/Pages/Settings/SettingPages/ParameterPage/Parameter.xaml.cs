@@ -1,25 +1,23 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.IO;
 using YamlDotNet.Serialization;
-using System.Collections.Generic;
 using System.Text;
 using System.Windows.Controls;
+using LidarVDS.Utils;
 
 namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
 {
     public partial class Parameter
     {
-        private Dictionary<string, string> _yamlData;//定义字典缓存数据
-        
         private string _filePath = @"../../Debug/net6.0-windows/Settings.yaml";//获取文件位置
-        //"D:\LidarVDS\LidarVDS\LidarVDS\bin\Debug\net6.0-windows\Settings.yaml"
+        private string _colorPath = @"../../..\Utils\Color.yaml";//详细颜色设计
         public Parameter()//初始化页面
         {
             InitializeComponent();
             
-            LoadSavedData();
-            //_yamlData = new Dictionary<string, string>();//声明字典
+            LoadSavedData();//加载选择项
+            
+            AppTheme.GetTheme();
         }
 
         private void Save(object sender, RoutedEventArgs e)//保存按钮
@@ -37,10 +35,51 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
             };
             // 将数据写入YAML文件
             var serializer = new SerializerBuilder().Build();//新建串行器
-            
             string yamlContent = serializer.Serialize(settings);
             
             File.WriteAllText(_filePath, yamlContent, Encoding.UTF8);//写入文件
+            
+            //修改详细颜色配置
+            string bg = "";
+            string c1 = "";
+            string c2 = "";
+            string c3 = "";
+            
+            if (selectedColor == "蓝色")
+            {
+                bg = "#6DA6F6";
+                c1 = "#7AB6F3";
+                c2 = "#7AB6F3";
+                c3 = "#6DA6F0";
+            }
+            else if (selectedColor == "红色")
+            {
+                bg = "#FF6B6B";
+                c1 = "#E74455";
+                c2 = "#E74455";
+                c3 = "#FF6B6B";
+            }
+            else if (selectedColor == "绿色")
+            {
+                bg = "#5EC603";
+                c1 = "#9DF252";
+                c2 = "#9DF252";
+                c3 = "#5EC603";
+            }
+            
+            var color = new
+            {
+                Background = bg,
+                Color1 = c1,
+                Color2 = c2,
+                Color3 = c3
+            };
+            // 将数据写入YAML文件
+            var serializer2 = new SerializerBuilder().Build();//新建串行器
+            string c = serializer2.Serialize(color);
+            
+            File.WriteAllText(_colorPath, c, Encoding.UTF8);//写入文件
+            $"修改成功，下次启动时生效".LogInfo();
         }
 
         //刷新按钮
@@ -48,6 +87,10 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
         {
             // 刷新按钮点击事件，重新加载保存的数据
             LoadSavedData();
+
+            //AppTheme.Change();
+            
+            AppTheme.GetTheme();
         }
         
         //加载内容
@@ -76,7 +119,7 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
             // 设置下拉框的选定值
             foreach (ComboBoxItem item in comboBox.Items)
             {
-                if (item.Content.ToString() != value)
+                if (item.Content.ToString() == value)
                 {
                     comboBox.SelectedItem = item;
                     break;
