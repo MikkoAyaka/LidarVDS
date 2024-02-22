@@ -15,5 +15,9 @@ public partial class HistoryPage : Page
         // Frame.NavigationService.LoadCompleted += NavigationService_LoadCompleted;
     }
 
+    private void PageAnalysis_Onclick(object sender, System.Windows.RoutedEventArgs e)
+    {
+        NavigationService.Navigate(new PageAnalysis());
+    }
    
 }

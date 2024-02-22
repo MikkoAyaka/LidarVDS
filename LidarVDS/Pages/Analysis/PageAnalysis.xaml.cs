@@ -1,23 +1,9 @@
-// using System;
-// using System.Windows.Controls;
-//
-// namespace LidarVDS.Pages.Analysis;
-//
-// public partial class PageAnalysis : Page
-// {
-//     [Obsolete("请通过相应Service类获取单例实例")]
-//     public PageAnalysis()
-//     {
-//         InitializeComponent();
-//     }
-// }
-
-
 using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using Microsoft.Research.DynamicDataDisplay.DataSources;
 
 namespace LidarVDS.Pages.Analysis;
 
@@ -30,54 +16,39 @@ public partial class PageAnalysis : Page
         // Frame.NavigationService.LoadCompleted += NavigationService_LoadCompleted;
     }
 
-    private void ShowStatisticsPage(List<double> data)
-    {
-        // 创建统计图子页面的实例
-        // statisticsPage statisticsPage = new StatisticsPage(data);
+    
 
-        // 导航到统计图子页面
-        // Frame.Navigate(statisticsPage);
+    void MainWindow_Loaded(object sender, RoutedEventArgs e)
+    {
+        //给曲线图绑定数据源
+        line_black.DataSource = CreateDataSource(7000,0.0005);
+        // line_blue.DataSource = CreateSineDataSource(3.0); ;
+        // line_red.DataSource = CreateSineDataSource(5.0); ;
+    
+        // Force evertyhing plotted to be visible
+        plotter.FitToView();
+    }
+    /**
+     * viewDistance 能见度 单位米
+     * scatteringCoefficient 大气颗粒散射系数 单位每米，取值范围在 10^5/m ~ 10^6/m
+     */
+    private IPointDataSource CreateDataSource(int viewDistance,double scatteringValue)
+    {
+        const int maxLen = 5000;
+        Point[] pts = new Point[maxLen];
+        // Dictionary<Double,Double> dataMap = Computer.MainAlg( viewDistance, scatteringValue,maxLen);
+        // for (int i = 1; i < maxLen; i++)
+        // {
+        //     pts[i] = new Point(i, dataMap[i]);
+        // }
+        var ds = new EnumerableDataSource<Point>(pts);
+        ds.SetXYMapping(pt => pt);
+        return ds;
     }
 
-    private void ShowHistoryPage(List<List<double>> historicalData)
-    {
-        // 创建历史记录子页面的实例
-        // HistoryPage historyPage = new HistoryPage(historicalData);
-
-        // 导航到历史记录子页面
-        // Frame.Navigate(historyPage);
-    }
-
-    private void Button_Click1(object sender, RoutedEventArgs e)
-    {
-        // 模拟历史数据
-        List<double> historicalData1 = new List<double> { 10, 20, 30, 40, 50 };
-        List<double> historicalData2 = new List<double> { 5, 15, 25, 35, 45 };
-
-        /*// 点击按钮后导航到统计图子页面，并传递相应的历史数据
-        if (sender == Button1)
-        {
-            ShowStatisticsPage(historicalData1);
-        }
-        else if (sender == Button2)
-        {
-            ShowStatisticsPage(historicalData2);
-        }*/
-    }
-
-    private void Button_Click2(object sender, RoutedEventArgs e)
-    {
-        // 模拟历史数据
-        List<List<double>> historicalData = new List<List<double>>();
-        historicalData.Add(new List<double> { 10, 20, 30, 40, 50 });
-        historicalData.Add(new List<double> { 5, 15, 25, 35, 45 });
-
-        // 点击按钮后导航到历史记录子页面，并传递历史数据
-        ShowHistoryPage(historicalData);
-    }
-
+    
     private void HistoryPage_Onclick(object sender, System.Windows.RoutedEventArgs e)
     {
-        HistoryFrame.Navigate(HistoryPageService.GetPage());
+        NavigationService.Navigate(new HistoryPage());
     }
 }

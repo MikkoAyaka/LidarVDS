@@ -8,20 +8,52 @@
       mc:Ignorable="d"
       Title="PageAnalysis" Height="720" Width="1440">
       
-      <Grid Background="#F4F8FE">        <!--创建一个Grid-->
-            <Grid.ColumnDefinitions>  <!-- 设置 Grid 的列定义 -->
-                  <ColumnDefinition Width="*"/>  
-            </Grid.ColumnDefinitions>
-           
-      
-      <Grid Grid.Column="0">
-            <StackPanel>
-                  <Border CornerRadius="0,0,10,10">
-                        <Frame Name="HistoryFrame" BorderThickness="0" NavigationUIVisibility="Hidden"/>
-                  </Border> 
-				
+    <Grid Background="#F4F8FE">        <!--创建一个Grid-->
+        <Grid.ColumnDefinitions>  <!-- 设置 Grid 的列定义 -->
+            <ColumnDefinition Width="256"/>  
+            <ColumnDefinition Width="2"/>
+            <ColumnDefinition Width="580"/>  
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+    
+        <!-- 左侧视图导航栏 -->
+        <Grid Grid.Column="0" Background="{StaticResource Brush-PrimaryBackground}">
+            <StackPanel Height="580" VerticalAlignment="Top">
+                <TextBlock HorizontalAlignment="Left" Margin="20,20,0,15" FontSize="20" FontWeight="Black">当前视图</TextBlock>
+                <!-- 边栏按钮 -->
+                <RadioButton Style="{StaticResource DocButton}" Content="统计图" Click="PageAnalysis_Onclick"/>
+                <RadioButton Style="{StaticResource DocButton}" Content="历史记录" IsChecked="True"/>
             </StackPanel>
-      </Grid>
-            
-      </Grid>
+        </Grid>
+        
+        <!-- 导航栏和内容部分的分隔线 -->
+        <Border Grid.Column="1" Background="#D8D8D8"/>
+        
+        <!-- 右侧第一个Grid -->
+        <Grid Grid.Column="2" Margin="50,50,50,50">
+            <!-- 右侧第一个Grid内容 -->
+            <!-- <Frame Name="HistoryFrame" BorderThickness="0" NavigationUIVisibility="Hidden"/> -->
+
+            <StackPanel VerticalAlignment="Bottom" Margin="0,10,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="横轴（x）：" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="20" />
+                    <ComboBox Width="150" Margin="0,5" Background="#D8D8D8">
+                        <ComboBoxItem Content="Km" FontSize="20"/>
+                        <ComboBoxItem Content="m" FontSize="20" />
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="纵轴（y）：" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="20" />
+                    <ComboBox Width="150" Margin="0,5" Background="#D8D8D8">
+                        <ComboBoxItem Content="phE" FontSize="20"/>
+                        <ComboBoxItem Content="选项2" FontSize="20"/>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        
+        <!-- 参数表组件 -->
+        <components:ArgumentsTable Grid.Column="3" Editable="False"/>
+        
+    </Grid>
 </Page>
