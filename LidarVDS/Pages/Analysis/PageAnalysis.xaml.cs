@@ -37,10 +37,11 @@ public partial class PageAnalysis : Page
     {
         const int maxLen = 5000;
         List<Point> dataPoints = new List<Point>();
-        for (int i = 0; i <= maxLen; i++)
+        var resultList = Computer.MainAlg(maxLen, viewDistance, scatteringValue);
+        for (int i = 1; i <= maxLen; i++)
         {
             double x = i;
-            double y = Computer.MainAlg(i, viewDistance, scatteringValue);
+            double y = resultList[x];
             dataPoints.Add(new Point(x,y));
         }
 

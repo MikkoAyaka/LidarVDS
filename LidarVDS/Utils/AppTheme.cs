@@ -3,6 +3,7 @@ using System.Windows.Media;
 using System.IO;
 using YamlDotNet.Serialization;
 using System.Collections.Generic;
+using System.Windows;
 
 namespace LidarVDS.Utils
 {
@@ -15,11 +16,7 @@ namespace LidarVDS.Utils
         public static string Theme = "";
 
         public static string Size = "";
-        public static SolidColorBrush Background { get; set;} = new SolidColorBrush();
-        public static SolidColorBrush Color1 { get; set;} = new SolidColorBrush();
-        public static SolidColorBrush Color2 { get; set;} = new SolidColorBrush();
-        public static SolidColorBrush Color3 { get; set;} = new SolidColorBrush();
-        
+
         public static void GetTheme()
         {
             if (File.Exists(_dataPath)&&File.Exists(_colorPath))
@@ -43,19 +40,23 @@ namespace LidarVDS.Utils
                 
                 if (ColorSet.TryGetValue((object)"Background", out c))
                 {
-                    Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(c.ToString()));
+                    var newBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(c.ToString()));
+                    Application.Current.Resources["Background"] = newBrush;
                 };
                 if (ColorSet.TryGetValue("Color1", out c))
                 {
-                    Color1 = new SolidColorBrush((Color)ColorConverter.ConvertFromString(c.ToString()));
+                    var newBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(c.ToString()));
+                    Application.Current.Resources["Color1"] = newBrush;
                 };
                 if (ColorSet.TryGetValue("Color2", out c))
                 {
-                    Color2 = new SolidColorBrush((Color)ColorConverter.ConvertFromString(c.ToString()));
+                    var newBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(c.ToString()));
+                    Application.Current.Resources["Color2"] = newBrush;
                 };
                 if (ColorSet.TryGetValue("Color3", out c))
                 {
-                    Color3 = new SolidColorBrush((Color)ColorConverter.ConvertFromString(c.ToString()));
+                    var newBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(c.ToString()));
+                    Application.Current.Resources["Color3"] = newBrush;
                 };
             }
         }

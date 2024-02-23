@@ -45,7 +45,7 @@ public partial class PageSimulator : Page
     {
         const int maxLen = 5000;
         Point[] pts = new Point[maxLen];
-        Dictionary<Double,Double> dataMap = Computer.MainAlg( viewDistance, scatteringValue,maxLen);
+        Dictionary<double,double> dataMap = Computer.MainAlg( viewDistance, scatteringValue,maxLen);
         for (int i = 1; i < maxLen; i++)
         {
             pts[i] = new Point(i, dataMap[i]);
