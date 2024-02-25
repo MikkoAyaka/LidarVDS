@@ -40,7 +40,7 @@ public partial class PageAnalysis : Page
         var resultList = Computer.MainAlg(maxLen, viewDistance, scatteringValue);
         for (int i = 1; i <= maxLen; i++)
         {
-            double x = i;
+            int x = i;
             double y = resultList[x];
             dataPoints.Add(new Point(x,y));
         }
