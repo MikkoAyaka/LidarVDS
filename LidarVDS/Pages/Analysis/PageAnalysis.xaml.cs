@@ -13,7 +13,7 @@ public partial class PageAnalysis : Page
 {
     [Obsolete("请通过相应Service类获取单例实例")]
     internal PageAnalysis()
-    {
+    { 
         InitializeComponent();
         Loaded += new RoutedEventHandler(MainWindow_Loaded);
     }
@@ -41,7 +41,7 @@ public partial class PageAnalysis : Page
         for (int i = 1; i <= maxLen; i++)
         {
             int x = i;
-            double y = resultList[x];
+            double y = resultList;
             dataPoints.Add(new Point(x,y));
         }
 

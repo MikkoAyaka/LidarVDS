@@ -14,7 +14,7 @@
         <Grid.ColumnDefinitions>  <!-- 设置 Grid 的列定义 -->
             <ColumnDefinition Width="256"/>  
             <ColumnDefinition Width="2"/>
-            <ColumnDefinition Width="580"/>  
+            <ColumnDefinition Width="*"/>  
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
     

@@ -30,26 +30,30 @@
         <Border Grid.Column="1" Background="#D8D8D8"/>
         
         <!-- 右侧第一个Grid -->
-        <Grid Grid.Column="2" Margin="50,50,50,50">
+        <Grid Grid.Column="2" Margin="50,50,10,50">
             <!-- 右侧第一个Grid内容 -->
-            <!-- <Frame Name="HistoryFrame" BorderThickness="0" NavigationUIVisibility="Hidden"/> -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="560"/> <!-- 第一行高度自动调整 -->
+                <RowDefinition Height="50"/>    <!-- 第二行占据剩余空间 -->
+            </Grid.RowDefinitions>
+            
+            <Grid Grid.Row="0">
+            <Rectangle Grid.Row="0"  Height="600" Fill="{StaticResource Brush-PrimaryBackground}" Margin="40,0,40,0" RadiusX="5" RadiusY="5">
+            <Rectangle.Effect>
+                <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.2" BlurRadius="10" />
+            </Rectangle.Effect>
+                
+            </Rectangle>
+                <TextBox Width="435" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,50,0,0" Panel.ZIndex="1" FontSize="15">
+                 实验数据 实验时间
+                </TextBox>
+            </Grid>
+            
+            <Grid Grid.Row="1" Width="435">
+                <Frame Name="HistoryFrame" BorderThickness="0" NavigationUIVisibility="Visible"/>
+            </Grid>
 
-            <StackPanel VerticalAlignment="Bottom" Margin="0,10,0,0">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="横轴（x）：" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="20" />
-                    <ComboBox Width="150" Margin="0,5" Background="#D8D8D8">
-                        <ComboBoxItem Content="Km" FontSize="20"/>
-                        <ComboBoxItem Content="m" FontSize="20" />
-                    </ComboBox>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="纵轴（y）：" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="20" />
-                    <ComboBox Width="150" Margin="0,5" Background="#D8D8D8">
-                        <ComboBoxItem Content="phE" FontSize="20"/>
-                        <ComboBoxItem Content="选项2" FontSize="20"/>
-                    </ComboBox>
-                </StackPanel>
-            </StackPanel>
+            
         </Grid>
         
         <!-- 参数表组件 -->
