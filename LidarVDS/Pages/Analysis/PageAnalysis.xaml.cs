@@ -36,12 +36,12 @@ public partial class PageAnalysis : Page
     private IPointDataSource CreateDataSource(double viewDistance,double scatteringValue)
     {
         const int maxLen = 5000;
-        List<Point> dataPoints = new List<Point>();
+        var dataPoints = new List<Point>();
         var resultList = Computer.MainAlg(maxLen, viewDistance, scatteringValue);
-        for (int i = 1; i <= maxLen; i++)
+        for (var x = 1; x <= maxLen; x++)
         {
-            int x = i;
-            double y = resultList;
+            if (!resultList.ContainsKey(x)) continue;
+            var y = resultList[x];
             dataPoints.Add(new Point(x,y));
         }
 
