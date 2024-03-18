@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using LidarVDS.Maths;
 using LidarVDS.Utils;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
 using Point = System.Windows.Point;
@@ -22,10 +23,7 @@ public partial class PageAnalysis : Page
 
     void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
-        //给曲线图绑定数据源
-        line_black.DataSource = CreateDataSource(7000, 0.0005);
-    
-        // Force evertyhing plotted to be visible
+        line_black.DataSource = CreateDataSource();
         plotter.FitToView();
     }
     
@@ -33,15 +31,13 @@ public partial class PageAnalysis : Page
      * viewDistance 能见度 单位米
      * scatteringCoefficient 大气颗粒散射系数 单位每米，取值范围在 10^5/m ~ 10^6/m
      */
-    private IPointDataSource CreateDataSource(double viewDistance,double scatteringValue)
+    private IPointDataSource CreateDataSource()
     {
         const int maxLen = 5000;
         var dataPoints = new List<Point>();
-        var resultList = Computer.MainAlg(maxLen, viewDistance, scatteringValue);
         for (var x = 1; x <= maxLen; x++)
         {
-            if (!resultList.ContainsKey(x)) continue;
-            var y = resultList[x];
+            var y = EchoParticleGenerator.Instance.Accept(x);
             dataPoints.Add(new Point(x,y));
         }
 

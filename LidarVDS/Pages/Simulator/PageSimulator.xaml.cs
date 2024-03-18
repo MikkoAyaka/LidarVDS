@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using LidarVDS.Maths;
 using LidarVDS.Utils;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
 
@@ -30,7 +31,7 @@ public partial class PageSimulator : Page
     void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
         //给曲线图绑定数据源
-        line_black.DataSource = CreateDataSource(7000,0.0005);
+        line_black.DataSource = CreateDataSource();
         // line_blue.DataSource = CreateSineDataSource(3.0); ;
         // line_red.DataSource = CreateSineDataSource(5.0); ;
 
@@ -41,49 +42,16 @@ public partial class PageSimulator : Page
      * viewDistance 能见度 单位米
      * scatteringCoefficient 大气颗粒散射系数 单位每米，取值范围在 10^5/m ~ 10^6/m
      */
-    private IPointDataSource CreateDataSource(int viewDistance,double scatteringValue)
+    private IPointDataSource CreateDataSource()
     {
         const int maxLen = 5000;
         Point[] pts = new Point[maxLen];
-        Dictionary<double,double> dataMap = Computer.MainAlg( viewDistance, scatteringValue,maxLen);
         for (int i = 1; i < maxLen; i++)
         {
-            pts[i] = new Point(i, dataMap[i]);
+            pts[i] = new Point(i, EchoParticleGenerator.Instance.Accept(i));
         }
         var ds = new EnumerableDataSource<Point>(pts);
         ds.SetXYMapping(pt => pt);
         return ds;
     }
-
-    private IPointDataSource CreateTestDS()
-    {
-        const int N = 100;
-        Point[] pts = new Point[N];
-        for (int i = 0; i < N; i++)
-        {
-            double x = i;
-            pts[i] = new Point(x, x);
-        }
-        var ds = new EnumerableDataSource<Point>(pts);
-        ds.SetXYMapping(pt => pt);
-        
-        return ds;
-    }
-    //模拟数据源
-    private IPointDataSource CreateSineDataSource(double phase)
-    {
-        const int N = 100;
-        Point[] pts = new Point[N];
-        for (int i = 0; i < N; i++)
-        {
-            double x = i;
-            pts[i] = new Point(x, Math.Sin(x));
-        }
-        var ds = new EnumerableDataSource<Point>(pts);
-        ds.SetXYMapping(pt => pt);
-        
-        return ds;
-    }
-
-
 }

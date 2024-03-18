@@ -48,9 +48,9 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
             if (selectedColor == "蓝色")
             {
                 bg = "#6DA6F6";
-                c1 = "#7AB6F3";
-                c2 = "#7AB6F3";
-                c3 = "#6DA6F0";
+                c1 = "#6DA6F6";
+                c2 = "#6DA6F6";
+                c3 = "#6DA6F6";
             }
             else if (selectedColor == "红色")
             {
