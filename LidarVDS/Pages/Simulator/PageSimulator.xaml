@@ -50,9 +50,9 @@
                 <StackPanel Height="580" VerticalAlignment="Top">
                     <TextBlock HorizontalAlignment="Left" Margin="20,20,0,15" FontSize="20" FontWeight="Black">当前视图</TextBlock>
                     <!-- 边栏按钮 -->
-                    <RadioButton Style="{StaticResource DocButton}" Content="回波粒子数" IsChecked="True"/>
-                    <RadioButton Style="{StaticResource DocButton}" Content="几何重叠因子"/>
-                    <RadioButton Style="{StaticResource DocButton}" Content="大气消光系数"/>
+                    <RadioButton Name="ViewBtn1" Style="{StaticResource DocButton}" Content="回波粒子数" Checked="EPG_Selected"/>
+                    <RadioButton Style="{StaticResource DocButton}" Content="几何重叠因子" Checked="GOF_Selected"/>
+                    <RadioButton Style="{StaticResource DocButton}" Content="大气消光系数" Checked="AEC_Selected"/>
                 </StackPanel>
             </Grid>
         </Grid>
@@ -65,20 +65,19 @@
                 <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <Label Content="推演算法" HorizontalAlignment="Left" Margin="30" Height="45" FontSize="25" FontFamily="微软雅黑" Background="Transparent" BorderThickness="0"/>
-                <ComboBox Name="ComboBox" Width="250" Background="#EDEDED" HorizontalAlignment="Left" Margin="160,0,0,0" Height="35" FontSize="16"/>
+                <!-- <Label Content="推演算法" HorizontalAlignment="Left" Margin="30" Height="45" FontSize="25" FontFamily="微软雅黑" Background="Transparent" BorderThickness="0"/> -->
+                <!-- <ComboBox Name="ComboBox" Width="250" Background="#EDEDED" HorizontalAlignment="Left" Margin="160,0,0,0" Height="35" FontSize="16"/> -->
             </Grid>
             <Grid Grid.Row="1" Margin="10,0,10,40">
                 <d3:ChartPlotter Name="plotter" Background="Transparent">
                     <!--x轴标题-->
-                    <d3:HorizontalAxisTitle>r(m)</d3:HorizontalAxisTitle>
+                    <d3:HorizontalAxisTitle Name="HorizontalAxisTitle">km</d3:HorizontalAxisTitle>
                     <!--y轴标题-->
-                    <d3:VerticalAxisTitle>PhE</d3:VerticalAxisTitle>
+                    <d3:VerticalAxisTitle Name="VerticalAxisTitle">PhE</d3:VerticalAxisTitle>
                     <!--仪表底部标题-->
-                    <d3:Footer TextBlock.FontSize="20" Margin="50,20,0,0">回波信号模拟数据</d3:Footer>
-                    <d3:LineGraph Name="line_black" Stroke="Black" StrokeThickness="4"></d3:LineGraph>
-                    <d3:LineGraph Name="line_blue" Stroke="Blue" StrokeThickness="4"></d3:LineGraph>
-                    <d3:LineGraph Name="line_red" Stroke="Red" StrokeThickness="4"></d3:LineGraph>
+                    <d3:LineGraph Name="LineBlack" Stroke="Black" StrokeThickness="4">
+                    </d3:LineGraph>
+                    <d3:LineGraph Name="LineBlue" Stroke="Blue" StrokeThickness="4"/>
                 </d3:ChartPlotter>
             </Grid>
             <Grid Grid.Row="2">
@@ -89,11 +88,11 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Style="{StaticResource FunctionalButton}" Grid.Row="1" x:Name="btn_Import" Content="导入"/>
-                <Button Grid.Column="1" Style="{StaticResource FunctionalButton}" Grid.Row="2" x:Name="btn_Output" Content="导出"/>
-                <Button Grid.Column="2" Style="{StaticResource FunctionalButton}" Grid.Row="3" x:Name="btn_Look" Content="总览"/>
-                <Button Grid.Column="3" Style="{StaticResource FunctionalButton}" Grid.Row="4" x:Name="btn_Refresh" Content="刷新"/>
-                <Button Grid.Column="4" Style="{StaticResource FunctionalButton}" Grid.Row="5" x:Name="btn_Save" Content="保存"/>
+                <Button Grid.Column="0" Style="{StaticResource FunctionalButton}" x:Name="btn_Import" Content="导入"/>
+                <Button Grid.Column="1" Style="{StaticResource FunctionalButton}" x:Name="btn_Output" Content="导出"/>
+                <Button Grid.Column="2" Style="{StaticResource FunctionalButton}" x:Name="btn_Look" Content="总览"/>
+                <Button Grid.Column="3" Style="{StaticResource FunctionalButton}" x:Name="btn_Refresh" Content="刷新"/>
+                <Button Grid.Column="4" Style="{StaticResource FunctionalButton}" x:Name="btn_Save" Content="保存"/>
             </Grid>
         </Grid>
         <!-- 参数表组件 -->
