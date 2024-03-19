@@ -22,7 +22,7 @@
         <!-- 导航栏 -->
         <!-- Background="{StaticResource Brush-NavBarBackground}" -->
         <Border CornerRadius="10,10,0,0"
-                Background="{DynamicResource NavBarThemeColor}"
+                Background="{DynamicResource Background}"
                 Height="80"
                 VerticalAlignment="Top"
                 MouseLeftButtonDown="DragWindow">
@@ -61,7 +61,7 @@
                             <!-- 最小化 -->
                         <Button Width="35" Margin="30,0,0,0" Click="HideWindow" Padding="0" BorderThickness="0"
                                 Background="Transparent">
-                            <Border CornerRadius="8" Background="{DynamicResource Color1}" Width="30" Height="30">
+                            <Border CornerRadius="8" Background="{DynamicResource HideButton}" Width="30" Height="30">
                                 <!--Background="#7AB6F3"-->
                                 <Line X1="0" Y1="0" X2="10" Y2="0" Stroke="Black" Opacity="0.5" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
@@ -70,7 +70,7 @@
                         <Button Width="35" Margin="10,0,30,0" Click="CloseWindow" Padding="0" BorderThickness="0"
                                 Background="Transparent">
                             <!--Background="#E74455"-->
-                            <Border CornerRadius="8" Background="{DynamicResource Color2}" Width="30" Height="30">
+                            <Border CornerRadius="8" Background="{DynamicResource CloseButton}" Width="30" Height="30">
                                 <hc:SimplePanel>
                                     <Line X1="0" Y1="0" X2="10" Y2="10" Stroke="Black" Opacity="0.5" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     <Line X1="10" Y1="0" X2="0" Y2="10" Stroke="Black" Opacity="0.5" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>

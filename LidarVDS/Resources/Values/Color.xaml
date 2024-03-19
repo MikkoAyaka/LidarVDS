@@ -17,8 +17,8 @@
     <Brush x:Key="Brush-DocButtonCheckedBorder">#0A6CF5</Brush>
     
     <SolidColorBrush x:Key="NavBarThemeColor" Color="#6DA6F6"/>
+    
     <SolidColorBrush x:Key="Background" Color="#5EC603"/>
-    <SolidColorBrush x:Key="Color1" Color="#9DF252"/>
-    <SolidColorBrush x:Key="Color2" Color="#9DF252"/>
-    <SolidColorBrush x:Key="Color3" Color="#5EC603"/>
+    <SolidColorBrush x:Key="HideButton" Color="#9DF252"/>
+    <SolidColorBrush x:Key="CloseButton" Color="#9DF252"/>
 </ResourceDictionary>

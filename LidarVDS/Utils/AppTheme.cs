@@ -43,51 +43,17 @@ namespace LidarVDS.Utils
                     var newBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(c.ToString()));
                     Application.Current.Resources["Background"] = newBrush;
                 };
-                if (ColorSet.TryGetValue("Color1", out c))
+                if (ColorSet.TryGetValue("HideButton", out c))
                 {
                     var newBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(c.ToString()));
-                    Application.Current.Resources["Color1"] = newBrush;
+                    Application.Current.Resources["HideButton"] = newBrush;
                 };
-                if (ColorSet.TryGetValue("Color2", out c))
+                if (ColorSet.TryGetValue("CloseButton", out c))
                 {
                     var newBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(c.ToString()));
-                    Application.Current.Resources["Color2"] = newBrush;
-                };
-                if (ColorSet.TryGetValue("Color3", out c))
-                {
-                    var newBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(c.ToString()));
-                    Application.Current.Resources["Color3"] = newBrush;
+                    Application.Current.Resources["CloseButton"] = newBrush;
                 };
             }
         }
-        /*public static void Change()
-        {
-            if (Theme == "蓝色")
-            {
-                Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6DA6F6"));
-                Color1 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6DA6F5"));
-                Color2 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6DA6F4"));
-                Color3 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6DA6F3"));
-            }
-            else if (Theme == "红色")
-            {
-                Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0000"));
-                Color1 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0001"));
-                Color2 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0002"));
-                Color3 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0003"));
-            }
-            else if (Theme == "绿色")
-            {
-                Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#EE0000"));
-                Color1 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0001"));
-                Color2 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0002"));
-                Color3 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0003"));
-            }
-        }
-
-        public static void Save()
-        {
-            
-        }*/
     }
 }

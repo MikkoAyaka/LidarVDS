@@ -1,4 +1,3 @@
 ﻿Background: '#6DA6F6'
-Color1: '#7AB6F3'
-Color2: '#7AB6F3'
-Color3: '#6DA6F0'
+HideButton: '#6DA6F9'
+CloseButton: '#6DA6F9'

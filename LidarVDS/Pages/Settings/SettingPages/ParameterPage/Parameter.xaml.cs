@@ -40,46 +40,41 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
             File.WriteAllText(_filePath, yamlContent, Encoding.UTF8);//写入文件
             
             //修改详细颜色配置
-            string bg = "";
-            string c1 = "";
-            string c2 = "";
-            string c3 = "";
+            string background = "";
+            string hide_button = "";
+            string close_button = "";
             
             if (selectedColor == "蓝色")
             {
-                bg = "#6DA6F6";
-                c1 = "#6DA6F6";
-                c2 = "#6DA6F6";
-                c3 = "#6DA6F6";
+                background = "#6DA6F6";
+                hide_button = "#6DA6F9";
+                close_button = "#6DA6F9";
             }
             else if (selectedColor == "红色")
             {
-                bg = "#FF6B6B";
-                c1 = "#E74455";
-                c2 = "#E74455";
-                c3 = "#FF6B6B";
+                background = "#FF6B6B";
+                hide_button = "#E74455";
+                close_button = "#E74455";
             }
             else if (selectedColor == "绿色")
             {
-                bg = "#5EC603";
-                c1 = "#9DF252";
-                c2 = "#9DF252";
-                c3 = "#5EC603";
+                background = "#5EC603";
+                hide_button = "#9DF252";
+                close_button = "#9DF252";
             }
             
             var color = new
             {
-                Background = bg,
-                Color1 = c1,
-                Color2 = c2,
-                Color3 = c3
+                Background = background,
+                HideButton =hide_button,
+                CloseButton = close_button,
             };
             // 将数据写入YAML文件
             var serializer2 = new SerializerBuilder().Build();//新建串行器
             string c = serializer2.Serialize(color);
             
             File.WriteAllText(_colorPath, c, Encoding.UTF8);//写入文件
-            $"修改成功，下次启动时生效".LogInfo();
+            $"修改成功，刷新后生效".LogInfo();
         }
 
         //刷新按钮
@@ -88,8 +83,6 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
             // 刷新按钮点击事件，重新加载保存的数据
             LoadSavedData();
 
-            //AppTheme.Change();
-            
             AppTheme.GetTheme();
         }
         
@@ -105,9 +98,6 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
                 var deserializer = new DeserializerBuilder().Build();
                 var settings = deserializer.Deserialize<dynamic>(yamlContent);
 
-            //    Color.SelectedItem = (ComboBoxItem)settings.MainColor;
-            //    Size.SelectedItem = settings.FontSize;
-                
                 // 设置下拉框的选定值
                 SetValue(Size, settings["FontSize"]);
                 SetValue(Color, settings["MainColor"]);
