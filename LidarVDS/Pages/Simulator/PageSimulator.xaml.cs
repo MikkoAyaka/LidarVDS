@@ -12,18 +12,11 @@ public partial class PageSimulator : Page
     {
         InitializeComponent();
         LateInit();
-        // ComboBox.Items.Add("斜率法");
-        // ComboBox.Items.Add("改进的斜率法");
-        // ComboBox.Items.Add("改进的 Fernald 算法");
-        // ComboBox.SelectedIndex = 0;
     }
 
     private async void LateInit()
     {
-        while (!IsLoaded)
-        {
-            await Task.Delay(1);
-        }
+        while (!IsLoaded) await Task.Delay(100);
         ViewBtn1.IsChecked = true;
     }
 

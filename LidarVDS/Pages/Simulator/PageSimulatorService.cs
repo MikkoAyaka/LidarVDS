@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows;
 using LidarVDS.Maths;
 using Microsoft.Research.DynamicDataDisplay;
@@ -57,10 +58,12 @@ public class PageSimulatorService
     {
         const int maxLen = 5000;
         Point[] pts = new Point[maxLen];
-        for (int i = 1; i < maxLen; i++)
+
+        Parallel.For(1, maxLen, i =>
         {
             pts[i] = new Point(i, EchoParticleGenerator.Instance.Accept(i));
-        }
+        });
+
         var ds = new EnumerableDataSource<Point>(pts);
         ds.SetXYMapping(pt => pt);
         return ds;
@@ -72,12 +75,12 @@ public class PageSimulatorService
     {
         const int maxLen = 5000;
         Point[] pts = new Point[maxLen];
-        for (int i = 1; i < maxLen; i++)
+        Parallel.For(1, maxLen, i =>
         {
             // TODO 这里应该改为这样：
             // pts[i] = new Point(i, EchoParticleGenerator.Instance.Accept(i) + GuassianNoice.Instance.Accept(i));
             pts[i] = new Point(i,0);
-        }
+        });
         var ds = new EnumerableDataSource<Point>(pts);
         ds.SetXYMapping(pt => pt);
         return ds;
