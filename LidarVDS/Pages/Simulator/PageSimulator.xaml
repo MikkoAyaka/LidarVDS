@@ -41,160 +41,34 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="256"/>
+            <ColumnDefinition Width="2"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Background="#F4F8FE">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            
-            <Button Grid.Row="1" x:Name="btn_Import" Content="导入" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="40" Foreground="White" FontSize="28" FontWeight="Bold" RenderTransformOrigin="0.49,0.725">
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="10" x:Name="PART_Background">
-                            <Border.Background>
-                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                    <GradientStop Color="#6DA6F6" Offset="0.0" />
-                                    <GradientStop Color="#6DA6F6" Offset="0.5" />
-                                    <GradientStop Color="#6DA6F6" Offset="0.0" />
-                                </LinearGradientBrush>
-                            </Border.Background>
-                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Effect">
-                                    <Setter.Value>
-                                        <DropShadowEffect BlurRadius="10" Color="#FF0033" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button Grid.Row="2" x:Name="btn_Output" Content="导出" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="40" Foreground="White" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.49,0.725">
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="10" x:Name="PART_Background">
-                            <Border.Background>
-                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                    <GradientStop Color="#6DA6F6" Offset="0.0" />
-                                    <GradientStop Color="#6DA6F6" Offset="0.5" />
-                                    <GradientStop Color="#6DA6F6" Offset="0.0" />
-                                </LinearGradientBrush>
-                            </Border.Background>
-                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Effect">
-                                    <Setter.Value>
-                                        <DropShadowEffect BlurRadius="10" Color="#FF0033" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button Grid.Row="3" x:Name="btn_Look" Content="总览" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="40" Foreground="White" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.49,0.725">
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="10" x:Name="PART_Background">
-                            <Border.Background>
-                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                    <GradientStop Color="#6DA6F6" Offset="0.0" />
-                                    <GradientStop Color="#6DA6F6" Offset="0.5" />
-                                    <GradientStop Color="#6DA6F6" Offset="0.0" />
-                                </LinearGradientBrush>
-                            </Border.Background>
-                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Effect">
-                                    <Setter.Value>
-                                        <DropShadowEffect BlurRadius="10" Color="#FF0033" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button Grid.Row="4" x:Name="btn_Refresh" Content="刷新" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="40" Foreground="White" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.49,0.725">
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="10" x:Name="PART_Background">
-                            <Border.Background>
-                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                    <GradientStop Color="#6DA6F6" Offset="0.0" />
-                                    <GradientStop Color="#6DA6F6" Offset="0.5" />
-                                    <GradientStop Color="#6DA6F6" Offset="0.0" />
-                                </LinearGradientBrush>
-                            </Border.Background>
-                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Effect">
-                                    <Setter.Value>
-                                        <DropShadowEffect BlurRadius="10" Color="#FF0033" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button Grid.Row="5" x:Name="btn_Save" Content="保存" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="40" Foreground="White" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.49,0.725">
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="10" x:Name="PART_Background">
-                            <Border.Background>
-                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                    <GradientStop Color="#6DA6F6" Offset="0.0" />
-                                    <GradientStop Color="#6DA6F6" Offset="0.5" />
-                                    <GradientStop Color="#6DA6F6" Offset="0.0" />
-                                </LinearGradientBrush>
-                            </Border.Background>
-                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Effect">
-                                    <Setter.Value>
-                                        <DropShadowEffect BlurRadius="10" Color="#FF0033" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
+            <Grid Grid.Column="0" Background="{StaticResource Brush-PrimaryBackground}">
+                <StackPanel Height="580" VerticalAlignment="Top">
+                    <TextBlock HorizontalAlignment="Left" Margin="20,20,0,15" FontSize="20" FontWeight="Black">当前视图</TextBlock>
+                    <!-- 边栏按钮 -->
+                    <RadioButton Style="{StaticResource DocButton}" Content="回波粒子数" IsChecked="True"/>
+                    <RadioButton Style="{StaticResource DocButton}" Content="几何重叠因子"/>
+                    <RadioButton Style="{StaticResource DocButton}" Content="大气消光系数"/>
+                </StackPanel>
+            </Grid>
         </Grid>
-        <Grid Grid.Column="1" Background="#F4F8FE">
+        <!-- 导航栏和内容部分的分隔线 -->
+        <Border Grid.Column="1" Background="#D8D8D8"/>
+        <Grid Grid.Column="2" Background="#F4F8FE">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Label Content="推演算法" HorizontalAlignment="Left" Margin="30" Height="45" FontSize="25" FontFamily="微软雅黑" Background="Transparent" BorderThickness="0"/>
                 <ComboBox Name="ComboBox" Width="250" Background="#EDEDED" HorizontalAlignment="Left" Margin="160,0,0,0" Height="35" FontSize="16"/>
             </Grid>
-            <Grid Grid.Row="1" Margin="40,0,0,40">
+            <Grid Grid.Row="1" Margin="10,0,10,40">
                 <d3:ChartPlotter Name="plotter" Background="Transparent">
                     <!--x轴标题-->
                     <d3:HorizontalAxisTitle>r(m)</d3:HorizontalAxisTitle>
@@ -207,8 +81,22 @@
                     <d3:LineGraph Name="line_red" Stroke="Red" StrokeThickness="4"></d3:LineGraph>
                 </d3:ChartPlotter>
             </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource FunctionalButton}" Grid.Row="1" x:Name="btn_Import" Content="导入"/>
+                <Button Grid.Column="1" Style="{StaticResource FunctionalButton}" Grid.Row="2" x:Name="btn_Output" Content="导出"/>
+                <Button Grid.Column="2" Style="{StaticResource FunctionalButton}" Grid.Row="3" x:Name="btn_Look" Content="总览"/>
+                <Button Grid.Column="3" Style="{StaticResource FunctionalButton}" Grid.Row="4" x:Name="btn_Refresh" Content="刷新"/>
+                <Button Grid.Column="4" Style="{StaticResource FunctionalButton}" Grid.Row="5" x:Name="btn_Save" Content="保存"/>
+            </Grid>
         </Grid>
         <!-- 参数表组件 -->
-        <components:ArgumentsTable Grid.Column="2" Editable="True"/>
+        <components:ArgumentsTable Grid.Column="3" Editable="True"/>
     </Grid>
 </Page>
