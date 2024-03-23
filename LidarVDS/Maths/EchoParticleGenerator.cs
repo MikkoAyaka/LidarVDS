@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Microsoft.Research.DynamicDataDisplay;
 
 namespace LidarVDS.Maths;
@@ -14,11 +15,17 @@ public class EchoParticleGenerator: AbstractAlgorithm<double,double>
             return instance;
         }
     }
-    public override double Accept(double x)
+
+    public double Pr_Calculate(double x)
     {
-     Double yr = GeometryOverlapFactor.Instance.Accept(x);
+     Double yr = GeometryOverlapFactor.Instance.Accept(x,GeometryOverlapFactor.AlgTypeEnum.Theory);
      var ta = Math.Exp(-3.912 * x / _viewDistance);
      var pr = _p0 * (C * _t / 2) * (_ar / (x * x)) * yr * _scatteringValue * ta * ta * _tt * _tr;
+     return pr;
+    }
+    public override double Accept(double x)
+    {
+     var pr = Pr_Calculate(x);
      var nsr = ((_eta * _lambda) / (H * C)) * pr * _t;
      var result = nsr;
      if (result.IsNaN()) result = 0;
@@ -42,12 +49,12 @@ public class EchoParticleGenerator: AbstractAlgorithm<double,double>
     /**
      * 脉冲宽度(秒)
      */
-    private double _t = 0.0000001;
+    private double _t = 0.00000005;
 
     /**
      * 接收望远镜面积(平方米)
      */
-    private double _ar = Math.PI / 1600;
+    private double _ar = Math.PI * 0.05 * 0.05;
 
     /**
      * 存疑 发射望远镜透过率(0.0~1.0)
