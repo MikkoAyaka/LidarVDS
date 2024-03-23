@@ -68,13 +68,13 @@
             <hc:SimpleStackPanel Orientation="Horizontal">
                 <Image x:Name="Logo" Width="30" Height="30" Source="../../Resources/Images/公告.png" Margin="15,0,0,0" />
                 <hc:SimpleStackPanel Height="30" Margin="15,0,0,0" >
-                    <TextBlock x:Name="Title" Width="60" FontSize="12" Text="预设标题abab" Height="15" VerticalAlignment="Center"/>
-                    <hc:SimpleStackPanel Orientation="Horizontal" Width="60">
+                    <TextBlock x:Name="Title" Width="120" FontSize="12" Text="预设标题abab" Height="15" VerticalAlignment="Center"/>
+                    <hc:SimpleStackPanel Orientation="Horizontal" Width="120">
                         <TextBlock x:Name="Value" Height="15" VerticalAlignment="Center" Text="{Binding Value, ElementName=ArgumentBarSlider}"/>
                         <TextBlock x:Name="Units" Height="15" VerticalAlignment="Center"/>
                     </hc:SimpleStackPanel>
                 </hc:SimpleStackPanel>
-                <Slider x:Name="ArgumentBarSlider" Height="40" Width="240" Margin="15,0,0,0"
+                <Slider x:Name="ArgumentBarSlider" Height="40" Width="200" Margin="15,0,0,0"
                         Style="{DynamicResource ArgBar_Slider_Style}" TickFrequency="1" IsSnapToTickEnabled="True">
                     <Slider.Effect>
                         <DropShadowEffect Color="Black" ShadowDepth="1" BlurRadius="10" Opacity="0.2" Direction="0" />

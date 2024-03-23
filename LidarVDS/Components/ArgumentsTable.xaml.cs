@@ -22,9 +22,20 @@ public partial class ArgumentsTable : UserControl
     private void EnvironmentArguments(object sender, RoutedEventArgs e)
     {
         StackPanelContext.Children.Clear();
-        LidarArgumentsRepository.GetInstance().GetAllData().ForEach(arg =>
+        LidarArgumentsRepository.GetInstance().GetArguments(LidarArgumentTypeEnum.Environment).ForEach(arg =>
         {
-            ArgumentBar bar = new ArgumentBar(arg);
+            ArgumentBar bar = new(arg);
+            bar.IsEnabled = Editable;
+            StackPanelContext.Children.Add(bar);
+        });
+    }
+
+    private void OpticalArguments(object sender, RoutedEventArgs e)
+    {
+        StackPanelContext.Children.Clear();
+        LidarArgumentsRepository.GetInstance().GetArguments(LidarArgumentTypeEnum.OpticalUnit).ForEach(arg =>
+        {
+            ArgumentBar bar = new(arg);
             bar.IsEnabled = Editable;
             StackPanelContext.Children.Add(bar);
         });

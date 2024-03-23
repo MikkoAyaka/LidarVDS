@@ -7,7 +7,7 @@ public class GOF_FIttingData
 {
     private static Dictionary<double, double> data = new()
     {
-        {0.000,4004741.000000},
+        {0.000,400474.000000},
 {0.015,3446.000000},
 {0.030,1709.000000},
 {0.045,1848.000000},
@@ -528,6 +528,6 @@ public class GOF_FIttingData
 
     public static double[] getYValues()
     {
-        return data.Values.ToArray();
+        return data.Values.Select(y => y / 400474 * 8).ToArray();
     }
 }

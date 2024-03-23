@@ -24,27 +24,11 @@
                                RenderOptions.BitmapScalingMode="HighQuality"/>
                     </StackPanel>
                 </RadioButton>
-                <RadioButton Style="{StaticResource ArgTypeButton}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock>探测器</TextBlock>
-                        <Image Source="../../Resources/Images/探测器参数.png" 
-                               Width="16" Height="16" Margin="10,0,0,0"
-                               RenderOptions.BitmapScalingMode="HighQuality"/>
-                    </StackPanel>
-                </RadioButton>
-                <RadioButton Style="{StaticResource ArgTypeButton}">
+                <RadioButton Click="OpticalArguments" Style="{StaticResource ArgTypeButton}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock>光学单元</TextBlock>
                         <Image Source="../../Resources/Images/光学单元参数.png" 
                                Width="16" Height="16" Margin="10,0,0,0"
-                               RenderOptions.BitmapScalingMode="HighQuality"/>
-                    </StackPanel>
-                </RadioButton>
-                <RadioButton Style="{StaticResource ArgTypeButton}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock>信号处理</TextBlock>
-                        <Image Source="../../Resources/Images/信号处理参数.png" 
-                               Width="16" Height="16" Margin="10,0,0,0" 
                                RenderOptions.BitmapScalingMode="HighQuality"/>
                     </StackPanel>
                 </RadioButton>
