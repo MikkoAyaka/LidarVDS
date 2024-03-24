@@ -45,7 +45,11 @@ public class PageSimulatorService
      */
     public void ChangeDataSource_AEC()
     {
-        
+        InstanceHolder.Page.LineBlack.DataSource = CreateDataSource(i => AtmosphericExtinctionCoeff.Instance.Accept(i));
+        InstanceHolder.Page.LineBlack.Description = new PenDescription("消光系数 含噪");
+        InstanceHolder.Page.LineBlue.DataSource = CreateDataSource(i => AtmosphericExtinctionCoeff.Instance.Accept(i));
+        InstanceHolder.Page.LineBlue.Description = new PenDescription("消光系数 不含噪");
+        InstanceHolder.Page.plotter.FitToView();
     }
     /**
      * 将数据源更新为 回波粒子信号 相关图像

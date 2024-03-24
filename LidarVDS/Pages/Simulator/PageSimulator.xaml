@@ -75,9 +75,9 @@
                     <!--y轴标题-->
                     <d3:VerticalAxisTitle Name="VerticalAxisTitle"/>
                     <!--仪表底部标题-->
-                    <d3:LineGraph Name="LineBlack" Stroke="Black" StrokeThickness="2">
+                    <d3:LineGraph Name="LineBlack" Stroke="Black" StrokeThickness="1">
                     </d3:LineGraph>
-                    <d3:LineGraph Name="LineBlue" Stroke="Blue" StrokeThickness="2"/>
+                    <d3:LineGraph Name="LineBlue" Stroke="Blue" StrokeThickness="1"/>
                 </d3:ChartPlotter>
             </Grid>
             <Grid Grid.Row="2">
