@@ -55,7 +55,7 @@ public class PageSimulatorService
         InstanceHolder.Page.LineBlack.Description = new PenDescription("回波粒子信号 不含噪");
         // InstanceHolder.Page.LineBlue.DataSource = CreateDataSource(i => EchoParticleGenerator.Instance.Accept(i) + GuassianNoice.Instance.Accept(i));
         // InstanceHolder.Page.LineBlue.Description = new PenDescription("回波粒子信号 含噪");
-        // 渲染
+        // 渲染 
         InstanceHolder.Page.plotter.FitToView();
     }
 
