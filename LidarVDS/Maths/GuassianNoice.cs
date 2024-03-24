@@ -27,5 +27,4 @@ public class GuassianNoice
         double exponent = -Math.Pow(x - mean, 2) / (2 * Math.Pow(stdDev, 2));
         return coefficient * Math.Exp(exponent);
     }
-
 }
