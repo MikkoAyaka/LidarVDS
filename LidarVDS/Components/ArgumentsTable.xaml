@@ -11,7 +11,9 @@
     <Border CornerRadius="30" Height="800" Width="600">
         <hc:SimpleStackPanel Orientation="Horizontal">
             <Border Background="{StaticResource Brush-SecondaryBackground}" Height="800" Width="450">
-                <hc:SimpleStackPanel Height="700" Width="450" Margin="0,50,0,50" Name="StackPanelContext"/>
+                <hc:ScrollViewer Height="800" Width="450">
+                    <hc:SimpleStackPanel Orientation="Vertical" Name="StackPanelContext"/>
+                </hc:ScrollViewer>
             </Border>
             <Rectangle Height="800" Width="2" Fill="Black" Opacity="0.15"/>
             <hc:SimpleStackPanel Height="800" Width="150" Background="{StaticResource Brush-PrimaryBackground}">
