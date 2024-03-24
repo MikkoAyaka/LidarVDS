@@ -45,7 +45,7 @@
                 
             </Rectangle>
                 <TextBox Width="435" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,50,0,0" Panel.ZIndex="1" FontSize="15">
-                 实验数据 实验时间
+                 实验数据 实验时间3.24
                 </TextBox>
             </Grid>
             
