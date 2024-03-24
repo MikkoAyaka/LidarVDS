@@ -51,8 +51,8 @@ public class PageSimulatorService
     public void ChangeDataSource_EPG()
     {
         //给曲线图绑定数据源
-        // InstanceHolder.Page.LineBlack.DataSource = CreateDataSource(i => EchoParticleGenerator.Instance.Accept(i));
-        // InstanceHolder.Page.LineBlack.Description = new PenDescription("回波粒子信号 不含噪");
+        InstanceHolder.Page.LineBlack.DataSource = CreateDataSource(i => EchoParticleGenerator.Instance.Accept(i));
+        InstanceHolder.Page.LineBlack.Description = new PenDescription("回波粒子信号 不含噪");
         InstanceHolder.Page.LineBlue.DataSource = CreateDataSource(i => EchoParticleGenerator.Instance.Accept(i)
                                                                         + GuassianNoice.Instance.Accept(0, Math.Sqrt(i) * 0.5)
                                                                         * GuassianNoice.Instance.NormalDistribution(2.7,0.1,1));
