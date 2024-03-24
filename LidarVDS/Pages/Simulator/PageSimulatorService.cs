@@ -63,6 +63,8 @@ public class PageSimulatorService
         });
         InstanceHolder.Page.LineBlue.Description = new PenDescription("回波粒子信号 含噪");
         // 渲染
+        InstanceHolder.Page.LineBlack.ZIndex = 1; // 确保不含噪声的信号在上层
+        InstanceHolder.Page.LineBlue.ZIndex = 0; // 确保含噪声的信号在下层
         InstanceHolder.Page.plotter.FitToView();
     }
 
