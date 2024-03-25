@@ -55,13 +55,17 @@ public class PageSimulatorService
         InstanceHolder.Page.LineBlack.Description = new PenDescription("回波粒子信号 不含噪");
         InstanceHolder.Page.LineBlue.DataSource = CreateDataSource(i =>
         {
+            if (EchoParticleGenerator.Instance.Accept(i) == 0)
+            {
+                return 0;
+            }
             var result = EchoParticleGenerator.Instance.Accept(i)
-                   + GuassianNoice.Instance.Accept(0, Math.Sqrt(i) * 0.5)
-                   * GuassianNoice.Instance.NormalDistribution(2.7, 0.1, 1);
+                         + GuassianNoice.Instance.Accept(0, i);//stdDev越大，波动峰值越大，stdDev应该逐渐增大
             if (result < 0) result = 0;
             return result;
         });
         InstanceHolder.Page.LineBlue.Description = new PenDescription("回波粒子信号 含噪");
+        
         // 渲染
         InstanceHolder.Page.LineBlack.ZIndex = 1; // 确保不含噪声的信号在上层
         InstanceHolder.Page.LineBlue.ZIndex = 0; // 确保含噪声的信号在下层
