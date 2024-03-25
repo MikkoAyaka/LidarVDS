@@ -71,9 +71,9 @@
             <Grid Grid.Row="1" Margin="10,0,10,40">
                 <d3:ChartPlotter Name="plotter" Background="Transparent">
                     <!--x轴标题-->
-                    <d3:HorizontalAxisTitle Name="HorizontalAxisTitle">km</d3:HorizontalAxisTitle>
+                    <d3:HorizontalAxisTitle Name="HorizontalAxisTitle"/>
                     <!--y轴标题-->
-                    <d3:VerticalAxisTitle Name="VerticalAxisTitle">PhE</d3:VerticalAxisTitle>
+                    <d3:VerticalAxisTitle Name="VerticalAxisTitle"/>
                     <!--仪表底部标题-->
                     <d3:LineGraph Name="LineBlack" Stroke="Black" StrokeThickness="2">
                     </d3:LineGraph>

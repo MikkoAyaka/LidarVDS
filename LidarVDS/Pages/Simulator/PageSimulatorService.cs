@@ -31,10 +31,12 @@ public class PageSimulatorService
      */
     public void ChangeDataSource_GOF()
     {
-        InstanceHolder.Page.LineBlack.DataSource = CreateDataSource(i => GeometryOverlapFactor.Instance.Accept(i,GeometryOverlapFactor.AlgTypeEnum.Theory));
+        InstanceHolder.Page.HorizontalAxisTitle.Content = "m";
+        InstanceHolder.Page.VerticalAxisTitle.Content = "%";
+        InstanceHolder.Page.LineBlack.DataSource = CreateDataSource(i => GeometryOverlapFactor.Instance.Accept(i,GeometryOverlapFactor.AlgTypeEnum.Theory) * 100);
         InstanceHolder.Page.LineBlack.Description = new PenDescription("理论几何重叠因子");
         GeometryOverlapFactor.Instance.Update_Fitting_Arguments(GOF_FIttingData.getXValues(),GOF_FIttingData.getYValues());
-        InstanceHolder.Page.LineBlue.DataSource = CreateDataSource(i => GeometryOverlapFactor.Instance.Accept(i,GeometryOverlapFactor.AlgTypeEnum.Fitting));
+        InstanceHolder.Page.LineBlue.DataSource = CreateDataSource(i => GeometryOverlapFactor.Instance.Accept(i,GeometryOverlapFactor.AlgTypeEnum.Fitting) * 100);
         InstanceHolder.Page.LineBlue.Description = new PenDescription("拟合几何重叠因子");
         InstanceHolder.Page.plotter.FitToView();
     }
@@ -50,6 +52,8 @@ public class PageSimulatorService
      */
     public void ChangeDataSource_EPG()
     {
+        InstanceHolder.Page.HorizontalAxisTitle.Content = "m";
+        InstanceHolder.Page.VerticalAxisTitle.Content = "PhE";
         //给曲线图绑定数据源
         InstanceHolder.Page.LineBlack.DataSource = CreateDataSource(i => EchoParticleGenerator.Instance.Accept(i));
         InstanceHolder.Page.LineBlack.Description = new PenDescription("回波粒子信号 不含噪");
