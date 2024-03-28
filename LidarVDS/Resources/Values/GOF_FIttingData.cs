@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LidarVDS.Resources.Values;
 
 public class GOF_FIttingData
 {
-    private static Dictionary<double, double> data = new()
+    private static Dictionary<double, double> _data = new()
     {
-        {0.000,400474.000000},
+        {0.000,4004741.000000},
 {0.015,3446.000000},
 {0.030,1709.000000},
 {0.045,1848.000000},
@@ -521,13 +522,34 @@ public class GOF_FIttingData
 {7.665,1580.000000}
     };
 
+    private static List<(double x, double y)> list = _data.Select(pair => (pair.Key * 1000,pair.Value)).ToList();
+
     public static double[] getXValues()
     {
-        return data.Keys.Select(x => x * 1000).ToArray();
+        return list.Select(pair => pair.x).ToArray();
+    }
+    public static double Interpolate(double x)
+    {
+        // 查找最接近的两个点
+        for (int i = 0; i < list.Count - 1; i++)
+        {
+            if (x >= list[i].x && x <= list[i + 1].x)
+            {
+                var (x0, y0) = list[i];
+                var (x1, y1) = list[i + 1];
+                
+                // 应用线性插值公式
+                return y0 + (x - x0) * (y1 - y0) / (x1 - x0);
+            }
+        }
+        
+        // 如果x不在已知点的范围内，可以选择返回一个默认值，
+        // 或者根据实际需要扩展为其他逻辑（如外推）
+        throw new ArgumentOutOfRangeException(nameof(x), "The value of x is out of the interpolation range.");
     }
 
     public static double[] getYValues()
     {
-        return data.Values.Select(y => y / 400474 * 8).ToArray();
+        return list.Select(pair => pair.y).ToArray();
     }
 }

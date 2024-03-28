@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 using HandyControl.Tools.Extension;
+using LidarVDS.Components;
 using LidarVDS.Resources.Values;
 
 namespace LidarVDS.Maths;
@@ -76,10 +77,26 @@ public class GeometryOverlapFactor: AbstractAlgorithm<double,double>
      */
     private double Accept_Fitting(double x)
     {
-        var pr = EchoParticleGenerator.Instance.Pr_Calculate(x);
+        
+        var nsr = GOF_FIttingData.Interpolate(x);
+        var pr = nsrToPr(nsr);
         var cBeta = Math.Pow(Math.E,_fitB);
-        var result = (pr * x * x) / (cBeta * Math.Pow(Math.E, _fitA * x));
+        var result = (pr * x * x) / (cBeta * Math.Pow(Math.E, _fitA * x)) * Math.Pow(10,11.5);
+        if (result > 1) result = 1; 
         return result;
+    }
+
+    public double nsrToPr(double nsr)
+    {
+        var repo = LidarArgumentsRepository.GetInstance();
+        var h = repo.GetArguments(LidarArgumentNameEnum.PlanckConstant).NowValue;
+        var c = repo.GetArguments(LidarArgumentNameEnum.LightSpeed).NowValue;
+        var eta = repo.GetArguments(LidarArgumentNameEnum.QuantumEfficiency).NowValue;
+        var lambda = repo.GetArguments(LidarArgumentNameEnum.Wavelength).NowValue;
+        // 观测时间 5分钟
+        var deltaT = 300;
+        var pr = (nsr * h * c) / (eta * lambda * deltaT);
+        return pr;
     }
 
     /**
@@ -87,8 +104,9 @@ public class GeometryOverlapFactor: AbstractAlgorithm<double,double>
      * x 距离
      * y 回波粒子数 Ns(r)
      */
-    public void Update_Fitting_Arguments(double[] xValues,double[] yValues)
+    public void Update_Fitting_Arguments(double[] xValues,double[] nsrValues)
     {
+        double[] yValues = nsrValues.Select(nsr => nsrToPr(nsr)).ToArray();
         double xSum = xValues.Sum();
         double ySum = yValues.Sum();
         double xxSum = xValues.Select(x => x * x).Sum();
@@ -100,8 +118,6 @@ public class GeometryOverlapFactor: AbstractAlgorithm<double,double>
         _fitA = (count * xySum - xSum * ySum) / (count * xxSum - xSum * xSum);
         _fitB = (ySum - _fitA * xSum) / count;
         
-        Debug.WriteLine("fit_a => "+_fitA);
-        Debug.WriteLine("fit_b => "+_fitB);
     }
 
     private double _fitA = 0;
