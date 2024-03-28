@@ -28,4 +28,9 @@ public partial class ArgumentBar : UserControl
         ArgumentBarSlider.TickFrequency = (argumentData.MaxValue - argumentData.MinValue) / 50;
         Units.Text = argumentData.Units;
     }
+
+    private void ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+    {
+        ArgumentData.NowValue = e.NewValue;
+    }
 }

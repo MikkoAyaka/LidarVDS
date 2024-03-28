@@ -65,16 +65,37 @@ public enum LidarArgumentTypeEnum
 /**
  * 数据类
  */
-public record LidarArgumentsData(
-    LidarArgumentTypeEnum ArgType,
-    LidarArgumentNameEnum ArgName,
-    string ImgPath,
-    string Name,
-    double MinValue,
-    double MaxValue,
-    double NowValue,
-    string Units
-){}
+public class LidarArgumentsData
+{
+    public LidarArgumentTypeEnum ArgType;
+    public LidarArgumentNameEnum ArgName;
+        public string ImgPath;
+        public string Name;
+        public double MinValue;
+        public double MaxValue;
+        public double NowValue;
+        public string Units;
+    public LidarArgumentsData(
+        LidarArgumentTypeEnum ArgType,
+        LidarArgumentNameEnum ArgName,
+        string ImgPath,
+        string Name,
+        double MinValue,
+        double MaxValue,
+        double NowValue,
+        string Units
+        )
+    {
+        this.ArgType = ArgType;
+        this.ArgName = ArgName;
+        this.ImgPath = ImgPath;
+        this.Name = Name;
+        this.MinValue = MinValue;
+        this.MaxValue = MaxValue;
+        this.NowValue = NowValue;
+        this.Units = Units;
+    }
+}
 
 /**
  * 仓库类

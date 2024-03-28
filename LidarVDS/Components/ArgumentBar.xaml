@@ -74,7 +74,7 @@
                         <TextBlock x:Name="Units" Height="15" VerticalAlignment="Center"/>
                     </hc:SimpleStackPanel>
                 </hc:SimpleStackPanel>
-                <Slider x:Name="ArgumentBarSlider" Height="40" Width="200" Margin="15,0,0,0"
+                <Slider x:Name="ArgumentBarSlider" Height="40" Width="200" Margin="15,0,0,0" ValueChanged="ValueChanged"
                         Style="{DynamicResource ArgBar_Slider_Style}" TickFrequency="1" IsSnapToTickEnabled="True">
                     <Slider.Effect>
                         <DropShadowEffect Color="Black" ShadowDepth="1" BlurRadius="10" Opacity="0.2" Direction="0" />

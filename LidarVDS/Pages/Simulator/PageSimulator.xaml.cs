@@ -34,4 +34,9 @@ public partial class PageSimulator : Page
     {
         PageSimulatorService.GetInstance().ChangeDataSource_AEC();
     }
+
+    private void Refresh(object sender, RoutedEventArgs e)
+    {
+        PageSimulatorService.GetInstance().Refresh();
+    }
 }

@@ -24,41 +24,42 @@ public partial class PageHelp : Page
 
     private void Btn1_Click(object sender, RoutedEventArgs e)
     {
-        Viewer.Document = new Markdown().Transform(File.ReadAllText(FileUtil.documentsPath+"\\斜程能见度.md"));
+        Viewer.Document = new Markdown().Transform(FileUtil.load(FileUtil.documentsPath+"\\斜程能见度.md"));
     }
 
     private void Btn2_Click(object sender, RoutedEventArgs e)
     {
-        Viewer.Document = new Markdown().Transform(File.ReadAllText(FileUtil.documentsPath+"\\大气后向散射.md"));
+        Viewer.Document = new Markdown().Transform(FileUtil.load(FileUtil.documentsPath+"\\大气后向散射.md"));
     }
     
     private void Btn3_Click(object sender, RoutedEventArgs e)
     {
-        Viewer.Document = new Markdown().Transform(File.ReadAllText(FileUtil.documentsPath+"\\微脉冲激光雷达.md"));
+        Viewer.Document = new Markdown().Transform(FileUtil.load(FileUtil.documentsPath+"\\微脉冲激光雷达.md"));
     }
     
     private void Btn4_Click(object sender, RoutedEventArgs e)
     {
-        Viewer.Document = new Markdown().Transform(File.ReadAllText(FileUtil.documentsPath+"\\米散射.md"));
+        Viewer.Document = new Markdown().Transform(FileUtil.load(FileUtil.documentsPath+"\\米散射.md"));
     }
     
     private void Btn5_Click(object sender, RoutedEventArgs e)
     {
-        Viewer.Document = new Markdown().Transform(File.ReadAllText(FileUtil.documentsPath+"\\瑞利散射.md"));
+        Viewer.Document = new Markdown().Transform(FileUtil.load(FileUtil.documentsPath+"\\瑞利散射.md"));
     }
     
     private void Btn6_Click(object sender, RoutedEventArgs e)
     {
-        Viewer.Document = new Markdown().Transform(File.ReadAllText(FileUtil.documentsPath+"\\能见度反演算法.md"));
+        Viewer.Document = new Markdown().Transform(FileUtil.load(FileUtil.documentsPath+"\\能见度反演算法.md"));
     }
     
     private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
     {
-        Process.Start(new ProcessStartInfo
-        {
-            FileName = "D:\\下载\\SLBrowser\\SLBrowser.exe",
-            Arguments = e.Uri.AbsoluteUri
-        });
+        // TODO 不应该调用其它的本地程序
+        // Process.Start(new ProcessStartInfo
+        // {
+        //     FileName = "D:\\下载\\SLBrowser\\SLBrowser.exe",
+        //     Arguments = e.Uri.AbsoluteUri
+        // });
 
         e.Handled = true;
     }
