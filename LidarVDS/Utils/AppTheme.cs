@@ -3,6 +3,7 @@ using System.Windows.Media;
 using System.IO;
 using YamlDotNet.Serialization;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows;
 
 namespace LidarVDS.Utils
@@ -13,9 +14,11 @@ namespace LidarVDS.Utils
 
         private static string _colorPath = @"../../../Utils/Color.yaml";//详细颜色设计
         
-        public static string Theme = "";
+        public static string Theme;
 
-        public static string Size = "";
+        public static string Size;
+
+        public static bool Mode;
 
         public static void GetTheme()
         {
@@ -30,7 +33,6 @@ namespace LidarVDS.Utils
                 var ThemeSet = deserializer1.Deserialize<dynamic>(ThemeData);
 
                 Theme = ThemeSet["MainColor"];
-                //Size = ThemeSet["FontSize"];
 
                 // 反序列化YAML为对象
                 var deserializer2 = new DeserializerBuilder().Build();
@@ -53,6 +55,30 @@ namespace LidarVDS.Utils
                     var newBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(c.ToString()));
                     Application.Current.Resources["CloseButton"] = newBrush;
                 };
+            }
+        }
+
+        public static void GetMode()
+        {
+            if (File.Exists(_dataPath))
+            {
+                // 读取保存的数据
+                string ThemeData = File.ReadAllText(_dataPath);
+
+                // 反序列化YAML为对象
+                var deserializer1 = new DeserializerBuilder().Build();
+                var ModeSet = deserializer1.Deserialize<dynamic>(ThemeData);
+
+                string mode = ModeSet["DebugMode"];
+                if (mode == "开")
+                {
+                    
+                    AppLogger.DebugMode = true;
+                }
+                else
+                {
+                    AppLogger.DebugMode = false;
+                }
             }
         }
     }

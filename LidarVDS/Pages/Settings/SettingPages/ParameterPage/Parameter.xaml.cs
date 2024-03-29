@@ -24,13 +24,13 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
         {
             // 获取选择的内容
             string selectedColor = ((ComboBoxItem)Color.SelectedItem).Content.ToString();//主体颜色
-            //string selectedSize = ((ComboBoxItem)Size.SelectedItem).Content.ToString();//字体大小
+            string selectedDebug = ((ComboBoxItem)Debug.SelectedItem).Content.ToString();//字体大小
 
             // 整合数据
             var settings = new
             {
                 MainColor = selectedColor,
-                //FontSize = selectedSize,
+                DebugMode = selectedDebug,
                 // 可根据需要添加更多选项
             };
             // 将数据写入YAML文件
@@ -40,23 +40,23 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
             File.WriteAllText(_filePath, yamlContent, Encoding.UTF8);//写入文件
             
             //修改详细颜色配置
-            string background = "";
-            string hide_button = "";
-            string close_button = "";
+            string background = null;
+            string hide_button = null;
+            string close_button = null;
             
-            if (selectedColor == "蓝色")
+            if (selectedColor == "蓝色主题")
             {
                 background = "#6DA6F6";
-                hide_button = "#6DA6F9";
-                close_button = "#6DA6F9";
+                hide_button = "#6DA6F0";
+                close_button = "#6DA6F0";
             }
-            else if (selectedColor == "红色")
+            else if (selectedColor == "红色主题")
             {
                 background = "#FF6B6B";
                 hide_button = "#E74455";
                 close_button = "#E74455";
             }
-            else if (selectedColor == "绿色")
+            else if (selectedColor == "绿色主题")
             {
                 background = "#5EC603";
                 hide_button = "#9DF252";
@@ -66,7 +66,7 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
             var color = new
             {
                 Background = background,
-                HideButton =hide_button,
+                HideButton = hide_button,
                 CloseButton = close_button,
             };
             // 将数据写入YAML文件
@@ -74,19 +74,25 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
             string c = serializer2.Serialize(color);
             
             File.WriteAllText(_colorPath, c, Encoding.UTF8);//写入文件
-            $"修改成功，刷新后生效".LogInfo();
+            $"修改成功".LogInfo();
+            
+            LoadSavedData();
+
+            AppTheme.GetTheme();
+            AppTheme.GetMode();
         }
 
         //刷新按钮
-        private void Refresh(object sender, RoutedEventArgs e)
+        /*private void Refresh(object sender, RoutedEventArgs e)
         {
             // 刷新按钮点击事件，重新加载保存的数据
             LoadSavedData();
 
             AppTheme.GetTheme();
-        }
+            AppTheme.GetMode();
+        }*/
         
-        //加载内容
+        //加载选项框中的选项
         private void LoadSavedData()
         {
             if (File.Exists(_filePath))
@@ -99,7 +105,7 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
                 var settings = deserializer.Deserialize<dynamic>(yamlContent);
 
                 // 设置下拉框的选定值
-                //SetValue(Size, settings["FontSize"]);
+                SetValue(Debug, settings["DebugMode"]);
                 SetValue(Color, settings["MainColor"]);
             }
         }
