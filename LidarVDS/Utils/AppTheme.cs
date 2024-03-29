@@ -9,9 +9,9 @@ namespace LidarVDS.Utils
 {
     public class AppTheme
     {
-        private static string _dataPath = @"..\..\Debug\net6.0-windows\Settings.yaml";//主题文件位置
+        private static string _dataPath = @"../../Debug/net6.0-windows/Settings.yaml";//主题文件位置
 
-        private static string _colorPath = @"../../..\Utils\Color.yaml";//详细颜色设计
+        private static string _colorPath = @"../../../Utils/Color.yaml";//详细颜色设计
         
         public static string Theme = "";
 
@@ -30,7 +30,7 @@ namespace LidarVDS.Utils
                 var ThemeSet = deserializer1.Deserialize<dynamic>(ThemeData);
 
                 Theme = ThemeSet["MainColor"];
-                Size = ThemeSet["FontSize"];
+                //Size = ThemeSet["FontSize"];
 
                 // 反序列化YAML为对象
                 var deserializer2 = new DeserializerBuilder().Build();

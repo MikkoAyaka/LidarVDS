@@ -10,7 +10,7 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
     public partial class Parameter
     {
         private string _filePath = @"../../Debug/net6.0-windows/Settings.yaml";//获取文件位置
-        private string _colorPath = @"../../..\Utils\Color.yaml";//详细颜色设计
+        private string _colorPath = @"../../../Utils/Color.yaml";//详细颜色设计
         public Parameter()//初始化页面
         {
             InitializeComponent();
@@ -24,13 +24,13 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
         {
             // 获取选择的内容
             string selectedColor = ((ComboBoxItem)Color.SelectedItem).Content.ToString();//主体颜色
-            string selectedSize = ((ComboBoxItem)Size.SelectedItem).Content.ToString();//字体大小
+            //string selectedSize = ((ComboBoxItem)Size.SelectedItem).Content.ToString();//字体大小
 
             // 整合数据
             var settings = new
             {
                 MainColor = selectedColor,
-                FontSize = selectedSize,
+                //FontSize = selectedSize,
                 // 可根据需要添加更多选项
             };
             // 将数据写入YAML文件
@@ -99,7 +99,7 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
                 var settings = deserializer.Deserialize<dynamic>(yamlContent);
 
                 // 设置下拉框的选定值
-                SetValue(Size, settings["FontSize"]);
+                //SetValue(Size, settings["FontSize"]);
                 SetValue(Color, settings["MainColor"]);
             }
         }
