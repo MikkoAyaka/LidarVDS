@@ -54,19 +54,17 @@ public partial class PageHelp : Page
     
     private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
     {
-        // TODO 不应该调用其它的本地程序
-        // Process.Start(new ProcessStartInfo
-        // {
-        //     FileName = "D:\\下载\\SLBrowser\\SLBrowser.exe",
-        //     Arguments = e.Uri.AbsoluteUri
-        // });
-
-        e.Handled = true;
+        string url = "https://www.yuque.com/mikkoayaka/vp9g2k/ywcg78ccdt0btyk2?singleDoc#";
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = url,
+            UseShellExecute = true
+        });
     }
     
     private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
-        string url = "https://www.baidu.com/?tn=15007414_12_dg";
+        string url = "https://www.yuque.com/mikkoayaka/vp9g2k/ywcg78ccdt0btyk2?singleDoc#";
         Process.Start(new ProcessStartInfo
         {
             FileName = url,
@@ -76,22 +74,16 @@ public partial class PageHelp : Page
     
     private void aboutclick(object sender, MouseButtonEventArgs e)
     {
-        string textToShow = "版权信息";
-
-        Window textWindow = new Window
-        {
-            Title = "版权信息",
-            Width = 400,
-            Height = 300,
-            Content = new TextBlock
-            {
-                Text = textToShow,
-                TextWrapping = TextWrapping.Wrap,
-                Margin = new Thickness(10)
-            }
-        };
-
-        textWindow.Show();
+        Window window = new Window();
+        window.Width = 400;
+        window.Height = 300;
+        window.Title = "关于";
+        TextBlock textBlock = new TextBlock();
+        textBlock.Text = "版本信息：1.0\n指导老师：冯帅\n开发人员：冉琦、田浩、殷嘉辰、谢思远、王霖康、吴骏\n软著信息：";
+        textBlock.Margin = new Thickness(10);
+        textBlock.FontSize = 16;
+        window.Content = textBlock;
+        window.ShowDialog();
     }
     
     private void Iaboutclick(object sender, MouseButtonEventArgs e)
@@ -99,9 +91,9 @@ public partial class PageHelp : Page
         Window window = new Window();
         window.Width = 400;
         window.Height = 300;
-        window.Title = "版权信息";
+        window.Title = "关于";
         TextBlock textBlock = new TextBlock();
-        textBlock.Text = "版权信息";
+        textBlock.Text = "版本信息：1.0\n指导老师：冯帅\n开发人员：冉琦、田浩、殷嘉辰、谢思远、王霖康、吴骏\n软著信息：";
         textBlock.Margin = new Thickness(10);
         textBlock.FontSize = 16;
         window.Content = textBlock;
