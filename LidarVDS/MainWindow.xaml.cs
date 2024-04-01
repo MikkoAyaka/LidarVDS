@@ -75,7 +75,6 @@ namespace LidarVDS
 
         private void NavButton_Analysis_OnClick(object sender, RoutedEventArgs e)
         {
-            PageFrame.Navigate(HistoryPageService.GetPage());
         }
     }
 }
