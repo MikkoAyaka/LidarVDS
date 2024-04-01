@@ -26,6 +26,9 @@ public enum LidarArgumentNameEnum
     // 普朗克常数
     PlanckConstant,
     
+    //能见度
+    Visibility,
+    
     // 波长
     Wavelength,
     // 发射光束直径,
@@ -65,37 +68,18 @@ public enum LidarArgumentTypeEnum
 /**
  * 数据类
  */
-public class LidarArgumentsData
-{
-    public LidarArgumentTypeEnum ArgType;
-    public LidarArgumentNameEnum ArgName;
-        public string ImgPath;
-        public string Name;
-        public double MinValue;
-        public double MaxValue;
-        public double NowValue;
-        public string Units;
-    public LidarArgumentsData(
-        LidarArgumentTypeEnum ArgType,
-        LidarArgumentNameEnum ArgName,
-        string ImgPath,
-        string Name,
-        double MinValue,
-        double MaxValue,
-        double NowValue,
-        string Units
-        )
-    {
-        this.ArgType = ArgType;
-        this.ArgName = ArgName;
-        this.ImgPath = ImgPath;
-        this.Name = Name;
-        this.MinValue = MinValue;
-        this.MaxValue = MaxValue;
-        this.NowValue = NowValue;
-        this.Units = Units;
-    }
-}
+public record LidarArgumentsData(
+    LidarArgumentTypeEnum ArgType,
+    LidarArgumentNameEnum ArgName,
+    string ImgPath,
+    string Name,
+    double MinValue,
+    double MaxValue,
+    double NowValue,
+    string Units
+);
+
+    
 
 /**
  * 仓库类
@@ -124,6 +108,7 @@ public class LidarArgumentsRepository
         new LidarArgumentsData(LidarArgumentTypeEnum.Environment,LidarArgumentNameEnum.Humidity,"pack://application:,,,/Resources/Images/SD.png", "湿度", 0, 100, 50, "%"),
         new LidarArgumentsData(LidarArgumentTypeEnum.Environment,LidarArgumentNameEnum.RelativeWindSpeed,"pack://application:,,,/Resources/Images/XDFS.png", "风速", 0, 60, 0, "m/s"),
         new LidarArgumentsData(LidarArgumentTypeEnum.Environment,LidarArgumentNameEnum.AtmospheicPressure,"pack://application:,,,/Resources/Images/QY.png", "气压", 0.5, 2, 1, "atm"),
+        new LidarArgumentsData(LidarArgumentTypeEnum.Environment,LidarArgumentNameEnum.Visibility,"pack://application:,,,/Resources/Images/QY.png", "能见度", 200, 20000, 5000, "m"),
         
         new LidarArgumentsData(LidarArgumentTypeEnum.Constant,LidarArgumentNameEnum.LightSpeed,"pack://application:,,,/Resources/Images/QY.png", "光速", 299792458, 299792458, 299792458, "m/s"),
         new LidarArgumentsData(LidarArgumentTypeEnum.Constant,LidarArgumentNameEnum.PlanckConstant,"pack://application:,,,/Resources/Images/QY.png", "普朗克常数", 6.62607015 * Math.Pow(10, -34), 6.62607015 * Math.Pow(10, -34), 6.62607015 * Math.Pow(10, -34), "N·m·s"),

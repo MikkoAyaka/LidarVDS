@@ -12,8 +12,7 @@
         <Grid.ColumnDefinitions>  <!-- 设置 Grid 的列定义 -->
             <ColumnDefinition Width="256"/>  
             <ColumnDefinition Width="2"/>
-            <ColumnDefinition Width="580"/>  
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>  
         </Grid.ColumnDefinitions>
     
         <!-- 左侧视图导航栏 -->
@@ -21,7 +20,7 @@
             <StackPanel Height="580" VerticalAlignment="Top">
                 <TextBlock HorizontalAlignment="Left" Margin="20,20,0,15" FontSize="20" FontWeight="Black">当前视图</TextBlock>
                 <!-- 边栏按钮 -->
-                <RadioButton Style="{StaticResource DocButton}" Content="统计图" Click="PageAnalysis_Onclick"/>
+                <!-- <RadioButton Style="{StaticResource DocButton}" Content="统计图" Click="PageAnalysis_Onclick"/> -->
                 <RadioButton Style="{StaticResource DocButton}" Content="历史记录" IsChecked="True"/>
             </StackPanel>
         </Grid>
@@ -32,32 +31,40 @@
         <!-- 右侧第一个Grid -->
         <Grid Grid.Column="2" Margin="50,50,10,50">
             <!-- 右侧第一个Grid内容 -->
-            <Grid.RowDefinitions>
-                <RowDefinition Height="560"/> <!-- 第一行高度自动调整 -->
-                <RowDefinition Height="50"/>    <!-- 第二行占据剩余空间 -->
-            </Grid.RowDefinitions>
-            
-            <Grid Grid.Row="0">
-            <Rectangle Grid.Row="0"  Height="600" Fill="{StaticResource Brush-PrimaryBackground}" Margin="40,0,40,0" RadiusX="5" RadiusY="5">
-            <Rectangle.Effect>
-                <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.2" BlurRadius="10" />
-            </Rectangle.Effect>
-                
-            </Rectangle>
-                <TextBox Width="435" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,50,0,0" Panel.ZIndex="1" FontSize="15">
-                 实验数据 实验时间3.24
-                </TextBox>
-            </Grid>
-            
-            <Grid Grid.Row="1" Width="435">
-                <Frame Name="HistoryFrame" BorderThickness="0" NavigationUIVisibility="Visible"/>
-            </Grid>
+        
 
+            <StackPanel>
+            <!--主体颜色-->
+            <Border Background="White" CornerRadius="10" Margin="10" BorderThickness="1" Height="50">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/> <!-- 文字固定在左侧 -->
+                        <ColumnDefinition Width="*"/>    <!-- ComboBox 占满剩余空间 -->
+                        <ColumnDefinition Width="Auto"/> <!-- 按钮固定在右侧 -->
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0"
+                               HorizontalAlignment="Left" Margin="20,0,0,0"
+                               FontFamily="黑体" FontSize="20" FontWeight="Bold" VerticalAlignment="Center">
+                        仿真时间 年月日时分
+                    </TextBlock>
+
+                    <TextBlock x:Name="Color" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20,0,0,0">
+                       
+                    </TextBlock>
+
+                    <Button Grid.Column="2"
+                            Width="60" Height="30" VerticalAlignment="Center" Margin="20,0,20,0" >查看</Button>
+                </Grid>
+            </Border>
+        </StackPanel>
+            
+            
             
         </Grid>
         
         <!-- 参数表组件 -->
-        <components:ArgumentsTable Grid.Column="3" Editable="False"/>
+        <!-- <components:ArgumentsTable Grid.Column="3" Editable="False"/> -->
         
     </Grid>
 </Page>
