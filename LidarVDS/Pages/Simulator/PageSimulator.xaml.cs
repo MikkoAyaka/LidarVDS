@@ -2,6 +2,8 @@ using System;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using LidarVDS.Resources.Values;
+using LidarVDS.Utils;
 
 namespace LidarVDS.Pages.Simulator;
 
@@ -38,5 +40,19 @@ public partial class PageSimulator : Page
     private void Refresh(object sender, RoutedEventArgs e)
     {
         PageSimulatorService.GetInstance().Refresh();
+    }
+
+    private void Save(object sender, RoutedEventArgs e)
+    {
+        var date = DateTime.Now.ToString("yyyy-MM-dd");
+        var time = DateTime.Now.ToString("HH-mm-ss");
+        var text = LidarArgumentsRepository.GetInstance().Serialize();
+        text += "Date: "+date+"\n";
+        text += "Time: "+time+"\n";
+        text += "ArgAmount: "+LidarArgumentsRepository.GetInstance().GetArguments().Count+"\n";
+        text += "Version: 1.0.0\n";
+        text += "ViewDistance: 5330\n";
+        FileUtil.save(FileUtil.historyPath,date+"_"+time+".yml",text);
+        AppLogger.LogSuccess(date+" 数据保存成功。");
     }
 }

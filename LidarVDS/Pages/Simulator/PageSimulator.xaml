@@ -92,7 +92,7 @@
                 <Button Grid.Column="1" Style="{StaticResource FunctionalButton}" x:Name="btn_Output" Content="导出"/>
                 <Button Grid.Column="2" Style="{StaticResource FunctionalButton}" x:Name="btn_Look" Content="总览"/>
                 <Button Grid.Column="3" Style="{StaticResource FunctionalButton}" x:Name="btn_Refresh" Content="刷新" Click="Refresh"/>
-                <Button Grid.Column="4" Style="{StaticResource FunctionalButton}" x:Name="btn_Save" Content="保存"/>
+                <Button Grid.Column="4" Style="{StaticResource FunctionalButton}" x:Name="btn_Save" Content="保存" Click="Save"/>
             </Grid>
         </Grid>
         <!-- 参数表组件 -->

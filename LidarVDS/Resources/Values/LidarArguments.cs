@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using YamlDotNet.Serialization;
 
 namespace LidarVDS.Resources.Values;
 
@@ -25,6 +26,8 @@ public enum LidarArgumentNameEnum
     LightSpeed,
     // 普朗克常数
     PlanckConstant,
+    // 温度
+    Temperature,
     
     // 波长
     Wavelength,
@@ -124,6 +127,7 @@ public class LidarArgumentsRepository
         new LidarArgumentsData(LidarArgumentTypeEnum.Environment,LidarArgumentNameEnum.Humidity,"pack://application:,,,/Resources/Images/SD.png", "湿度", 0, 100, 50, "%"),
         new LidarArgumentsData(LidarArgumentTypeEnum.Environment,LidarArgumentNameEnum.RelativeWindSpeed,"pack://application:,,,/Resources/Images/XDFS.png", "风速", 0, 60, 0, "m/s"),
         new LidarArgumentsData(LidarArgumentTypeEnum.Environment,LidarArgumentNameEnum.AtmospheicPressure,"pack://application:,,,/Resources/Images/QY.png", "气压", 0.5, 2, 1, "atm"),
+        new LidarArgumentsData(LidarArgumentTypeEnum.Environment,LidarArgumentNameEnum.Temperature,"pack://application:,,,/Resources/Images/QY.png", "温度", -20, 40, 17, "°C"),
         
         new LidarArgumentsData(LidarArgumentTypeEnum.Constant,LidarArgumentNameEnum.LightSpeed,"pack://application:,,,/Resources/Images/QY.png", "光速", 299792458, 299792458, 299792458, "m/s"),
         new LidarArgumentsData(LidarArgumentTypeEnum.Constant,LidarArgumentNameEnum.PlanckConstant,"pack://application:,,,/Resources/Images/QY.png", "普朗克常数", 6.62607015 * Math.Pow(10, -34), 6.62607015 * Math.Pow(10, -34), 6.62607015 * Math.Pow(10, -34), "N·m·s"),
@@ -158,5 +162,36 @@ public class LidarArgumentsRepository
     public LidarArgumentsData GetArguments(LidarArgumentNameEnum nameEnum)
     {
         return _list.First(x => x.ArgName == nameEnum);
+    }
+
+    public string Serialize()
+    {
+        var text = "";
+        _list.ForEach(arg =>
+        {
+            text += arg.ArgName.ToString();
+            text += ": ";
+            text += arg.NowValue;
+            text += "\n";
+        });
+        return text;
+    }
+
+    public void Deserialize(string text)
+    {
+        var deserializer = new DeserializerBuilder().Build();
+        var data = deserializer.Deserialize<dynamic>(text);
+        _list.ForEach(arg =>
+        {
+            var argName = arg.ArgName.ToString();
+            arg.NowValue = data[argName];
+        });
+    }
+
+    public static dynamic DeserializeAsMap(string text)
+    {
+        var deserializer = new DeserializerBuilder().Build();
+        var data = deserializer.Deserialize<dynamic>(text);
+        return data;
     }
 }

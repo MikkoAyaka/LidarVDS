@@ -1,9 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Navigation;
+using LidarVDS.Components;
 using LidarVDS.Maths;
+using LidarVDS.Resources.Values;
 using LidarVDS.Utils;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
 using Point = System.Windows.Point;
@@ -16,40 +20,28 @@ public partial class PageAnalysis : Page
     internal PageAnalysis()
     { 
         InitializeComponent();
-        Loaded += new RoutedEventHandler(MainWindow_Loaded);
+        Loaded += MainWindow_Loaded;
     }
-
-    
 
     void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
-        line_black.DataSource = CreateDataSource();
-        plotter.FitToView();
-    }
-    
-    /**
-     * viewDistance 能见度 单位米
-     * scatteringCoefficient 大气颗粒散射系数 单位每米，取值范围在 10^5/m ~ 10^6/m
-     */
-    private IPointDataSource CreateDataSource()
-    {
-        const int maxLen = 5000;
-        var dataPoints = new List<Point>();
-        for (var x = 1; x <= maxLen; x++)
+        Container.Children.Clear();
+        foreach (var filePath in Directory.GetFiles(FileUtil.historyPath))
         {
-            var y = EchoParticleGenerator.Instance.Accept(x);
-            dataPoints.Add(new Point(x,y));
+            var text = FileUtil.load(filePath);
+            var dynmap = LidarArgumentsRepository.DeserializeAsMap(text);
+            var date = (string)dynmap["Date"];
+            var time = (string)dynmap["Time"];
+            var version = (string)dynmap["Version"];
+            var argAmount = int.Parse((string)dynmap["ArgAmount"]);
+            var viewDistance = int.Parse((string)dynmap["ViewDistance"]);
+            var temperature = int.Parse((string)dynmap["Temperature"]);
+            var humidity = int.Parse((string)dynmap["Humidity"]);
+            var airPressure = (int)(double.Parse((string)dynmap["AtmospheicPressure"]) * 1013.25);
+            var card = new HistoryCard(date, time, version, argAmount, viewDistance, temperature, humidity,
+                airPressure);
+            card.Margin = new Thickness(10,10,10,10);
+            Container.Children.Add(card);
         }
-
-        var dataSource = new EnumerableDataSource<Point>(dataPoints);
-        dataSource.SetXYMapping(pt => pt);
-        return dataSource;
-    }
-    
-
-    
-    private void HistoryPage_Onclick(object sender, System.Windows.RoutedEventArgs e)
-    {
-        NavigationService.Navigate(new HistoryPage());
     }
 }
