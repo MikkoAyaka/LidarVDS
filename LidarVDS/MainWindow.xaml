@@ -56,7 +56,7 @@
                             <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavHelp}" Click="NavButton_Help_OnClick"/>
                             <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavSettings}" Click="NavButton_Settings_OnClick"/>
                             <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavDataAnalysis}" Click="NavButton_Analysis_OnClick"/>
-                            <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavSimulator}" Click="NavButton_Simulator_OnClick"/>
+                            <RadioButton Style="{StaticResource NavButton}" Name="SimulatorBtn" Content="{StaticResource NavSimulator}" Click="NavButton_Simulator_OnClick"/>
                             <RadioButton Style="{StaticResource NavButton}" Content="{StaticResource NavHomePage}" IsChecked="True" Click="NavButton_MainPage_OnClick"/>
                             <!-- 最小化 -->
                         <Button Width="35" Margin="30,0,0,0" Click="HideWindow" Padding="0" BorderThickness="0"

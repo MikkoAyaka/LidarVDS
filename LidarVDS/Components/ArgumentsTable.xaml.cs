@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -14,6 +15,14 @@ public partial class ArgumentsTable : UserControl
     public ArgumentsTable()
     {
         InitializeComponent();
+    }
+
+    public void Refresh()
+    {
+        foreach (ArgumentBar bar in StackPanelContext.Children)
+        {
+            bar.ArgumentBarSlider.Value = bar.ArgumentData.NowValue;
+        }
     }
 
     /**

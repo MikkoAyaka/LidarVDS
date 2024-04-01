@@ -9,8 +9,10 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
 {
     public partial class Parameter
     {
-        public Parameter()//初始化页面
+        public static Parameter Instance = new();
+        private Parameter()//初始化页面
         {
+            Instance = this;
             Init();
             
             InitializeComponent();

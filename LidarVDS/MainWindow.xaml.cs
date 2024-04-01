@@ -14,17 +14,19 @@ namespace LidarVDS
 {
     public partial class MainWindow : Window
     {
+        public static MainWindow Instance;
         /**
          * 菜单初始化
          */
         public MainWindow()
         {
+            Instance = this;
             TimingUtil.StartTiming("应用启动");
             AppTheme.GetTheme();//初始化主题
             InitializeComponent();
             var ms = TimingUtil.StopTiming("应用启动");
             $"启动成功，耗时 {ms/1000.0} 秒".LogInfo();
-            PageFrame.Navigate(PageMainService.GetPage());
+            PageFrame.Navigate(PageMain.Instance);
         }
 
         /**
@@ -55,27 +57,27 @@ namespace LidarVDS
 
         private void NavButton_MainPage_OnClick(object sender, RoutedEventArgs e)
         {
-            PageFrame.Navigate(PageMainService.GetPage());
+            PageFrame.Navigate(PageMain.Instance);
         }
 
         private void NavButton_Simulator_OnClick(object sender, RoutedEventArgs e)
         {
-            PageFrame.Navigate(PageSimulatorService.GetPage());
+            PageFrame.Navigate(PageSimulator.Instance);
         }
 
         private void NavButton_Settings_OnClick(object sender, RoutedEventArgs e)
         {
-            PageFrame.Navigate(PageSettingsService.GetPage());
+            PageFrame.Navigate(PageSettings.Instance);
         }
 
         private void NavButton_Help_OnClick(object sender, RoutedEventArgs e)
         {
-            PageFrame.Navigate(PageHelpService.GetPage());
+            PageFrame.Navigate(PageHelp.Instance);
         }
 
         private void NavButton_Analysis_OnClick(object sender, RoutedEventArgs e)
         {
-            PageFrame.Navigate(PageAnalysisService.GetPage());
+            PageFrame.Navigate(PageAnalysis.Instance);
         }
     }
 }

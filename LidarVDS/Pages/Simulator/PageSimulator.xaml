@@ -96,6 +96,6 @@
             </Grid>
         </Grid>
         <!-- 参数表组件 -->
-        <components:ArgumentsTable Grid.Column="3" Editable="True"/>
+        <components:ArgumentsTable x:Name="ArgTable" Grid.Column="3" Editable="True"/>
     </Grid>
 </Page>

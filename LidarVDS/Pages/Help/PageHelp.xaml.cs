@@ -16,9 +16,10 @@ namespace LidarVDS.Pages.Help;
 
 public partial class PageHelp : Page
 {
-    [Obsolete("请通过相应Service类获取单例实例")]
-    internal PageHelp()
+    public static PageHelp Instance = new();
+    private PageHelp()
     {
+        Instance = this;
         InitializeComponent();
     }
 

@@ -188,7 +188,15 @@ public class LidarArgumentsRepository
         _list.ForEach(arg =>
         {
             var argName = arg.ArgName.ToString();
-            arg.NowValue = data[argName];
+            try
+            {
+                arg.NowValue = double.Parse((string)data[argName]);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         });
     }
 

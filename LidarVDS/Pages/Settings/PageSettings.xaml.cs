@@ -1,25 +1,21 @@
 using System.Windows.Controls;
 using LidarVDS.Pages.Settings.SettingPages.ParameterPage;
-using LidarVDS.Pages.Settings.SettingPages.LidarPage;
 
 namespace LidarVDS.Pages.Settings;
 
 public partial class PageSettings : Page
 {
-    public PageSettings()
+    public static PageSettings Instance = new();
+    private PageSettings()
     {
+        Instance = this;
         InitializeComponent();
-        SettingFrame.Navigate(ParameterService.GetPage());
+        SettingFrame.Navigate(Parameter.Instance);
     }
 
     private void Environment_OnClick(object sender, System.Windows.RoutedEventArgs e)
     {
-        SettingFrame.Navigate(ParameterService.GetPage());
-    } 
-    
-    private void Lidar_OnClick(object sender, System.Windows.RoutedEventArgs e)
-    {
-        SettingFrame.Navigate(LidarService.GetPage());
-    } 
-    
+        SettingFrame.Navigate(Parameter.Instance);
+    }
+
 }

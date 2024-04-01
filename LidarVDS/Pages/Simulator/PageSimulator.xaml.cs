@@ -8,10 +8,11 @@ using LidarVDS.Utils;
 namespace LidarVDS.Pages.Simulator;
 
 public partial class PageSimulator : Page
-{ 
-    [Obsolete("请通过相应Service类获取单例实例")]
-    public PageSimulator()
+{
+    public static PageSimulator Instance = new();
+    private PageSimulator()
     {
+        Instance = this;
         InitializeComponent();
         LateInit();
     }
@@ -24,22 +25,22 @@ public partial class PageSimulator : Page
 
     private void EPG_Selected(object sender, RoutedEventArgs e)
     {
-        PageSimulatorService.GetInstance().ChangeDataSource_EPG();
+        PageSimulatorService.Instance.ChangeDataSource_EPG();
     }
 
     private void GOF_Selected(object sender, RoutedEventArgs e)
     {
-        PageSimulatorService.GetInstance().ChangeDataSource_GOF();
+        PageSimulatorService.Instance.ChangeDataSource_GOF();
     }
 
     private void AEC_Selected(object sender, RoutedEventArgs e)
     {
-        PageSimulatorService.GetInstance().ChangeDataSource_AEC();
+        PageSimulatorService.Instance.ChangeDataSource_AEC();
     }
 
     private void Refresh(object sender, RoutedEventArgs e)
     {
-        PageSimulatorService.GetInstance().Refresh();
+        PageSimulatorService.Instance.Refresh();
     }
 
     private void Save(object sender, RoutedEventArgs e)
@@ -51,7 +52,6 @@ public partial class PageSimulator : Page
         text += "Time: "+time+"\n";
         text += "ArgAmount: "+LidarArgumentsRepository.GetInstance().GetArguments().Count+"\n";
         text += "Version: 1.0.0\n";
-        text += "ViewDistance: 5330\n";
         FileUtil.save(FileUtil.historyPath,date+"_"+time+".yml",text);
         AppLogger.LogSuccess(date+" 数据保存成功。");
     }

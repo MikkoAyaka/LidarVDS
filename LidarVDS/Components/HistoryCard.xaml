@@ -46,8 +46,8 @@
             <TextBlock Grid.Row="6" Grid.Column="1" Text="17%" Name="Humidity" HorizontalAlignment="Center"/>
             <TextBlock Grid.Row="7" Grid.Column="0" Text="气压" FontWeight="Bold" HorizontalAlignment="Center"/>
             <TextBlock Grid.Row="7" Grid.Column="1" Text="1012hpa" Name="AirPressure" HorizontalAlignment="Center"/>
-            <Button Style="{StaticResource FunctionalButton}" Grid.Row="8" Grid.Column="0" FontSize="15" Content="导入并查看"/>
-            <Button Style="{StaticResource FunctionalButton}" Grid.Row="8" Grid.Column="1" FontSize="15" Content="删除"/>
+            <Button Style="{StaticResource FunctionalButton}" Grid.Row="8" Grid.Column="0" FontSize="15" Content="导入并查看" Click="Select"/>
+            <Button Style="{StaticResource FunctionalButton}" Grid.Row="8" Grid.Column="1" FontSize="15" Content="删除" Click="Delete"/>
         </Grid>
     </Grid>
 </UserControl>
