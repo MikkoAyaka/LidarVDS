@@ -9,17 +9,31 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
 {
     public partial class Parameter
     {
-        private string _filePath = @"../../Debug/net6.0-windows/Settings.yaml";//获取文件位置
-        private string _colorPath = @"../../../Utils/Color.yaml";//详细颜色设计
         public Parameter()//初始化页面
         {
-            InitializeComponent();
+            Init();
             
+            InitializeComponent();
+
             LoadSavedData();//加载选择项
             
             AppTheme.GetTheme();
         }
 
+        private void Init()
+        {
+            if(File.Exists(FileUtil.colorFilePath)) return;
+
+            var content = "Background: '#6DA6F6'\n" +
+                          "HideButton: '#6DA6F0'\n" +
+                          "CloseButton: '#6DA6F0'";
+            FileUtil.save(FileUtil.configFolderPath,FileUtil.colorFileName,content);
+            
+            if(File.Exists(FileUtil.configFilePath)) return;
+
+            var config = "DebugMode: '开'\nMainColor: '蓝色主题'";
+            FileUtil.save(FileUtil.configFolderPath,FileUtil.configFileName,config);
+        }
         private void Save(object sender, RoutedEventArgs e)//保存按钮
         {
             // 获取选择的内容
@@ -37,7 +51,7 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
             var serializer = new SerializerBuilder().Build();//新建串行器
             string yamlContent = serializer.Serialize(settings);
             
-            File.WriteAllText(_filePath, yamlContent, Encoding.UTF8);//写入文件
+            FileUtil.save(FileUtil.configFolderPath,FileUtil.configFileName,yamlContent);
             
             //修改详细颜色配置
             string background = null;
@@ -73,7 +87,7 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
             var serializer2 = new SerializerBuilder().Build();//新建串行器
             string c = serializer2.Serialize(color);
             
-            File.WriteAllText(_colorPath, c, Encoding.UTF8);//写入文件
+            FileUtil.save(FileUtil.configFolderPath,FileUtil.colorFileName,c);
             $"修改成功".LogInfo();
             
             LoadSavedData();
@@ -95,10 +109,10 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
         //加载选项框中的选项
         private void LoadSavedData()
         {
-            if (File.Exists(_filePath))
+            if (File.Exists(FileUtil.configFilePath))
             {
                 // 读取保存的数据
-                string yamlContent = File.ReadAllText(_filePath);
+                string yamlContent = FileUtil.load(FileUtil.configFilePath);
 
                 // 反序列化YAML为对象
                 var deserializer = new DeserializerBuilder().Build();
