@@ -25,7 +25,7 @@
                         主题颜色
                     </TextBlock>
 
-                    <ComboBox x:Name="Color" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20,0,0,0">
+                    <ComboBox x:Name="ColorCombo" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20,0,0,0">
                         <ComboBoxItem Content="蓝色主题"/>
                         <ComboBoxItem Content="红色主题"/>
                         <ComboBoxItem Content="绿色主题"/>
@@ -51,7 +51,30 @@
                         调试模式
                     </TextBlock>
 
-                    <ComboBox x:Name="Debug" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20,0,0,0">
+                    <ComboBox x:Name="DebugCombo" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20,0,0,0">
+                        <ComboBoxItem Content="开"/>
+                        <ComboBoxItem Content="关"/>
+                    </ComboBox>
+                    <Button Grid.Column="2"
+                            Width="60" Height="30" VerticalAlignment="Center" Margin="20,0,20,0" Click="Save">保存</Button>
+                </Grid>
+            </Border>
+            
+            <Border Background="White" CornerRadius="10" Margin="10" BorderThickness="1" Height="50">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/> <!-- 文字固定在左侧 -->
+                        <ColumnDefinition Width="*"/>    <!-- ComboBox 占满剩余空间 -->
+                        <ColumnDefinition Width="Auto"/> <!-- 按钮固定在右侧 -->
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0"
+                               HorizontalAlignment="Left" Margin="20,0,0,0"
+                               FontFamily="黑体" FontSize="20" FontWeight="Bold" VerticalAlignment="Center">
+                        弹窗提示
+                    </TextBlock>
+
+                    <ComboBox x:Name="NoticeCombo" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20,0,0,0">
                         <ComboBoxItem Content="开"/>
                         <ComboBoxItem Content="关"/>
                     </ComboBox>

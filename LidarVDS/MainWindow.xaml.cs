@@ -6,6 +6,7 @@ using HandyControl.Controls;
 using LidarVDS.Pages.Analysis;
 using LidarVDS.Pages.Help;
 using LidarVDS.Pages.Settings;
+using LidarVDS.Pages.Settings.SettingPages.ParameterPage;
 using LidarVDS.Pages.Simulator;
 using LidarVDS.Utils;
 using Window = HandyControl.Controls.Window;
@@ -22,11 +23,11 @@ namespace LidarVDS
         {
             Instance = this;
             TimingUtil.StartTiming("应用启动");
-            AppTheme.GetTheme();//初始化主题
             InitializeComponent();
             var ms = TimingUtil.StopTiming("应用启动");
             $"启动成功，耗时 {ms/1000.0} 秒".LogInfo();
             PageFrame.Navigate(PageMain.Instance);
+            var _ = Parameter.Instance;
         }
 
         /**

@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using LidarVDS.Pages.Settings.SettingPages.ParameterPage;
 
 namespace LidarVDS
 {

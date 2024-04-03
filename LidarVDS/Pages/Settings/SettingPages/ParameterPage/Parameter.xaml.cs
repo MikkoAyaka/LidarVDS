@@ -1,134 +1,50 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
 using System.IO;
 using YamlDotNet.Serialization;
-using System.Text;
 using System.Windows.Controls;
+using System.Windows.Media;
 using LidarVDS.Utils;
+using ComboBox = System.Windows.Controls.ComboBox;
 
 namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
 {
     public partial class Parameter
     {
-        public static Parameter Instance = new();
-        private Parameter()//初始化页面
+        public static readonly Parameter Instance = new();
+        private ConfigurationSettings _settings;
+        private ColorScheme _colorScheme = new();
+
+        public Parameter()
         {
-            Instance = this;
-            Init();
-            
             InitializeComponent();
-
-            LoadSavedData();//加载选择项
-            
-            AppTheme.GetTheme();
+            InitializeSettings();
         }
 
-        private void Init()
+        private void InitializeSettings()
         {
-            if(File.Exists(FileUtil.colorFilePath)) return;
-
-            var content = "Background: '#6DA6F6'\n" +
-                          "HideButton: '#6DA6F0'\n" +
-                          "CloseButton: '#6DA6F0'";
-            FileUtil.save(FileUtil.configFolderPath,FileUtil.colorFileName,content);
-            
-            if(File.Exists(FileUtil.configFilePath)) return;
-
-            var config = "DebugMode: '开'\nMainColor: '蓝色主题'";
-            FileUtil.save(FileUtil.configFolderPath,FileUtil.configFileName,config);
-        }
-        private void Save(object sender, RoutedEventArgs e)//保存按钮
-        {
-            // 获取选择的内容
-            string selectedColor = ((ComboBoxItem)Color.SelectedItem).Content.ToString();//主体颜色
-            string selectedDebug = ((ComboBoxItem)Debug.SelectedItem).Content.ToString();//字体大小
-
-            // 整合数据
-            var settings = new
-            {
-                MainColor = selectedColor,
-                DebugMode = selectedDebug,
-                // 可根据需要添加更多选项
-            };
-            // 将数据写入YAML文件
-            var serializer = new SerializerBuilder().Build();//新建串行器
-            string yamlContent = serializer.Serialize(settings);
-            
-            FileUtil.save(FileUtil.configFolderPath,FileUtil.configFileName,yamlContent);
-            
-            //修改详细颜色配置
-            string background = null;
-            string hide_button = null;
-            string close_button = null;
-            
-            if (selectedColor == "蓝色主题")
-            {
-                background = "#6DA6F6";
-                hide_button = "#6DA6F0";
-                close_button = "#6DA6F0";
-            }
-            else if (selectedColor == "红色主题")
-            {
-                background = "#FF6B6B";
-                hide_button = "#E74455";
-                close_button = "#E74455";
-            }
-            else if (selectedColor == "绿色主题")
-            {
-                background = "#5EC603";
-                hide_button = "#9DF252";
-                close_button = "#9DF252";
-            }
-            
-            var color = new
-            {
-                Background = background,
-                HideButton = hide_button,
-                CloseButton = close_button,
-            };
-            // 将数据写入YAML文件
-            var serializer2 = new SerializerBuilder().Build();//新建串行器
-            string c = serializer2.Serialize(color);
-            
-            FileUtil.save(FileUtil.configFolderPath,FileUtil.colorFileName,c);
-            $"修改成功".LogInfo();
-            
-            LoadSavedData();
-
-            AppTheme.GetTheme();
-            AppTheme.GetMode();
+            _settings = ConfigurationSettings.Load();
+            SetValue(DebugCombo, _settings.DebugMode);
+            SetValue(ColorCombo, _settings.MainColor);
+            SetValue(NoticeCombo, _settings.Notice);
+            UpdateUI();
         }
 
-        //刷新按钮
-        /*private void Refresh(object sender, RoutedEventArgs e)
+        private void Save(object sender, RoutedEventArgs e)
         {
-            // 刷新按钮点击事件，重新加载保存的数据
-            LoadSavedData();
+            _settings.Save();
+            AppLogger.Enabled = _settings.parse(_settings.Notice);
+            AppLogger.LogInfo("修改成功");
+            UpdateUI();
+        }
 
-            AppTheme.GetTheme();
-            AppTheme.GetMode();
-        }*/
-        
-        //加载选项框中的选项
-        private void LoadSavedData()
+        private void UpdateUI()
         {
-            if (File.Exists(FileUtil.configFilePath))
-            {
-                // 读取保存的数据
-                string yamlContent = FileUtil.load(FileUtil.configFilePath);
-
-                // 反序列化YAML为对象
-                var deserializer = new DeserializerBuilder().Build();
-                var settings = deserializer.Deserialize<dynamic>(yamlContent);
-
-                // 设置下拉框的选定值
-                SetValue(Debug, settings["DebugMode"]);
-                SetValue(Color, settings["MainColor"]);
-            }
+            _colorScheme.UpdateColors(_settings.MainColor);
         }
 
         private void SetValue(ComboBox comboBox, string value)
         {
-            // 设置下拉框的选定值
             foreach (ComboBoxItem item in comboBox.Items)
             {
                 if (item.Content.ToString() == value)
@@ -137,6 +53,85 @@ namespace LidarVDS.Pages.Settings.SettingPages.ParameterPage
                     break;
                 }
             }
+        }
+    }
+
+    public class ConfigurationSettings
+    {
+        public string DebugMode = "关";
+        public string MainColor = "蓝色主题";
+        public string Notice = "开";
+
+        public static ConfigurationSettings Load()
+        {
+            if (File.Exists(FileUtil.configFilePath))
+            {
+                string yamlContent = FileUtil.load(FileUtil.configFilePath);
+                var deserializer = new DeserializerBuilder().Build();
+                return deserializer.Deserialize<ConfigurationSettings>(yamlContent);
+            }
+
+            return new ConfigurationSettings();
+        }
+
+        public void Save()
+        {
+            DebugMode = ((ComboBoxItem)Parameter.Instance.DebugCombo.SelectedItem).Content.ToString();
+            MainColor = ((ComboBoxItem)Parameter.Instance.ColorCombo.SelectedItem).Content.ToString();
+            Notice = ((ComboBoxItem)Parameter.Instance.NoticeCombo.SelectedItem).Content.ToString();
+            
+            var serializer = new SerializerBuilder().Build();
+            string yamlContent = serializer.Serialize(this);
+            FileUtil.save(FileUtil.configFolderPath, FileUtil.configFileName, yamlContent);
+        }
+
+        public bool parse(string str)
+        {
+            if (str.Equals("开")) return true;
+            return false;
+        }
+    }
+
+    public class ColorScheme
+    {
+        public void UpdateColors(string mainColor)
+        {
+            switch (mainColor)
+            {
+                case "蓝色主题":
+                    UpdateBackground("#6DA6F6");
+                    UpdateHideButton("#fdfbdc");
+                    UpdateCloseButton("#f89999");
+                    break;
+                case "红色主题":
+                    UpdateBackground("#FF6B6B");
+                    UpdateHideButton("#E74455");
+                    UpdateCloseButton("#E74455");
+                    break;
+                case "绿色主题":
+                    UpdateBackground("#5EC603");
+                    UpdateHideButton("#9DF252");
+                    UpdateCloseButton("#9DF252");
+                    break;
+            }
+        }
+
+        private void UpdateBackground(string colorHex)
+        {
+            var newBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(colorHex));
+            Application.Current.Resources["Background"] = newBrush;
+        }
+
+        private void UpdateHideButton(string colorHex)
+        {
+            var newBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(colorHex));
+            Application.Current.Resources["HideButton"] = newBrush;
+        }
+
+        private void UpdateCloseButton(string colorHex)
+        {
+            var newBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(colorHex));
+            Application.Current.Resources["CloseButton"] = newBrush;
         }
     }
 }
