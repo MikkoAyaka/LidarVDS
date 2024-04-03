@@ -53,6 +53,21 @@ public partial class PageHelp : Page
         Viewer.Document = new Markdown().Transform(FileUtil.load(FileUtil.documentsPath+"\\能见度反演算法.md"));
     }
     
+    private void Btn7_Click(object sender, RoutedEventArgs e)
+    {
+        Viewer.Document = new Markdown().Transform(FileUtil.load(FileUtil.documentsPath+"\\创建仿真配置.md"));
+    }
+    
+    private void Btn8_Click(object sender, RoutedEventArgs e)
+    {
+        Viewer.Document = new Markdown().Transform(FileUtil.load(FileUtil.documentsPath+"\\运行仿真模拟.md"));
+    }
+    
+    private void Btn9_Click(object sender, RoutedEventArgs e)
+    {
+        Viewer.Document = new Markdown().Transform(FileUtil.load(FileUtil.documentsPath+"\\仿真数据分析.md"));
+    }
+    
     private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
     {
         string url = "https://www.yuque.com/mikkoayaka/vp9g2k/ywcg78ccdt0btyk2?singleDoc#";
